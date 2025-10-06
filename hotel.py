@@ -100,7 +100,7 @@ for province in provinces:
     print(f"Đang lấy dữ liệu khách sạn cho: {province}")
     hotels = fetch_and_process_json(search_url, province)
     all_hotels.extend(hotels)
-    time.sleep(2)  # Tránh bị giới hạn API
+    time.sleep(2)  # Tránh bị giới hạn APIyj
 
 with open(output_file, mode="w", newline="", encoding="utf-8") as file:
     writer = csv.writer(file)
