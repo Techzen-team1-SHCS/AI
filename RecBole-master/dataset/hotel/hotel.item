@@ -1,0 +1,6 @@
+item_id:token,style:token_seq,price:float,star:float,score:float
+h1,hiện_đại|yên_tĩnh,2836440,4.0,9.9
+h2,yên_tĩnh|tình_yêu,3724000,4.0,9.7
+h3,thơ_mộng|hiện_đại,1980000,3.0,9.5
+h4,cổ_điển|thơ_mộng,2500000,4.0,9.6
+h5,sôi_động|tình_yêu,3250000,4.5,9.8
