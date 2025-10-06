@@ -1,0 +1,10 @@
+dataset: hotel
+field_separator: ","
+seq_separator: "|"
+USER_ID_FIELD: user_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+filter_inter_by_user_or_item: True
+load_col:
+    inter: [user_id, item_id, action_type, timestamp]
+    item: [item_id, style, price, star, score]
