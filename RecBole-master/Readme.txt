@@ -1,5 +1,3 @@
-CMD :
-
 1.Cài môi trường
 ```bash
 python -m venv recbole-env
