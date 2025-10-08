@@ -1,61 +1,86 @@
-1.Cài môi trường
-```bash
+Yêu cầu hệ thống
+
+Python >= 3.8, <= 3.12
+
+pip >= 21.0
+
+GPU (tùy chọn, có thể chạy CPU)
+
+Hệ điều hành: Windows / macOS / Linux
+
+1) Chuẩn bị kiểm tra ban đầu
+
+Mở PowerShell và đổi đến thư mục dự án:
+
+Set-Location G:\AI\RecBole-master
+
+
+Kiểm tra Python bạn đang dùng (phải ≥ 3.7):
+
+
+2) Tạo và kích hoạt môi trường ảo (venv) — Tại sao: tách gói của dự án, tránh xung đột
+
+Tạo venv:
+
 python -m venv recbole-env
-recbole-env\Scripts\activate
-pip install -r requirements.txt
-
-2.Kiểm tra Recbole
-python -c "import recbole; print(recbole.__version__)"
-
-Hoặc
-
-pip show recbole
-
-TERMINAL(POWERSHELL) :
-
-🧩 Bước 1: Mở PowerShell
-
-Mở thư mục dự án (nơi có requirements.txt), ví dụ:
-
-G:\AI_Project\InstallRecbole
 
 
-Sau đó Shift + chuột phải → chọn "Open PowerShell window here"
-(hoặc gõ đường dẫn này trên thanh địa chỉ của File Explorer và bấm Enter)
-⚙️ Bước 2: Kích hoạt môi trường ảo
+Kích hoạt (PowerShell):
 
-Nhập lệnh sau:
-
-G:\AI_Project\recbole-env\Scripts\Activate.ps1
+.\recbole-env\Scripts\Activate.ps1
 
 
-Nếu PowerShell báo lỗi như:
+Nếu PowerShell chặn script, cho phép tạm thời:
 
-running scripts is disabled on this system
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
 
-thì chạy lệnh này (chỉ cần làm 1 lần):
+Sau đó nhập lại lệnh .\recbole-env\Scripts\Activate.ps1
 
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Sau khi kích hoạt, bạn sẽ thấy (recbole-env) tiền tố trên prompt.
+
+3) Cập nhật pip và cài PyTorch (quan trọng)
+
+Lý do: requirements.txt có thể tham chiếu torch; tốt nhất cài PyTorch trước tùy môi trường GPU/CPU.
+
+Nếu máy không có NVIDIA GPU (CPU-only):
+
+python -m pip install --upgrade pip
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
 
-Sau đó chạy lại lệnh activate phía trên.
+Nếu có GPU và bạn muốn dùng CUDA, vào https://pytorch.org
+ chọn phiên bản CUDA tương thích rồi copy lệnh pip install ... --index-url ... tương ứng.
 
-Khi thành công, bạn sẽ thấy prompt đổi như sau:
+Lưu ý: nếu trong requirements.txt có một dòng torch==... mà không tương thích (ví dụ yêu cầu CUDA), tốt nhất xóa dòng torch trong file hoặc cài torch theo cách bên trên trước rồi pip install -r requirements.txt (không cài torch hai lần).
 
-(recobole-env) PS G:\AI_Project\InstallRecbole>
+4) Cài các thư viện từ requirements.txt — Tại sao: đây là tất cả phụ thuộc dự án
 
-📦 Bước 3: Cài đặt từ requirements.txt
-
-Khi môi trường đã được kích hoạt, chạy:
+Trong venv đã activate:
 
 pip install -r requirements.txt
 
 
-Python sẽ tự động cài tất cả các thư viện cần thiết cho RecBole (như PyTorch, numpy, pandas, tqdm,...).
+Nếu lệnh báo lỗi hoặc dừng ở phần torch/cuda thì:
 
-✅ Bước 4: Kiểm tra
-Sau khi cài xong, kiểm tra RecBole đã sẵn sàng:
+Xem lại file requirements.txt, nếu có torch dòng, xóa dòng đó và cài torch riêng như bước 3 rồi chạy lại pip install -r requirements.txt.
 
-python -c "import recbole, torch; print('RecBole:', recbole.__version__, '| Torch:', torch.__version__, '| CUDA:', torch.cuda.is_available())"
+5) Cài thêm (nếu cần) — những library RecBole hay dùng
 
-Hiển thị là :RecBole: 1.2.1 | Torch: 2.8.0+cpu | CUDA: False 
+Bạn đã gặp các lỗi trước (thiếu ray, pyarrow) — để chắc chắn, cài:
+
+pip install "ray[tune]" pyarrow
+
+
+ray[tune] cho hyperparameter tuning; pyarrow thường là dependency của Ray.
+
+6) Kiểm tra cài đặt RecBole & PyTorch
+
+Trong môi trường đang active:
+
+python -c "import recbole, torch; print('recbole', recbole.__version__); print('torch', torch.__version__, 'cuda_available=', torch.cuda.is_available())"
+
+
+Nếu lỗi ModuleNotFoundError: recbole thì pip install recbole (thường không cần nếu bạn đã cài theo requirements). Nếu lỗi numpy như np.float_ removed, cài lại numpy tương thích:
+
+pip install numpy==1.26.4
+

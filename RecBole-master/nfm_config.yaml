@@ -1,0 +1,6 @@
+model: NFM
+dataset: ml-100k
+eval_type: both
+metrics: ["AUC", "Recall"]
+epochs: 20
+learning_rate: 0.001
