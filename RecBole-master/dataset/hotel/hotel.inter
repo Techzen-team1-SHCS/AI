@@ -1,0 +1,9 @@
+user_id:token	item_id:token	action_type:token	rating:float	timestamp:float
+u1	h1	click	1	1695400000
+u1	h2	hover	1	1695403600
+u2	h3	booking	1	1695407200
+u2	h1	click	1	1695493600
+u3	h4	hover	1	1695494000
+u3	h5	click	1	1695494600
+u4	h2	click	1	1695495200
+u5	h1	booking	1	1695495800
