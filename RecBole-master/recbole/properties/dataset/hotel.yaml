@@ -1,0 +1,10 @@
+field_separator: "\t"
+seq_separator: " "
+USER_ID_FIELD: user_id
+ITEM_ID_FIELD: item_id
+RATING_FIELD: rating
+TIME_FIELD: timestamp
+LABEL_FIELD: rating
+load_col:
+    inter: [user_id, item_id, action_type, rating, timestamp]
+    item: [item_id, style, price, star, score]
