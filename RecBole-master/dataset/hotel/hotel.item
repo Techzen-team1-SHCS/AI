@@ -1,6 +1,597 @@
-item_id:token	style:token_seq	price:float	star:float	score:float
-h1	hiện_đại yên_tĩnh	2836440	4.0	9.9
-h2	yên_tĩnh tình_yêu	3724000	4.0	9.7
-h3	thơ_mộng hiện_đại	1980000	3.0	9.5
-h4	cổ_điển thơ_mộng	2500000	4.0	9.6
-h5	sôi_động tình_yêu	3250000	4.5	9.8
+﻿item_id:token	style:token_seq	price:float	star:float	score:float	city:token_seq
+hotel_41588	Romantic	2836440.0	4.0	9.9	Hoan Kiem
+hotel_91611	Quiet Love	3724000.0001	4.0	9.7	Hoan Kiem
+hotel_25441	Romantic Modern Lively	1462050.0	4.0	9.9	Hanoi
+hotel_45891	Love	1833960.0001	4.0	8.9	Hanoi
+hotel_10095	Modern Romantic	1917664.0	4.0	9.3	Hanoi
+hotel_88149	Classic Quiet	1178100.0001	3.0	9.1	Hanoi
+hotel_98654	Quiet Romantic Love	1810881.0	4.0	9.3	Hanoi
+hotel_41724	Love	2562435.0001	4.0	9.6	Hanoi
+hotel_53717	Classic Love	1040000.0	4.0	9.0	Hanoi
+hotel_47547	Classic Quiet Love	1612800.0	4.0	9.3	Hanoi
+hotel_44213	Love	2124745.0	4.0	9.4	Hanoi
+hotel_57297	Lively Love	480000.0	3.0	0.0	Cau Giay
+hotel_15958	Classic Lively Love	2730000.0	4.0	9.5	Hoan Kiem
+hotel_30190	Romantic	4909311.0	5.0	9.5	Hanoi
+hotel_81677	Romantic Love	1275000.0	3.0	9.4	Hanoi
+hotel_47574	Love	2676240.0	4.0	9.2	Hanoi
+hotel_86715	Romantic Classic Quiet	1320000.0	4.0	9.1	Cau Giay
+hotel_57542	Love	4819237.0	5.0	9.6	Hanoi
+hotel_15506	Classic Romantic Love	2842875.0	5.0	9.4	Hoan Kiem
+hotel_18714	Quiet Romantic	1664245.0	4.0	9.5	Hanoi
+hotel_96842	Lively Love	1450000.0	4.0	9.7	Hanoi
+hotel_23354	Quiet Romantic Love	2185000.0001	5.0	9.6	Hoan Kiem
+hotel_92579	Quiet Love	2287350.0	3.0	9.8	Hoan Kiem
+hotel_49334	Quiet Romantic Love	1990230.0001	4.0	9.4	Hoan Kiem
+hotel_49939	Love	3277500.0	5.0	9.4	Hanoi
+hotel_38832	Romantic Love	1244958.0001	4.0	9.6	Hanoi
+hotel_53704	Lively	994500.0	3.0	8.8	Hai Ba Trung
+hotel_22539	Modern Quiet Romantic	1620000.0	4.0	9.5	Hanoi
+hotel_54645	Love	980000.0	3.0	8.5	Hoan Kiem
+hotel_61894	Quiet Romantic Love	1749950.0	4.0	9.2	Hoan Kiem
+hotel_99641	Lively Romantic Love	2200000.0	5.0	9.5	Hoan Kiem
+hotel_67187	Romantic	2451390.0001	4.0	9.2	Hanoi
+hotel_42823	Classic Quiet Love	1479576.0	3.0	9.5	Hoan Kiem
+hotel_54544	Modern Romantic Love	792000.0	4.0	9.7	Hoan Kiem
+hotel_29765	Lively	1338120.0	4.0	9.3	Hanoi
+hotel_44767	Classic Lively	1677500.0001	3.0	9.1	Hanoi
+hotel_20794	Lively Romantic Love	3708400.0	5.0	9.5	Hanoi
+hotel_44726	Modern Lively	1856000.0	4.0	8.3	Hanoi
+hotel_40973	Quiet	1775310.0001	4.0	9.5	Hoan Kiem
+hotel_41849	Classic Quiet	3934870.0001	5.0	9.6	Hanoi
+hotel_13777	Classic	2728440.0	5.0	9.7	Hanoi
+hotel_75521	Modern Quiet	2026820.0	4.0	9.5	Hanoi
+hotel_20265	Modern Quiet	1139600.0	3.0	9.2	Hanoi
+hotel_23917	Modern Lively	1879801.0	4.0	9.6	Hanoi
+hotel_71703	Lively	2380950.0	4.0	9.2	Hanoi
+hotel_98434	Modern	3207600.0	3.0	9.0	Hoan Kiem
+hotel_14175	Quiet	1185462.0	4.0	9.2	Hoan Kiem
+hotel_72750	Modern Lively Love	1013760.0	3.0	9.1	Hanoi
+hotel_52233	Classic	2242665.0	4.0	9.3	Hanoi
+hotel_27970	Modern Quiet Romantic	1867020.0	4.0	9.0	Hoan Kiem
+hotel_62125	Romantic Love	2289000.0001	5.0	9.2	Hoan Kiem
+hotel_67819	Quiet Love	405000.0	0.0	8.2	Hoan Kiem
+hotel_29777	Romantic Love	1864800.0	4.0	9.3	Hoan Kiem
+hotel_92221	Modern Quiet Romantic	3024000.0	4.0	9.4	Hoan Kiem
+hotel_30983	Lively Modern Love	1793792.0	4.0	8.8	Hoan Kiem
+hotel_21630	Quiet	4840000.0	4.0	9.7	Hoan Kiem
+hotel_12636	Romantic	1660050.0	4.0	9.1	Hanoi
+hotel_51623	Lively Love	2360909.0001	4.0	9.4	Hanoi
+hotel_37357	Lively	891000.0	1.0	9.4	Hanoi
+hotel_61543	Modern Romantic Lively	2106000.0001	4.0	9.0	Hanoi
+hotel_67157	Modern Lively	2469250.0	4.0	9.5	Hoan Kiem
+hotel_12305	Modern Lively Love	1548360.0	4.0	8.5	Hanoi
+hotel_82730	Romantic Love	1495648.0001	4.0	9.4	Hoan Kiem
+hotel_37207	Classic Romantic Love	875327.0	4.0	8.4	Hanoi
+hotel_65885	Classic Romantic	4168117.0	5.0	9.3	Hanoi
+hotel_52608	Classic	2624501.0001	4.0	9.7	Hanoi
+hotel_26804	Quiet	2325600.0	4.0	8.8	Hanoi
+hotel_83336	Modern Quiet	2574000.0001	4.0	9.7	Hanoi
+hotel_27414	Classic Lively	1470000.0	4.0	9.2	Hoan Kiem
+hotel_94950	Quiet	1567500.0	3.0	8.4	Hanoi
+hotel_42791	Love	990000.0	4.0	8.8	Hanoi
+hotel_56732	Love Quiet Romantic	1839200.0	4.0	9.1	Hanoi
+hotel_99883	Classic Lively Romantic	1282500.0	4.0	8.9	Hoan Kiem
+hotel_10906	Love	1963500.0001	4.0	9.2	Hanoi
+hotel_30345	Romantic Love	3650000.0001	5.0	9.5	Hanoi
+hotel_59629	Quiet Romantic Love	1667020.0001	3.0	9.4	Hanoi
+hotel_28616	Modern Lively	1036800.0	0.0	8.6	Hanoi
+hotel_61226	Lively Romantic Love	1089000.0	4.0	9.0	Hoan Kiem
+hotel_40243	Modern Lively Love	1952875.0001	3.0	9.3	Hanoi
+hotel_69528	Romantic	1132740.0	4.0	8.8	Hoan Kiem
+hotel_64552	Romantic Love	640900.0	2.0	8.9	Hanoi
+hotel_37407	Lively Romantic	1616530.0	4.0	9.2	Hoan Kiem
+hotel_60185	Love Modern Quiet	652500.0	3.0	8.6	Hanoi
+hotel_32273	Love	840000.0	3.0	8.8	Hanoi
+hotel_81884	Modern	1089000.0	4.0	9.0	Hoan Kiem
+hotel_73347	Modern Lively Romantic	1260000.0	3.0	8.5	Hoan Kiem
+hotel_44226	Romantic	1222650.0001	3.0	9.0	Hanoi
+hotel_57132	Modern Romantic	2091600.0	4.0	9.5	Hanoi
+hotel_31207	Quiet Romantic Love	1620000.0	4.0	9.2	Hanoi
+hotel_11279	Love	2752245.0	5.0	9.5	Hanoi
+hotel_28571	Modern Quiet	1103600.0001	3.0	8.3	Hanoi
+hotel_42593	Classic Quiet	1260000.0	4.0	9.5	District Hoan Kiem Hanoi Vietnam
+hotel_52020	Quiet Romantic	2245320.0	4.0	9.3	Hanoi
+hotel_51915	Love	1787560.0001	4.0	9.1	Hanoi
+hotel_77935	Modern	1020000.0001	4.0	7.9	Hoan Kiem
+hotel_65216	Classic Romantic Love	1955813.0	4.0	8.9	Hanoi
+hotel_41583	Lively Romantic	732564.0	0.0	8.3	Hanoi
+hotel_87349	Romantic	1365120.0	4.0	9.0	Hanoi
+hotel_89748	Love	1075000.0	4.0	0.0	Hoan Kiem
+hotel_73508	Classic Romantic Love	1020000.0001	4.0	7.9	Hoan Kiem
+hotel_81073	Lively Romantic	2150702.0	4.0	9.4	Hanoi
+hotel_66925	Modern Quiet	1125180.0	4.0	8.1	Hoan Kiem
+hotel_80539	Modern Love	1969920.0001	4.0	8.5	Hanoi
+hotel_92012	Modern Quiet Romantic	3115200.0001	4.0	9.2	Hanoi
+hotel_92343	Romantic	1760000.0	0.0	9.2	Hanoi
+hotel_23930	Modern Romantic	2160000.0	4.0	8.9	Hanoi
+hotel_53940	Quiet Romantic	1260000.0	4.0	9.5	District Hoan Kiem Hanoi Vietnam
+hotel_33212	Classic Lively Romantic	3175200.0	5.0	9.3	Hanoi
+hotel_53592	Lively	1880000.0001	0.0	9.1	Hanoi
+hotel_77548	Modern Quiet Love	1700000.0	0.0	8.9	Hanoi
+hotel_25583	Romantic	1093500.0	3.0	9.2	Hoan Kiem
+hotel_84828	Modern Romantic Lively	1150000.0001	4.0	9.2	Hanoi
+hotel_49898	Modern	1555200.0	4.0	8.9	Ba Dinh
+hotel_21090	Modern Quiet	1210000.0	3.0	9.0	Hanoi
+hotel_87972	Modern Lively Love	1539000.0	4.0	8.7	Hanoi
+hotel_12161	Lively	1035000.0	3.0	8.5	Hoan Kiem
+hotel_62534	Quiet	3397350.0001	4.0	9.5	Hanoi
+hotel_63884	Modern Romantic Love	2493750.0	4.0	10.0	Hoan Kiem
+hotel_57249	Classic Lively Romantic	940000.0	3.0	9.3	Old Quarter Hanoi
+hotel_25260	Lively	1539000.0	4.0	8.7	Hanoi
+hotel_13515	Classic Love	1630736.9999	4.0	8.0	Hoan Kiem
+hotel_26607	Modern Romantic Love	1239556.0	0.0	9.0	Hanoi
+hotel_54138	Classic	940000.0	3.0	9.3	Old Quarter Hanoi
+hotel_65268	Classic Love	1630125.0	3.0	9.1	Hoan Kiem
+hotel_48451	Modern Romantic	974400.0	4.0	9.8	Cau Giay
+hotel_66936	Romantic Love Classic	1765575.0	4.0	9.3	Hanoi
+hotel_13451	Modern Lively Romantic	1984500.0	0.0	9.2	Hanoi
+hotel_85446	Classic Quiet Love	1663481.0	4.0	9.9	Hai Ba Trung
+hotel_24665	Love	1551000.0	3.0	9.1	Hanoi
+hotel_92986	Modern Quiet	1911000.0001	4.0	8.8	Hanoi
+hotel_28741	Lively Romantic	1691087.0	3.0	9.0	Hanoi
+hotel_62616	Romantic	815480.0	0.0	8.4	Cau Giay
+hotel_27842	Lively	1476300.0001	4.0	8.4	Hanoi
+hotel_69663	Modern Romantic	2281192.0001	4.0	9.3	Hanoi
+hotel_44825	Modern Quiet Romantic	2227500.0	4.0	9.4	Hanoi
+hotel_42546	Modern Romantic Love	1511100.0	4.0	9.0	Hanoi
+hotel_28068	Modern	2152086.0	4.0	9.4	Hoan Kiem
+hotel_91712	Modern	1451520.0	3.0	9.2	Hoan Kiem
+hotel_30305	Classic Lively	918540.0	0.0	9.4	Hanoi
+hotel_50119	Lively	877500.0	3.0	9.2	Hanoi
+hotel_16792	Modern Lively Love	1785000.0	4.0	9.3	Hanoi
+hotel_34137	Classic Romantic Love	1790100.0	3.0	9.7	Hoan Kiem
+hotel_25093	Classic Romantic	1020600.0	4.0	7.6	Hanoi
+hotel_51677	Modern	1240200.0	3.0	8.8	Hoan Kiem
+hotel_76551	Lively Romantic	2400000.0	4.0	9.5	Hanoi
+hotel_99612	Modern Romantic Love	990000.0	4.0	8.2	Hanoi
+hotel_51200	Quiet	1312500.0	4.0	9.2	Hanoi
+hotel_47069	Lively	2493750.0	4.0	10.0	Hoan Kiem
+hotel_59176	Classic Love	1071574.0001	4.0	9.0	Hanoi
+hotel_80900	Lively Romantic Love	517942.0	0.0	10.0	Cau Giay
+hotel_66700	Romantic	1306013.0	3.0	9.3	Hanoi
+hotel_21637	Modern	1050000.0	3.0	8.8	Hanoi
+hotel_53987	Classic Love	1164670.0001	4.0	8.0	Hoan Kiem
+hotel_89628	Lively Romantic Love	1120000.0	4.0	9.0	Tay Ho
+hotel_34822	Modern Romantic Love	2187000.0	4.0	9.0	Hanoi
+hotel_76989	Classic Romantic Love	1440000.0	0.0	9.8	Ba Dinh
+hotel_52383	Love	897750.0	3.0	8.8	Hanoi
+hotel_81215	Lively	2086651.0001	3.0	9.0	Hanoi
+hotel_70082	Quiet Love	2318400.0	3.0	8.5	Hanoi
+hotel_98779	Classic Lively Romantic	1440000.0	0.0	9.8	Ba Dinh
+hotel_52425	Love	897750.0	3.0	8.8	Hanoi
+hotel_98448	Lively Romantic	1120000.0	4.0	9.0	Tay Ho
+hotel_57687	Romantic Lively Love	992612.0	3.0	8.9	Hanoi
+hotel_56985	Classic Romantic Love	1040000.0	3.0	8.9	Hanoi Vietnam
+hotel_18869	Romantic Love	765703.0001	3.0	9.7	Ba Dinh
+hotel_51560	Love	2444000.0	4.0	9.1	Hoan Kiem
+hotel_47985	Classic	1284416.0	4.0	8.7	Hanoi
+hotel_85179	Romantic Love	720000.0	0.0	8.3	Hanoi
+hotel_87566	Lively Romantic Love	734400.0	0.0	8.3	Hanoi
+hotel_64012	Lively Romantic Love	1108080.0	3.0	9.2	Hoan Kiem
+hotel_96567	Lively Love	926100.0	4.0	8.1	Hanoi
+hotel_91582	Modern Romantic Love	1347840.0	4.0	8.5	Hanoi
+hotel_90862	Quiet Love	2960550.0	4.0	9.4	Hanoi
+hotel_45996	Love	2754000.0	4.0	9.0	Hoan Kiem
+hotel_82563	Modern Quiet Romantic	1036800.0	0.0	8.3	Hanoi
+hotel_70768	Quiet	633728.0	3.0	7.3	Hanoi
+hotel_68325	Lively Love	900000.0	4.0	8.5	Hanoi
+hotel_34269	Quiet	1630125.0	3.0	8.9	Hanoi
+hotel_60656	Classic Romantic Love	803358.0	3.0	8.8	Hoan Kiem
+hotel_85345	Modern Lively Romantic	4394250.0	5.0	9.0	Hanoi
+hotel_12423	Romantic Love	2660505.0	4.0	9.1	Hanoi
+hotel_74429	Modern Lively Romantic	1371825.0	4.0	9.0	Hanoi
+hotel_81878	Lively Modern Love	748800.0	3.0	8.8	Hanoi
+hotel_27794	Modern Quiet Romantic	1302000.0001	4.0	10.0	Hanoi
+hotel_78082	Quiet	472500.0	3.0	7.3	Hanoi
+hotel_79340	Romantic	4462617.0	5.0	8.4	Hanoi
+hotel_29024	Love	820000.0	0.0	9.0	Hanoi
+hotel_20550	Classic Love	1360125.0	4.0	9.1	Hoan Kiem
+hotel_80626	Romantic	1316250.0	4.0	8.2	Hanoi
+hotel_75782	Lively Romantic Love	1500000.0	3.0	9.1	Hanoi
+hotel_76184	Lively	3980340.0	5.0	8.6	Hanoi
+hotel_19463	Modern Romantic Love	1017586.8	3.0	7.8	Hoan Kiem
+hotel_99589	Modern Quiet	3454545.0	4.0	9.2	Tay Ho
+hotel_52942	Modern	875000.0	0.0	9.3	Hanoi
+hotel_80968	Classic Love	3520890.0	4.0	9.3	Hanoi
+hotel_56879	Romantic	908438.0	4.0	8.0	Hanoi
+hotel_26740	Quiet	497250.0	3.0	9.2	Cau Giay
+hotel_90232	Classic	910000.0	3.0	8.5	Hanoi
+hotel_96669	Quiet	845000.0	3.0	8.8	Hanoi
+hotel_33482	Classic	910000.0	3.0	8.5	Hanoi
+hotel_88246	Quiet Romantic	845000.0	3.0	8.8	Hanoi
+hotel_96250	Modern Lively Romantic	1190000.0001	3.0	9.4	Hanoi
+hotel_13509	Lively	806400.0	2.0	8.3	Hanoi
+hotel_48788	Modern Romantic	971999.0	0.0	8.7	Hanoi
+hotel_65039	Quiet Romantic	683820.0	4.0	9.0	Tay Ho
+hotel_30641	Quiet Romantic	988000.0	3.0	8.3	Hanoi
+hotel_25124	Love	2336040.0	5.0	9.2	Hanoi
+hotel_27561	Classic	1923801.0001	0.0	9.3	Hanoi
+hotel_73759	Classic	600000.0001	3.0	8.1	Hoan Kiem
+hotel_43981	Romantic Love	360450.0	3.0	6.8	Hanoi
+hotel_54163	Modern Quiet	1055500.0	4.0	9.3	Hanoi
+hotel_17478	Romantic	1623232.0	4.0	9.6	Ba Dinh
+hotel_43617	Classic Love	774857.1429	3.0	8.3	Hanoi
+hotel_66506	Modern Romantic	402944.0	0.0	8.7	Cau Giay
+hotel_97488	Lively Love	2449296.0	4.0	9.1	Hanoi
+hotel_74326	Modern	3894705.0	5.0	9.0	Hanoi
+hotel_43988	Classic Quiet Love	2027250.0	4.0	10.0	Cau Giay
+hotel_54418	Classic Lively Love	969607.0001	4.0	8.6	Hanoi
+hotel_10138	Modern Romantic Love	1377000.0	3.0	8.5	Hanoi
+hotel_95596	Modern Love Romantic	2389500.0001	4.0	8.6	Hoan Kiem
+hotel_83775	Lively Love	994500.0	0.0	9.3	Hoan Kiem
+hotel_11651	Modern Lively Romantic	17010000.0	4.0	8.8	Ba Dinh
+hotel_95630	Romantic	1331618.0	4.0	9.4	Hoan Kiem
+hotel_91789	Classic Love	1023750.0	4.0	9.0	Tay Ho
+hotel_49557	Romantic Love	724337.0	4.0	8.5	Hanoi
+hotel_75855	Modern Romantic Love	525000.0	2.0	8.9	Tay Ho
+hotel_91414	Quiet Love	1075000.0	4.0	0.0	Hoan Kiem
+hotel_56284	Romantic Love	1505000.0	4.0	9.0	Cau Giay
+hotel_51956	Romantic	1607200.0	4.0	8.9	Hanoi
+hotel_32952	Romantic	507465.0	0.0	7.6	Hanoi
+hotel_78645	Classic Romantic	5239214.0	5.0	9.1	Hanoi
+hotel_36567	Classic Quiet	270000.0	0.0	8.2	Hanoi
+hotel_78017	Classic Romantic	2153500.0	4.0	9.6	Hanoi
+hotel_84506	Modern Lively Love	799875.0	0.0	8.9	Ha Dong
+hotel_83329	Quiet Romantic Classic	2041200.0	4.0	8.8	Hanoi
+hotel_23874	Romantic	935190.0	3.0	5.4	Hanoi
+hotel_29482	Lively Romantic	2112000.0001	4.0	9.2	Ba Dinh
+hotel_79359	Classic Lively Love	867000.0	3.0	9.0	Hoan Kiem
+hotel_54683	Classic Love	2250000.0	3.0	8.5	Hanoi
+hotel_76451	Modern Quiet	613700.0001	3.0	8.9	Hanoi
+hotel_82788	Lively Romantic Love	867000.0	3.0	9.0	Hoan Kiem
+hotel_88187	Love Classic Romantic	2250000.0	3.0	8.5	Hanoi
+hotel_60994	Lively Love	810000.0	0.0	8.5	Hoan Kiem
+hotel_22672	Classic	944500.0	4.0	9.1	Hanoi
+hotel_39403	Lively Romantic	656880.0	3.0	9.5	Nam Tu Liem
+hotel_51946	Classic Romantic Love	5384870.0	5.0	9.3	Hoan Kiem
+hotel_33221	Quiet Romantic	540000.0	3.0	8.0	Hanoi
+hotel_15891	Quiet Love	905850.0	0.0	9.2	Hanoi
+hotel_97837	Modern Romantic	410400.0	0.0	9.7	Hanoi
+hotel_31866	Classic Romantic	732000.0	0.0	8.4	Tay Ho
+hotel_29368	Modern Lively Love	1503000.0	4.0	9.1	Ba Dinh
+hotel_27415	Classic Love	2911619.0	5.0	8.6	Hanoi
+hotel_41913	Romantic Quiet Love	768768.0	2.0	8.6	Hanoi
+hotel_48045	Modern	3063633.0	4.0	9.4	Hanoi
+hotel_92481	Quiet Romantic Love	1877850.0001	4.0	8.5	Hanoi
+hotel_52662	Modern	2082500.0001	0.0	9.3	Hoan Kiem
+hotel_22924	Romantic	1500000.0	3.0	8.9	Hoan Kiem
+hotel_15341	Romantic Love	2000000.0	4.0	9.3	Hanoi
+hotel_66144	Modern Lively Love	2100000.0001	5.0	9.2	Hanoi
+hotel_49192	Romantic	643500.0001	3.0	8.0	Hanoi
+hotel_73567	Quiet	410400.0	0.0	9.7	Hanoi
+hotel_27475	Lively Love	1320000.0	4.0	9.0	Hoan Kiem
+hotel_74336	Classic Romantic Love	3214890.0	5.0	8.8	Hanoi
+hotel_74486	Modern Love	1359954.0	3.0	9.5	Hoan Kiem
+hotel_64786	Lively Romantic Love	3132675.0	4.0	8.8	Hanoi
+hotel_32972	Quiet	718497.0	3.0	8.7	Cau Giay
+hotel_47034	Classic Lively Love	733480.0001	3.0	9.2	Hanoi Vietnam
+hotel_54665	Modern Lively	1020000.0001	0.0	9.1	Hoan Kiem
+hotel_83211	Modern Romantic	1251591.0001	3.0	9.0	Hanoi
+hotel_92404	Modern Lively	570000.0	0.0	8.4	Hoan Kiem
+hotel_98138	Modern Love	1815840.0001	5.0	8.5	Hanoi
+hotel_29890	Classic Love	2550000.0	4.0	9.1	Hanoi
+hotel_42357	Romantic Love	648000.0	3.0	6.6	Ba Dinh
+hotel_97906	Lively Romantic	1950366.6	4.0	8.6	Hanoi
+hotel_34591	Lively Romantic	2082500.0001	0.0	9.3	Hoan Kiem
+hotel_65984	Modern Love	1111000.0	4.0	9.2	Hanoi
+hotel_13731	Lively	3124786.0	4.0	9.2	Hanoi
+hotel_41755	Classic Love	1041984.0	4.0	8.5	Tay Ho
+hotel_13322	Love Lively Romantic	720000.0	0.0	9.2	Hanoi
+hotel_29121	Classic Quiet Romantic	1861200.0001	4.0	8.2	Hanoi
+hotel_29239	Romantic Quiet Love	891000.0	0.0	8.5	Hanoi
+hotel_62168	Lively Love	1494000.0	3.0	7.4	Hoan Kiem
+hotel_26551	Classic Quiet	1448916.0	3.0	7.3	Hanoi
+hotel_15584	Modern Love	363165.0	0.0	7.8	Hanoi
+hotel_45576	Modern Lively Romantic	1033200.0	4.0	8.7	Hoan Kiem
+hotel_16883	Lively	648000.0	2.0	9.7	Nam Tu Liem
+hotel_91920	Romantic Love Modern	1152000.0	0.0	8.5	Hanoi
+hotel_41447	Modern Romantic Love	1256850.0	4.0	8.5	Hoan Kiem
+hotel_91245	Quiet Romantic Love	1840625.0	4.0	8.9	Hanoi
+hotel_68603	Lively	733480.0001	3.0	9.2	Hanoi Vietnam
+hotel_46873	Modern Quiet	620500.0	3.0	8.6	Hanoi
+hotel_14374	Romantic	576810.0001	2.0	8.8	Hanoi
+hotel_98867	Lively	1346400.0	0.0	9.1	Hanoi
+hotel_60615	Modern Romantic Love	550000.0001	0.0	8.9	Thanh Xuan
+hotel_92351	Modern Lively Romantic	648000.0	3.0	6.6	Ba Dinh
+hotel_28650	Love	809676.0	4.0	9.6	Ba Dinh
+hotel_12593	Classic Romantic Love	382290.0	0.0	8.0	Hanoi
+hotel_92925	Classic	371013.0001	0.0	8.0	Cau Giay
+hotel_24303	Modern	956387.0	4.0	8.9	Hanoi
+hotel_25810	Lively Romantic	620500.0	3.0	8.6	Hanoi
+hotel_30711	Modern Love	3912300.0	5.0	9.2	Hanoi
+hotel_25632	Classic Quiet Romantic	810000.0	0.0	8.4	Tay Ho
+hotel_92663	Modern	363165.0	0.0	7.8	Hanoi
+hotel_65427	Modern	1494000.0	3.0	7.4	Hoan Kiem
+hotel_28164	Love	441000.0	0.0	9.5	Hanoi
+hotel_38599	Romantic Modern Love	1192950.0	0.0	9.3	Ba Dinh
+hotel_65960	Quiet	497250.0	2.0	7.8	Hanoi
+hotel_27160	Modern Quiet Love	11955131.0001	4.0	8.7	Hanoi
+hotel_96850	Lively	550000.0001	0.0	8.9	Thanh Xuan
+hotel_17776	Classic Love	1012500.0	0.0	9.7	Hanoi
+hotel_57708	Quiet Romantic	956387.0	4.0	8.9	Hanoi
+hotel_66091	Modern Romantic	371013.0001	0.0	8.0	Cau Giay
+hotel_71424	Modern	10169148.402	5.0	9.4	Hanoi
+hotel_77115	Love	3150000.0	3.0	8.5	Hanoi
+hotel_76265	Classic Love	540000.0	3.0	8.1	Hanoi
+hotel_61104	Classic Lively Love	641725.0	0.0	8.8	Dong Da
+hotel_46667	Love	3075000.0001	4.0	8.3	Hanoi
+hotel_33543	Romantic Love	731025.0	0.0	8.7	Ha noi
+hotel_43741	Quiet	1215000.0	4.0	8.7	Cau Giay
+hotel_95339	Classic Lively	1485000.0	0.0	7.6	Hanoi
+hotel_65976	Lively Love	6045509.0	5.0	8.6	Hanoi
+hotel_80986	Classic Love	1343722.0	0.0	9.6	Ba Dinh
+hotel_18658	Modern Romantic	1986600.0	4.0	10.0	Hoan Kiem
+hotel_64883	Romantic	2111592.0	0.0	8.7	Hanoi
+hotel_11619	Quiet Romantic	907800.0	4.0	8.0	Hanoi
+hotel_25071	Modern Romantic Love	1170000.0	3.0	8.9	Hanoi
+hotel_22184	Lively Love	600000.0001	0.0	7.2	Hanoi
+hotel_27573	Classic	903000.0	4.0	8.6	Hanoi
+hotel_71584	Classic Quiet	2447999.9999	4.0	8.7	Hanoi
+hotel_80661	Love	846450.0	3.0	8.0	Hanoi
+hotel_21209	Classic Lively	765000.0	3.0	8.7	Thanh Xuan
+hotel_95816	Quiet Romantic Love	900000.0	4.0	8.2	Hanoi
+hotel_31260	Love Classic Romantic	870000.0001	3.0	8.5	Hoan Kiem
+hotel_18928	Romantic Love	1381050.0001	4.0	9.0	Hanoi
+hotel_15922	Quiet Love	948525.0	0.0	9.8	Hanoi
+hotel_81781	Modern Lively Love	367200.0	3.0	7.9	Hanoi
+hotel_70482	Classic Quiet	1239300.0001	3.0	8.3	Hanoi
+hotel_93698	Lively	1575000.0001	4.0	8.1	Hanoi
+hotel_93122	Lively	2287937.0	4.0	8.6	Hanoi
+hotel_96857	Modern Romantic Love	1575000.0001	4.0	8.1	Hanoi
+hotel_87115	Classic Love	359736.0	0.0	7.5	Cau Giay
+hotel_30476	Classic Romantic	2447999.9999	4.0	8.7	Hanoi
+hotel_45985	Lively Romantic Love	1077797.0	3.0	8.5	Hanoi
+hotel_69583	Love Romantic Modern	984546.0	3.0	9.0	Hanoi
+hotel_23982	Classic	2287937.0	4.0	8.6	Hanoi
+hotel_95021	Romantic	2347380.0	5.0	9.2	Hanoi
+hotel_20044	Love	824850.0	0.0	9.6	Tay Ho
+hotel_71277	Quiet Romantic	1701000.0	4.0	9.2	Hoan Kiem
+hotel_62561	Love	612000.0	0.0	8.1	Hoan Kiem
+hotel_99900	Love	975116.0	0.0	7.9	Cau Giay
+hotel_81146	Quiet Romantic	382290.0	0.0	8.4	Cau Giay
+hotel_56310	Classic Romantic Quiet	714000.0	3.0	8.8	Hanoi
+hotel_90523	Classic Quiet Love	1404000.0	4.0	7.9	Nam Tu Liem
+hotel_64836	Love	451944.0	0.0	8.8	Hanoi
+hotel_40862	Classic Quiet	1270500.0	0.0	8.1	Hanoi
+hotel_67367	Modern Lively	690000.0	3.0	7.7	Hanoi
+hotel_11485	Quiet Romantic Love	1137150.0	3.0	8.7	Hanoi
+hotel_67365	Quiet Romantic	5145865.2	5.0	8.5	Hanoi
+hotel_16408	Classic Lively Romantic	529000.0	0.0	9.1	Hoan Kiem
+hotel_28611	Modern	451944.0	0.0	8.8	Hanoi
+hotel_90530	Classic Romantic Love	2894080.0	4.0	8.9	Hanoi
+hotel_11949	Romantic	1137150.0	3.0	8.7	Hanoi
+hotel_32145	Romantic	712800.0	0.0	9.1	Dong Da
+hotel_32456	Modern Lively Love	1713600.0	4.0	9.1	Dong Da
+hotel_93935	Quiet Romantic	406125.0	0.0	8.8	Ba Dinh
+hotel_47426	Love	396900.0	2.0	7.9	Hai Ba Trung
+hotel_60701	Classic Love	719100.0	3.0	8.0	Hanoi
+hotel_69440	Romantic	1134000.0	3.0	8.7	Hanoi
+hotel_32807	Lively Romantic Love	1152000.0	3.0	9.5	Hoan Kiem
+hotel_96818	Classic Lively Love	489600.0	3.0	8.5	Hai Ba Trung
+hotel_45150	Modern	619920.0	3.0	8.4	Hanoi
+hotel_18581	Classic Romantic Love	1260000.0	4.0	8.8	Hanoi
+hotel_84226	Romantic	382290.0	0.0	8.1	Cau Giay
+hotel_35594	Quiet Romantic Love	891000.0	1.0	8.5	Hanoi
+hotel_66132	Love	768735.0	3.0	8.4	HA NOI
+hotel_69182	Modern Quiet Romantic	550000.0001	1.0	7.6	Hoan Kiem
+hotel_36899	Modern Lively Love	1986600.0	4.0	10.0	Hoan Kiem
+hotel_63256	Love	4575312.0	5.0	8.9	Hanoi
+hotel_79249	Romantic	714000.0	3.0	8.8	Hanoi
+hotel_66507	Quiet	405000.0	3.0	8.2	Cau Giay
+hotel_87750	Classic Lively Romantic	545280.0	0.0	8.3	Hanoi
+hotel_51862	Lively	662160.0	2.0	8.0	Hanoi
+hotel_45030	Classic Lively	1084011.0	3.0	8.9	Hanoi
+hotel_72252	Love	489600.0	3.0	8.5	Hai Ba Trung
+hotel_57880	Romantic Love Quiet	780000.0	3.0	9.0	Hanoi
+hotel_45181	Romantic	1552000.0	4.0	8.7	Ba Dinh
+hotel_19131	Quiet Romantic Love	886498.0	3.0	8.5	Hanoi
+hotel_66586	Modern Lively	623700.0	3.0	8.9	Cau Giay
+hotel_79635	Romantic	945000.0	0.0	8.2	Ba Dinh
+hotel_24304	Classic Quiet Love	1032240.0	4.0	8.7	Cau Giay
+hotel_63444	Modern Quiet	3420000.0	4.0	9.5	Hanoi
+hotel_78285	Lively	450000.0	0.0	8.3	Hanoi
+hotel_99837	Love	1336500.0	4.0	8.8	Hanoi
+hotel_77247	Modern Lively	1080000.0	0.0	0.0	Hai Ba Trung
+hotel_83507	Lively	1134000.0	0.0	9.2	Ba Dinh
+hotel_35709	Quiet Love	1300000.0	3.0	7.4	Hanoi
+hotel_75880	Romantic	1176000.0	3.0	5.5	Hoan Kiem
+hotel_94855	Lively	789012.0	0.0	8.3	Tay Ho
+hotel_57473	Modern Quiet Romantic	4114800.0	0.0	8.6	Hanoi
+hotel_10440	Lively Romantic	2676240.0	4.0	9.2	Hanoi
+hotel_94084	Lively Romantic	3277500.0	5.0	9.4	Hanoi
+hotel_83152	Love	980000.0	3.0	8.5	Hoan Kiem
+hotel_61114	Modern Love	2842875.0	5.0	9.4	Hoan Kiem
+hotel_32842	Love Classic Romantic	994500.0	3.0	8.8	Hai Ba Trung
+hotel_10875	Romantic	1749950.0	4.0	9.2	Hoan Kiem
+hotel_46779	Lively	2200000.0	5.0	9.5	Hoan Kiem
+hotel_68124	Classic Lively Love	4820259.0	5.0	9.6	Hanoi
+hotel_73718	Romantic	1990230.0001	4.0	9.4	Hoan Kiem
+hotel_28880	Lively	1338120.0	4.0	9.3	Hanoi
+hotel_49054	Modern Quiet	2185000.0001	5.0	9.6	Hoan Kiem
+hotel_70156	Classic Romantic	1479576.0	3.0	9.5	Hoan Kiem
+hotel_57038	Modern Quiet Love	3934870.0001	5.0	9.6	Hanoi
+hotel_32362	Classic Lively Love	2026820.0	4.0	9.5	Hanoi
+hotel_63270	Lively	1677500.0001	3.0	9.1	Hanoi
+hotel_96232	Lively Romantic	3708400.0	5.0	9.5	Hanoi
+hotel_96965	Lively	1856000.0	4.0	8.3	Hanoi
+hotel_80066	Lively	2451390.0001	4.0	9.2	Hanoi
+hotel_81056	Romantic	1013760.0	3.0	9.1	Hanoi
+hotel_36272	Love	2289000.0001	5.0	9.2	Hoan Kiem
+hotel_78285	Romantic	1866317.0001	5.0	8.7	Da Nang
+hotel_31422	Modern Romantic Love	1199157.6604	4.0	9.2	Da Nang
+hotel_98007	Classic	387600.0	4.0	8.6	Da Nang
+hotel_91282	Lively Romantic	301000.0	4.0	8.5	Da Nang
+hotel_78658	Modern Lively Love	1254934.0001	4.0	9.0	Da Nang
+hotel_56436	Modern Love	599352.0	4.0	8.4	Da Nang
+hotel_44026	Lively Romantic Love	314594.28	3.0	8.5	Da Nang
+hotel_91823	Romantic Love	1600000.0	4.0	9.3	Hai Chau
+hotel_93118	Modern Romantic	833625.0	4.0	8.9	Ngu Hanh Son
+hotel_29314	Modern	332500.0	0.0	8.8	Da Nang
+hotel_37522	Modern Romantic	1698120.0001	5.0	9.2	Da Nang
+hotel_92986	Romantic Love	3067413.3	4.0	8.0	Da Nang
+hotel_22211	Lively	400944.0001	0.0	7.4	Son Tra
+hotel_52581	Classic Romantic	603028.8	0.0	8.5	Da Nang
+hotel_63380	Modern Love	1458600.0001	4.0	9.1	Da Nang
+hotel_81485	Classic Love	1077300.0	0.0	9.3	Da Nang
+hotel_97060	Modern Romantic	1260000.0	4.0	8.8	Da Nang
+hotel_25095	Love	400000.0	4.0	8.5	Son Tra
+hotel_99729	Classic Lively Romantic	350000.0	4.0	8.7	Da Nang
+hotel_70960	Classic	345780.0	0.0	8.1	Da Nang
+hotel_79393	Modern	664956.0	4.0	8.2	Da Nang
+hotel_52694	Quiet	405000.0001	0.0	7.4	Son Tra
+hotel_87712	Love	628460.0	3.0	9.9	Da Nang
+hotel_93631	Classic	1379655.0	4.0	9.0	Da Nang
+hotel_95237	Lively Love	563313.0	4.0	8.3	Da Nang
+hotel_98084	Lively	547199.9999	4.0	8.3	Son Tra
+hotel_98552	Lively Love	983588.0	4.0	8.7	Son Tra
+hotel_54677	Quiet Romantic	592704.0	0.0	8.5	Son Tra
+hotel_73722	Lively	870750.0	4.0	8.9	Da Nang
+hotel_27538	Modern Lively	741690.0	4.0	8.7	Son Tra
+hotel_53167	Romantic	455175.0001	4.0	8.2	Da Nang
+hotel_47907	Classic Quiet Love	567600.0001	3.0	8.6	Da Nang
+hotel_56172	Modern Romantic Love	272000.0001	0.0	8.4	Ngu Hanh Son
+hotel_76796	Love Classic Romantic	2226609.0	5.0	8.6	Da Nang
+hotel_12553	Lively Love	745200.0	4.0	8.9	Da Nang
+hotel_98035	Romantic Love	640000.0	4.0	8.8	Ngu Hanh Son
+hotel_85691	Lively Love	540600.0001	4.0	8.2	Da Nang
+hotel_88697	Lively Romantic Love	928800.0001	4.0	8.5	Da Nang
+hotel_20372	Classic Lively Romantic	1703460.0	0.0	9.2	Ngu Hanh Son
+hotel_27144	Lively Love	1590435.0	4.0	8.8	Da Nang
+hotel_85054	Love	711000.0001	4.0	8.8	Da Nang
+hotel_10512	Classic Love	865801.0	0.0	8.8	Da Nang
+hotel_27446	Lively	749700.0	4.0	8.1	Da Nang
+hotel_74910	Romantic Modern Lively	2061947.0	5.0	9.1	Da Nang
+hotel_50160	Quiet Romantic Love	487051.0	3.0	8.6	Da Nang
+hotel_69626	Classic Lively Love	732000.0	0.0	8.2	Da Nang
+hotel_78307	Love	972800.0	4.0	8.6	Da Nang
+hotel_97123	Quiet Love	466830.0	3.0	8.6	Da Nang
+hotel_52684	Lively Love Romantic	580800.0	4.0	7.8	Da Nang
+hotel_36040	Romantic Love	682440.0	4.0	8.1	Da Nang
+hotel_79666	Romantic	302940.0	0.0	7.0	Son Tra
+hotel_61819	Modern Lively Love	916666.0	0.0	9.3	Da Nang
+hotel_66707	Modern Quiet	399000.0001	0.0	9.2	Da Nang
+hotel_55485	Romantic Love	386880.0	4.0	8.2	Son Tra
+hotel_92530	Modern Quiet Romantic	977760.0	4.0	8.8	Da Nang
+hotel_95941	Romantic	1415880.0	4.0	8.5	Son Tra
+hotel_32754	Modern Quiet Romantic	1087758.0	4.0	8.4	Da Nang
+hotel_28561	Modern Romantic	735300.0	3.0	8.4	Da Nang
+hotel_94093	Quiet	1150560.0	4.0	8.2	Ngu Hanh Son
+hotel_65042	Romantic Love	630000.0001	3.0	8.2	Da Nang
+hotel_36134	Quiet Romantic Love	640244.0	0.0	9.3	Son Tra City Da Nang
+hotel_76579	Lively	1372500.0	5.0	7.2	Da Nang
+hotel_46977	Lively Romantic Love	522000.0	0.0	7.5	Da Nang
+hotel_33962	Romantic Love	900200.0	0.0	9.3	Son Tra
+hotel_77421	Romantic Love Lively	520695.0	3.0	8.0	Da Nang
+hotel_22663	Classic Romantic	850000.0001	4.0	8.7	Hai Chau
+hotel_32572	Modern Quiet	1117200.0001	4.0	9.2	Da Nang
+hotel_15822	Modern Romantic	2814936.0001	5.0	8.9	Ngu Hanh Son
+hotel_19461	Love Modern Romantic	981240.0001	4.0	8.6	Da Nang
+hotel_69123	Modern Lively Romantic	430920.0	0.0	8.1	Da Nang
+hotel_43818	Quiet	199784.0	0.0	7.1	Da Nang
+hotel_97336	Lively	425250.0	4.0	7.8	Da Nang
+hotel_82276	Quiet	2821000.0	4.0	8.7	Da Nang
+hotel_45898	Romantic Love	1618740.0001	4.0	9.1	Da Nang
+hotel_49758	Classic	4649400.0	5.0	8.7	Da Nang
+hotel_61098	Love Lively Romantic	1877904.0	5.0	8.7	Da Nang
+hotel_45444	Classic	1000000.0001	4.0	8.4	Da Nang
+hotel_26732	Classic Quiet Romantic	672600.0	0.0	8.8	City Da Nang
+hotel_42147	Quiet Classic Romantic	710334.0	0.0	9.3	Da Nang
+hotel_81525	Classic Lively Love	720000.0	4.0	7.8	Da Nang
+hotel_64495	Romantic Love	810000.0	4.0	8.4	Da Nang
+hotel_36713	Romantic Love	2970750.0001	5.0	9.4	Son Tra
+hotel_48069	Lively Romantic Love	962280.0	4.0	8.4	Da Nang
+hotel_72330	Classic Lively Romantic	2448682.0001	5.0	8.8	Da Nang
+hotel_21479	Classic Quiet Love	623700.0	4.0	8.1	Ngu Hanh Son
+hotel_97893	Lively Romantic	938120.0	4.0	8.3	Da Nang
+hotel_28597	Classic Romantic	798000.0	0.0	9.0	Hai Chau
+hotel_69531	Lively	865268.0	4.0	7.8	Da Nang
+hotel_16570	Quiet	1759320.0	5.0	8.6	Da Nang
+hotel_11443	Quiet Love	1940784.0	5.0	8.8	Da Nang
+hotel_11194	Love	1555556.0	4.0	9.2	Son Tra
+hotel_44534	Modern	685125.0	4.0	7.8	Da Nang
+hotel_27402	Quiet Romantic Love	511434.0	0.0	9.5	Da Nang
+hotel_26674	Modern Romantic Love	571536.0	4.0	8.1	Da Nang
+hotel_91978	Classic	1520640.0001	4.0	9.5	Da Nang
+hotel_63804	Modern Romantic Love	2293200.0	4.0	9.4	Da Nang
+hotel_25060	Classic Romantic	1290000.0001	4.0	8.8	Da Nang
+hotel_27096	Lively Love	1337050.0001	3.0	7.5	Da Nang
+hotel_91212	Quiet	1113750.0001	4.0	9.3	Ngu Hanh Son
+hotel_65513	Lively Love	411924.0001	4.0	7.6	Da Nang
+hotel_41679	Modern	2028390.0	0.0	9.0	Da Nang
+hotel_45425	Classic Romantic Love	2270909.0	5.0	9.1	Da Nang
+hotel_53106	Modern	1350000.0	0.0	8.3	Ngu Hanh Son
+hotel_51472	Modern Quiet Love	728000.0	4.0	8.1	Da Nang
+hotel_52864	Classic Quiet Romantic	1409400.0	5.0	8.8	Da Nang
+hotel_92718	Romantic	285000.0	3.0	7.0	Da Nang
+hotel_93886	Quiet Romantic Love	874000.0001	4.0	8.0	Son Tra
+hotel_14984	Lively Romantic Love	1349760.0	4.0	8.2	Da Nang
+hotel_23615	Lively Love	399000.0001	0.0	9.0	Ngu Hanh Son
+hotel_66753	Modern Love	828000.0	0.0	9.0	Da Nang
+hotel_23050	Romantic	1100000.0	0.0	9.2	Da Nang
+hotel_11640	Modern Lively	749312.0	3.0	8.7	Da Nang
+hotel_79572	Romantic Love	675800.0001	3.0	8.4	Son Tra
+hotel_54294	Classic Love	648000.0	3.0	8.6	Da Nang
+hotel_30972	Modern Lively Romantic	637500.0	3.0	8.0	Da Nang
+hotel_18788	Modern Romantic	531279.0	4.0	8.1	Da Nang
+hotel_83404	Quiet Romantic Love	592515.0	0.0	9.0	Ngu Hanh Son
+hotel_50180	Romantic Love	628581.3643	3.0	8.4	Da Nang
+hotel_79186	Quiet Love	1260000.0	4.0	8.9	Hai Chau
+hotel_58263	Romantic Love	483332.0	0.0	7.5	Da Nang
+hotel_10366	Quiet Love	483332.0	0.0	7.5	Da Nang
+hotel_54834	Classic Love	333000.0001	3.0	8.4	Da Nang
+hotel_51833	Romantic	788603.0	4.0	8.2	Da Nang
+hotel_89221	Modern Lively	1782000.0	4.0	8.9	Son Tra
+hotel_88986	Love Classic Lively	950000.0	3.0	8.7	Da Nang
+hotel_32286	Love	821600.0001	4.0	8.3	Da Nang
+hotel_50683	Classic Romantic	2313360.0	5.0	8.5	Da Nang
+hotel_65285	Classic Romantic Love	793750.0	4.0	9.2	Ngu Hanh Son
+hotel_74695	Love	287000.0001	3.0	8.1	Ngu Hanh Son
+hotel_24533	Lively Romantic Love	999000.0001	0.0	9.3	Da Nang
+hotel_63500	Modern	1092000.0001	4.0	8.9	Da Nang
+hotel_69857	Love	1471999.9999	4.0	8.7	Da Nang
+hotel_80316	Modern	405000.0001	3.0	8.3	Da Nang
+hotel_89824	Quiet	640500.0001	0.0	7.9	Da Nang
+hotel_58377	Classic Romantic	6194444.0	5.0	9.0	Da Nang
+hotel_85381	Modern Romantic Love	1600000.0	4.0	9.2	Da Nang
+hotel_65063	Classic Quiet	2074297.0	5.0	8.9	Da Nang
+hotel_28532	Lively	5230800.0	4.0	8.4	Da Nang
+hotel_18878	Romantic	1350000.0	4.0	9.2	Da Nang
+hotel_10615	Modern Quiet Romantic	3415034.0001	5.0	8.4	Da Nang
+hotel_17555	Classic Love	585000.0	0.0	8.7	Da Nang
+hotel_91225	Classic Romantic Love	328860.0	0.0	9.5	Son Tra
+hotel_35352	Modern	730520.0	0.0	8.1	Da Nang
+hotel_98406	Modern Quiet	963600.0	4.0	9.0	Hai Chau
+hotel_32506	Lively Modern Romantic	720900.0	4.0	8.8	Ngu Hanh Son
+hotel_72859	Lively	7048093.5	5.0	8.6	Da Nang
+hotel_54495	Love	731250.0	0.0	9.1	Da Nang
+hotel_74761	Classic Romantic	850000.0001	0.0	9.1	Da Nang
+hotel_37477	Love	387828.0	3.0	8.0	Da Nang
+hotel_64262	Classic	1831410.0	5.0	8.9	Da Nang
+hotel_18582	Romantic Love	1188000.0	3.0	9.1	Da Nang
+hotel_47687	Classic	1476563.0	5.0	8.3	Da Nang
+hotel_70785	Romantic	1064950.0	0.0	9.1	Da Nang
+hotel_79582	Modern Romantic	960300.0	4.0	8.8	Da Nang
+hotel_19203	Classic Romantic Love	1210986.0001	4.0	8.7	Da Nang
+hotel_78181	Classic Lively Love	4680349.128	5.0	8.8	Da Nang
+hotel_45589	Classic	365000.0	3.0	8.3	Ngu Hanh Son
+hotel_85370	Classic	1249500.0001	0.0	8.8	Da Nang
+hotel_41840	Modern Romantic	1005000.0001	0.0	9.3	Son Tra
+hotel_40723	Love	2147950.0	0.0	8.9	Son Tra
+hotel_42031	Love	7560000.0	5.0	8.0	Da Nang
+hotel_25204	Romantic	663000.0	3.0	7.8	Da Nang
+hotel_79312	Love	984375.0001	4.0	8.5	Son Tra
+hotel_70808	Modern Love	799425.0001	4.0	8.9	Da Nang
+hotel_31717	Love Quiet Modern	1532700.0	0.0	9.2	Da Nang
+hotel_49817	Quiet Love Romantic	1055700.0001	4.0	7.2	Da Nang
+hotel_80653	Modern Love Quiet	1260000.0	4.0	8.5	Da Nang
+hotel_16226	Love	2430000.0001	5.0	7.9	Da Nang
+hotel_20356	Romantic Love	1820000.0	0.0	8.0	Da Nang
+hotel_48316	Modern Lively Love	468342.0	3.0	8.2	Da Nang
+hotel_66866	Classic Quiet Love	370000.0	3.0	7.9	Da Nang
+hotel_70403	Quiet Love	327994.0001	3.0	8.0	Ngu Hanh Son
+hotel_56055	Romantic	1562085.0	4.0	8.9	Da Nang
+hotel_88709	Classic Romantic	1488000.0	4.0	9.1	Son Tra
+hotel_42683	Classic Romantic	732888.0	3.0	8.7	Da Nang
+hotel_15604	Love	1148000.0	4.0	8.3	Da Nang
+hotel_56892	Romantic	690200.0	4.0	8.8	Da Nang

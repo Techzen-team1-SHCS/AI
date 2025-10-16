@@ -1,6 +1,9 @@
 model: NFM
-dataset: ml-100k
+dataset: hotel
 eval_type: both
-metrics: ["AUC", "Recall"]
-epochs: 20
+metrics: ["AUC", "LogLoss"]
+epochs: 300
 learning_rate: 0.001
+embedding_size: 10
+mlp_hidden_size: [64, 64, 64]
+dropout_prob: 0.0
