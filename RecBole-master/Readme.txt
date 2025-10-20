@@ -91,5 +91,15 @@ Chạy dự án:PowerShell
 .\recbole-env\Scripts\Activate.ps1
 
 2.lệnh chạy:
+--NFM
 python run_recbole.py --model=NFM --dataset=hotel --epochs=10
 chú ý:--epochs= : là số lần train. --epochs=10 là train 10 lần
+--DEEPFM
+python run_recbole.py --model=DeepFM --dataset=hotel --config_file_list=recbole/properties/overall.yaml,recbole/properties/dataset/hotel.yaml,deepfm_config.yaml --epochs=3
+
+
+3.Thang điểm 5 mức hành vi người dùng:
+click	0.25
+like	0.5
+share	0.75
+booking	1.0
