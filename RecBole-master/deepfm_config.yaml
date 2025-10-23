@@ -1,7 +1,7 @@
-model: NFM
+model: DeepFM
 dataset: hotel
 eval_type: both
-metrics: ["AUC", "LogLoss"]
+metrics: ["RMSE", "MAE"]
 epochs: 300
 learning_rate: 0.001
 embedding_size: 10

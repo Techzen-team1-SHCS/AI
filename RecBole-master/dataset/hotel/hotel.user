@@ -1,0 +1,601 @@
+user_id:token	age:float	gender:token	region:token
+u1	25.0	F	Hanoi
+u2	32.0	M	Hanoi
+u3	28.0	F	Hoan Kiem
+u4	35.0	M	Hanoi
+u5	22.0	F	Cau Giay
+u6	41.0	M	Hanoi
+u7	29.0	F	Ba Dinh
+u8	26.0	M	Hanoi
+u9	33.0	F	Hoan Kiem
+u10	38.0	M	Hanoi
+u11	24.0	F	Hai Ba Trung
+u12	31.0	M	Hanoi
+u13	27.0	F	Hanoi
+u14	36.0	M	Hoan Kiem
+u15	23.0	F	Cau Giay
+u16	40.0	M	Hanoi
+u17	30.0	F	Ba Dinh
+u18	25.0	M	Hanoi
+u19	34.0	F	Hoan Kiem
+u20	39.0	M	Hanoi
+u21	26.0	F	Hai Ba Trung
+u22	32.0	M	Hanoi
+u23	28.0	F	Hanoi
+u24	37.0	M	Hoan Kiem
+u25	24.0	F	Cau Giay
+u26	31.0	M	Hanoi
+u27	29.0	F	Ba Dinh
+u28	35.0	M	Hanoi
+u29	22.0	F	Hoan Kiem
+u30	38.0	M	Hanoi
+u31	27.0	F	Hai Ba Trung
+u32	33.0	M	Hanoi
+u33	25.0	F	Hanoi
+u34	36.0	M	Hoan Kiem
+u35	23.0	F	Cau Giay
+u36	30.0	M	Hanoi
+u37	28.0	F	Ba Dinh
+u38	34.0	M	Hanoi
+u39	26.0	F	Hoan Kiem
+u40	31.0	M	Hanoi
+u41	29.0	F	Hai Ba Trung
+u42	37.0	M	Hanoi
+u43	24.0	F	Hanoi
+u44	32.0	M	Hoan Kiem
+u45	27.0	F	Cau Giay
+u46	35.0	M	Hanoi
+u47	25.0	F	Ba Dinh
+u48	30.0	M	Hanoi
+u49	28.0	F	Hoan Kiem
+u50	33.0	M	Hanoi
+u51	26.0	F	Hai Ba Trung
+u52	31.0	M	Hanoi
+u53	29.0	F	Hanoi
+u54	36.0	M	Hoan Kiem
+u55	23.0	F	Cau Giay
+u56	34.0	M	Hanoi
+u57	27.0	F	Ba Dinh
+u58	32.0	M	Hanoi
+u59	25.0	F	Hoan Kiem
+u60	38.0	M	Hanoi
+u61	28.0	F	Hai Ba Trung
+u62	35.0	M	Hanoi
+u63	24.0	F	Hanoi
+u64	30.0	M	Hoan Kiem
+u65	26.0	F	Cau Giay
+u66	33.0	M	Hanoi
+u67	29.0	F	Ba Dinh
+u68	37.0	M	Hanoi
+u69	25.0	F	Hoan Kiem
+u70	31.0	M	Hanoi
+u71	27.0	F	Hai Ba Trung
+u72	34.0	M	Hanoi
+u73	28.0	F	Hanoi
+u74	32.0	M	Hoan Kiem
+u75	23.0	F	Cau Giay
+u76	36.0	M	Hanoi
+u77	26.0	F	Ba Dinh
+u78	30.0	M	Hanoi
+u79	29.0	F	Hoan Kiem
+u80	35.0	M	Hanoi
+u81	24.0	F	Da Nang
+u82	31.0	M	Da Nang
+u83	27.0	F	Da Nang
+u84	33.0	M	Da Nang
+u85	25.0	F	Son Tra
+u86	38.0	M	Da Nang
+u87	28.0	F	Hai Chau
+u88	32.0	M	Da Nang
+u89	26.0	F	Ngu Hanh Son
+u90	34.0	M	Da Nang
+u91	29.0	F	Da Nang
+u92	31.0	M	Son Tra
+u93	24.0	F	Da Nang
+u94	36.0	M	Hai Chau
+u95	27.0	F	Da Nang
+u96	30.0	M	Ngu Hanh Son
+u97	25.0	F	Da Nang
+u98	33.0	M	Da Nang
+u99	28.0	F	Son Tra
+u100	35.0	M	Da Nang
+u101	22.0	F	Hanoi
+u102	29.0	M	Hanoi
+u103	26.0	F	Hoan Kiem
+u104	34.0	M	Hanoi
+u105	23.0	F	Cau Giay
+u106	31.0	M	Hanoi
+u107	28.0	F	Ba Dinh
+u108	36.0	M	Hanoi
+u109	25.0	F	Hoan Kiem
+u110	32.0	M	Hanoi
+u111	27.0	F	Hai Ba Trung
+u112	30.0	M	Hanoi
+u113	24.0	F	Hanoi
+u114	33.0	M	Hoan Kiem
+u115	26.0	F	Cau Giay
+u116	35.0	M	Hanoi
+u117	29.0	F	Ba Dinh
+u118	31.0	M	Hanoi
+u119	25.0	F	Hoan Kiem
+u120	37.0	M	Hanoi
+u121	28.0	F	Hai Ba Trung
+u122	32.0	M	Hanoi
+u123	23.0	F	Hanoi
+u124	34.0	M	Hoan Kiem
+u125	27.0	F	Cau Giay
+u126	30.0	M	Hanoi
+u127	26.0	F	Ba Dinh
+u128	33.0	M	Hanoi
+u129	24.0	F	Hoan Kiem
+u130	35.0	M	Hanoi
+u131	29.0	F	Hai Ba Trung
+u132	31.0	M	Hanoi
+u133	25.0	F	Hanoi
+u134	36.0	M	Hoan Kiem
+u135	28.0	F	Cau Giay
+u136	32.0	M	Hanoi
+u137	26.0	F	Ba Dinh
+u138	34.0	M	Hanoi
+u139	23.0	F	Hoan Kiem
+u140	30.0	M	Hanoi
+u141	27.0	F	Hai Ba Trung
+u142	33.0	M	Hanoi
+u143	24.0	F	Hanoi
+u144	35.0	M	Hoan Kiem
+u145	26.0	F	Cau Giay
+u146	31.0	M	Hanoi
+u147	29.0	F	Ba Dinh
+u148	32.0	M	Hanoi
+u149	25.0	F	Hoan Kiem
+u150	37.0	M	Hanoi
+u151	28.0	F	Hai Ba Trung
+u152	30.0	M	Hanoi
+u153	23.0	F	Hanoi
+u154	34.0	M	Hoan Kiem
+u155	27.0	F	Cau Giay
+u156	33.0	M	Hanoi
+u157	26.0	F	Ba Dinh
+u158	35.0	M	Hanoi
+u159	24.0	F	Hoan Kiem
+u160	31.0	M	Hanoi
+u161	29.0	F	Hai Ba Trung
+u162	32.0	M	Hanoi
+u163	25.0	F	Hanoi
+u164	36.0	M	Hoan Kiem
+u165	28.0	F	Cau Giay
+u166	30.0	M	Hanoi
+u167	26.0	F	Ba Dinh
+u168	34.0	M	Hanoi
+u169	23.0	F	Hoan Kiem
+u170	33.0	M	Hanoi
+u171	27.0	F	Hai Ba Trung
+u172	31.0	M	Hanoi
+u173	24.0	F	Hanoi
+u174	35.0	M	Hoan Kiem
+u175	26.0	F	Cau Giay
+u176	32.0	M	Hanoi
+u177	29.0	F	Ba Dinh
+u178	30.0	M	Hanoi
+u179	25.0	F	Hoan Kiem
+u180	37.0	M	Hanoi
+u181	28.0	F	Hai Ba Trung
+u182	33.0	M	Hanoi
+u183	23.0	F	Hanoi
+u184	34.0	M	Hoan Kiem
+u185	27.0	F	Cau Giay
+u186	31.0	M	Hanoi
+u187	26.0	F	Ba Dinh
+u188	35.0	M	Hanoi
+u189	24.0	F	Hoan Kiem
+u190	32.0	M	Hanoi
+u191	29.0	F	Hai Ba Trung
+u192	30.0	M	Hanoi
+u193	25.0	F	Hanoi
+u194	36.0	M	Hoan Kiem
+u195	28.0	F	Cau Giay
+u196	33.0	M	Hanoi
+u197	26.0	F	Ba Dinh
+u198	34.0	M	Hanoi
+u199	23.0	F	Hoan Kiem
+u200	31.0	M	Hanoi
+u201	27.0	F	Hai Ba Trung
+u202	35.0	M	Hanoi
+u203	24.0	F	Hanoi
+u204	32.0	M	Hoan Kiem
+u205	26.0	F	Cau Giay
+u206	30.0	M	Hanoi
+u207	29.0	F	Ba Dinh
+u208	33.0	M	Hanoi
+u209	25.0	F	Hoan Kiem
+u210	37.0	M	Hanoi
+u211	28.0	F	Hai Ba Trung
+u212	31.0	M	Hanoi
+u213	23.0	F	Hanoi
+u214	34.0	M	Hoan Kiem
+u215	27.0	F	Cau Giay
+u216	32.0	M	Hanoi
+u217	26.0	F	Ba Dinh
+u218	35.0	M	Hanoi
+u219	24.0	F	Hoan Kiem
+u220	30.0	M	Hanoi
+u221	29.0	F	Hai Ba Trung
+u222	33.0	M	Hanoi
+u223	25.0	F	Hanoi
+u224	36.0	M	Hoan Kiem
+u225	28.0	F	Cau Giay
+u226	31.0	M	Hanoi
+u227	26.0	F	Ba Dinh
+u228	34.0	M	Hanoi
+u229	23.0	F	Hoan Kiem
+u230	32.0	M	Hanoi
+u231	27.0	F	Hai Ba Trung
+u232	35.0	M	Hanoi
+u233	24.0	F	Hanoi
+u234	30.0	M	Hoan Kiem
+u235	26.0	F	Cau Giay
+u236	33.0	M	Hanoi
+u237	29.0	F	Ba Dinh
+u238	31.0	M	Hanoi
+u239	25.0	F	Hoan Kiem
+u240	37.0	M	Hanoi
+u241	28.0	F	Hai Ba Trung
+u242	32.0	M	Hanoi
+u243	23.0	F	Hanoi
+u244	34.0	M	Hoan Kiem
+u245	27.0	F	Cau Giay
+u246	30.0	M	Hanoi
+u247	26.0	F	Ba Dinh
+u248	35.0	M	Hanoi
+u249	24.0	F	Hoan Kiem
+u250	33.0	M	Hanoi
+u251	29.0	F	Hai Ba Trung
+u252	31.0	M	Hanoi
+u253	25.0	F	Hanoi
+u254	36.0	M	Hoan Kiem
+u255	28.0	F	Cau Giay
+u256	32.0	M	Hanoi
+u257	26.0	F	Ba Dinh
+u258	34.0	M	Hanoi
+u259	23.0	F	Hoan Kiem
+u260	30.0	M	Hanoi
+u261	27.0	F	Hai Ba Trung
+u262	35.0	M	Hanoi
+u263	24.0	F	Hanoi
+u264	33.0	M	Hoan Kiem
+u265	26.0	F	Cau Giay
+u266	31.0	M	Hanoi
+u267	29.0	F	Ba Dinh
+u268	32.0	M	Hanoi
+u269	25.0	F	Hoan Kiem
+u270	37.0	M	Hanoi
+u271	28.0	F	Hai Ba Trung
+u272	30.0	M	Hanoi
+u273	23.0	F	Hanoi
+u274	34.0	M	Hoan Kiem
+u275	27.0	F	Cau Giay
+u276	33.0	M	Hanoi
+u277	26.0	F	Ba Dinh
+u278	35.0	M	Hanoi
+u279	24.0	F	Hoan Kiem
+u280	31.0	M	Hanoi
+u281	29.0	F	Hai Ba Trung
+u282	32.0	M	Hanoi
+u283	25.0	F	Hanoi
+u284	36.0	M	Hoan Kiem
+u285	28.0	F	Cau Giay
+u286	30.0	M	Hanoi
+u287	26.0	F	Ba Dinh
+u288	34.0	M	Hanoi
+u289	23.0	F	Hoan Kiem
+u290	33.0	M	Hanoi
+u291	27.0	F	Hai Ba Trung
+u292	35.0	M	Hanoi
+u293	24.0	F	Hanoi
+u294	31.0	M	Hoan Kiem
+u295	26.0	F	Cau Giay
+u296	32.0	M	Hanoi
+u297	29.0	F	Ba Dinh
+u298	30.0	M	Hanoi
+u299	25.0	F	Hoan Kiem
+u300	37.0	M	Hanoi
+u301	28.0	F	Da Nang
+u302	31.0	M	Da Nang
+u303	24.0	F	Da Nang
+u304	33.0	M	Da Nang
+u305	26.0	F	Son Tra
+u306	35.0	M	Da Nang
+u307	29.0	F	Hai Chau
+u308	32.0	M	Da Nang
+u309	25.0	F	Ngu Hanh Son
+u310	34.0	M	Da Nang
+u311	27.0	F	Da Nang
+u312	30.0	M	Son Tra
+u313	23.0	F	Da Nang
+u314	36.0	M	Hai Chau
+u315	28.0	F	Da Nang
+u316	31.0	M	Ngu Hanh Son
+u317	24.0	F	Da Nang
+u318	33.0	M	Da Nang
+u319	26.0	F	Son Tra
+u320	35.0	M	Da Nang
+u321	29.0	F	Hai Chau
+u322	32.0	M	Da Nang
+u323	25.0	F	Da Nang
+u324	34.0	M	Son Tra
+u325	27.0	F	Da Nang
+u326	30.0	M	Hai Chau
+u327	23.0	F	Da Nang
+u328	36.0	M	Ngu Hanh Son
+u329	28.0	F	Da Nang
+u330	31.0	M	Da Nang
+u331	24.0	F	Son Tra
+u332	33.0	M	Da Nang
+u333	26.0	F	Hai Chau
+u334	35.0	M	Da Nang
+u335	29.0	F	Ngu Hanh Son
+u336	32.0	M	Da Nang
+u337	25.0	F	Da Nang
+u338	34.0	M	Son Tra
+u339	27.0	F	Da Nang
+u340	30.0	M	Hai Chau
+u341	23.0	F	Da Nang
+u342	36.0	M	Ngu Hanh Son
+u343	28.0	F	Da Nang
+u344	31.0	M	Da Nang
+u345	24.0	F	Son Tra
+u346	33.0	M	Da Nang
+u347	26.0	F	Hai Chau
+u348	35.0	M	Da Nang
+u349	29.0	F	Ngu Hanh Son
+u350	32.0	M	Da Nang
+u351	25.0	F	Da Nang
+u352	34.0	M	Son Tra
+u353	27.0	F	Da Nang
+u354	30.0	M	Hai Chau
+u355	23.0	F	Da Nang
+u356	36.0	M	Ngu Hanh Son
+u357	28.0	F	Da Nang
+u358	31.0	M	Da Nang
+u359	24.0	F	Son Tra
+u360	33.0	M	Da Nang
+u361	26.0	F	Hai Chau
+u362	35.0	M	Da Nang
+u363	29.0	F	Ngu Hanh Son
+u364	32.0	M	Da Nang
+u365	25.0	F	Da Nang
+u366	34.0	M	Son Tra
+u367	27.0	F	Da Nang
+u368	30.0	M	Hai Chau
+u369	23.0	F	Da Nang
+u370	36.0	M	Ngu Hanh Son
+u371	28.0	F	Da Nang
+u372	31.0	M	Da Nang
+u373	24.0	F	Son Tra
+u374	33.0	M	Da Nang
+u375	26.0	F	Hai Chau
+u376	35.0	M	Da Nang
+u377	29.0	F	Ngu Hanh Son
+u378	32.0	M	Da Nang
+u379	25.0	F	Da Nang
+u380	34.0	M	Son Tra
+u381	27.0	F	Da Nang
+u382	30.0	M	Hai Chau
+u383	23.0	F	Da Nang
+u384	36.0	M	Ngu Hanh Son
+u385	28.0	F	Da Nang
+u386	31.0	M	Da Nang
+u387	24.0	F	Son Tra
+u388	33.0	M	Da Nang
+u389	26.0	F	Hai Chau
+u390	35.0	M	Da Nang
+u391	29.0	F	Ngu Hanh Son
+u392	32.0	M	Da Nang
+u393	25.0	F	Da Nang
+u394	34.0	M	Son Tra
+u395	27.0	F	Da Nang
+u396	30.0	M	Hai Chau
+u397	23.0	F	Da Nang
+u398	36.0	M	Ngu Hanh Son
+u399	28.0	F	Da Nang
+u400	31.0	M	Da Nang
+u401	24.0	F	Son Tra
+u402	33.0	M	Da Nang
+u403	26.0	F	Hai Chau
+u404	35.0	M	Da Nang
+u405	29.0	F	Ngu Hanh Son
+u406	32.0	M	Da Nang
+u407	25.0	F	Da Nang
+u408	34.0	M	Son Tra
+u409	27.0	F	Da Nang
+u410	30.0	M	Hai Chau
+u411	23.0	F	Da Nang
+u412	36.0	M	Ngu Hanh Son
+u413	28.0	F	Da Nang
+u414	31.0	M	Da Nang
+u415	24.0	F	Son Tra
+u416	33.0	M	Da Nang
+u417	26.0	F	Hai Chau
+u418	35.0	M	Da Nang
+u419	29.0	F	Ngu Hanh Son
+u420	32.0	M	Da Nang
+u421	25.0	F	Da Nang
+u422	34.0	M	Son Tra
+u423	27.0	F	Da Nang
+u424	30.0	M	Hai Chau
+u425	23.0	F	Da Nang
+u426	36.0	M	Ngu Hanh Son
+u427	28.0	F	Da Nang
+u428	31.0	M	Da Nang
+u429	24.0	F	Son Tra
+u430	33.0	M	Da Nang
+u431	26.0	F	Hai Chau
+u432	35.0	M	Da Nang
+u433	29.0	F	Ngu Hanh Son
+u434	32.0	M	Da Nang
+u435	25.0	F	Da Nang
+u436	34.0	M	Son Tra
+u437	27.0	F	Da Nang
+u438	30.0	M	Hai Chau
+u439	23.0	F	Da Nang
+u440	36.0	M	Ngu Hanh Son
+u441	28.0	F	Da Nang
+u442	31.0	M	Da Nang
+u443	24.0	F	Son Tra
+u444	33.0	M	Da Nang
+u445	26.0	F	Hai Chau
+u446	35.0	M	Da Nang
+u447	29.0	F	Ngu Hanh Son
+u448	32.0	M	Da Nang
+u449	25.0	F	Da Nang
+u450	34.0	M	Son Tra
+u451	27.0	F	Da Nang
+u452	30.0	M	Hai Chau
+u453	23.0	F	Da Nang
+u454	36.0	M	Ngu Hanh Son
+u455	28.0	F	Da Nang
+u456	31.0	M	Da Nang
+u457	24.0	F	Son Tra
+u458	33.0	M	Da Nang
+u459	26.0	F	Hai Chau
+u460	35.0	M	Da Nang
+u461	29.0	F	Ngu Hanh Son
+u462	32.0	M	Da Nang
+u463	25.0	F	Da Nang
+u464	34.0	M	Son Tra
+u465	27.0	F	Da Nang
+u466	30.0	M	Hai Chau
+u467	23.0	F	Da Nang
+u468	36.0	M	Ngu Hanh Son
+u469	28.0	F	Da Nang
+u470	31.0	M	Da Nang
+u471	24.0	F	Son Tra
+u472	33.0	M	Da Nang
+u473	26.0	F	Hai Chau
+u474	35.0	M	Da Nang
+u475	29.0	F	Ngu Hanh Son
+u476	32.0	M	Da Nang
+u477	25.0	F	Da Nang
+u478	34.0	M	Son Tra
+u479	27.0	F	Da Nang
+u480	30.0	M	Hai Chau
+u481	23.0	F	Da Nang
+u482	36.0	M	Ngu Hanh Son
+u483	28.0	F	Da Nang
+u484	31.0	M	Da Nang
+u485	24.0	F	Son Tra
+u486	33.0	M	Da Nang
+u487	26.0	F	Hai Chau
+u488	35.0	M	Da Nang
+u489	29.0	F	Ngu Hanh Son
+u490	32.0	M	Da Nang
+u491	25.0	F	Da Nang
+u492	34.0	M	Son Tra
+u493	27.0	F	Da Nang
+u494	30.0	M	Hai Chau
+u495	23.0	F	Da Nang
+u496	36.0	M	Ngu Hanh Son
+u497	28.0	F	Da Nang
+u498	31.0	M	Da Nang
+u499	24.0	F	Son Tra
+u500	33.0	M	Da Nang
+u501	26.0	F	Hai Chau
+u502	35.0	M	Da Nang
+u503	29.0	F	Ngu Hanh Son
+u504	32.0	M	Da Nang
+u505	25.0	F	Da Nang
+u506	34.0	M	Son Tra
+u507	27.0	F	Da Nang
+u508	30.0	M	Hai Chau
+u509	23.0	F	Da Nang
+u510	36.0	M	Ngu Hanh Son
+u511	28.0	F	Da Nang
+u512	31.0	M	Da Nang
+u513	24.0	F	Son Tra
+u514	33.0	M	Da Nang
+u515	26.0	F	Hai Chau
+u516	35.0	M	Da Nang
+u517	29.0	F	Ngu Hanh Son
+u518	32.0	M	Da Nang
+u519	25.0	F	Da Nang
+u520	34.0	M	Son Tra
+u521	27.0	F	Da Nang
+u522	30.0	M	Hai Chau
+u523	23.0	F	Da Nang
+u524	36.0	M	Ngu Hanh Son
+u525	28.0	F	Da Nang
+u526	31.0	M	Da Nang
+u527	24.0	F	Son Tra
+u528	33.0	M	Da Nang
+u529	26.0	F	Hai Chau
+u530	35.0	M	Da Nang
+u531	29.0	F	Ngu Hanh Son
+u532	32.0	M	Da Nang
+u533	25.0	F	Da Nang
+u534	34.0	M	Son Tra
+u535	27.0	F	Da Nang
+u536	30.0	M	Hai Chau
+u537	23.0	F	Da Nang
+u538	36.0	M	Ngu Hanh Son
+u539	28.0	F	Da Nang
+u540	31.0	M	Da Nang
+u541	24.0	F	Son Tra
+u542	33.0	M	Da Nang
+u543	26.0	F	Hai Chau
+u544	35.0	M	Da Nang
+u545	29.0	F	Ngu Hanh Son
+u546	32.0	M	Da Nang
+u547	25.0	F	Da Nang
+u548	34.0	M	Son Tra
+u549	27.0	F	Da Nang
+u550	30.0	M	Hai Chau
+u551	23.0	F	Da Nang
+u552	36.0	M	Ngu Hanh Son
+u553	28.0	F	Da Nang
+u554	31.0	M	Da Nang
+u555	24.0	F	Son Tra
+u556	33.0	M	Da Nang
+u557	26.0	F	Hai Chau
+u558	35.0	M	Da Nang
+u559	29.0	F	Ngu Hanh Son
+u560	32.0	M	Da Nang
+u561	25.0	F	Da Nang
+u562	34.0	M	Son Tra
+u563	27.0	F	Da Nang
+u564	30.0	M	Hai Chau
+u565	23.0	F	Da Nang
+u566	36.0	M	Ngu Hanh Son
+u567	28.0	F	Da Nang
+u568	31.0	M	Da Nang
+u569	24.0	F	Son Tra
+u570	33.0	M	Da Nang
+u571	26.0	F	Hai Chau
+u572	35.0	M	Da Nang
+u573	29.0	F	Ngu Hanh Son
+u574	32.0	M	Da Nang
+u575	25.0	F	Da Nang
+u576	34.0	M	Son Tra
+u577	27.0	F	Da Nang
+u578	30.0	M	Hai Chau
+u579	23.0	F	Da Nang
+u580	36.0	M	Ngu Hanh Son
+u581	28.0	F	Da Nang
+u582	31.0	M	Da Nang
+u583	24.0	F	Son Tra
+u584	33.0	M	Da Nang
+u585	26.0	F	Hai Chau
+u586	35.0	M	Da Nang
+u587	29.0	F	Ngu Hanh Son
+u588	32.0	M	Da Nang
+u589	25.0	F	Da Nang
+u590	34.0	M	Son Tra
+u591	27.0	F	Da Nang
+u592	30.0	M	Hai Chau
+u593	23.0	F	Da Nang
+u594	36.0	M	Ngu Hanh Son
+u595	28.0	F	Da Nang
+u596	31.0	M	Da Nang
+u597	24.0	F	Son Tra
+u598	33.0	M	Da Nang
+u599	26.0	F	Hai Chau
+u600	35.0	M	Da Nang
