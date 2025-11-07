@@ -7,3 +7,8 @@ learning_rate: 0.001
 embedding_size: 10
 mlp_hidden_size: [64, 64, 64]
 dropout_prob: 0.0
+# Early stopping settings
+stopping_step: 10  # Dung training neu valid score khong cai thien trong 10 epochs
+valid_metric: RMSE  # Metric de danh gia (RMSE cang thap cang tot)
+valid_metric_bigger: False  # False vi RMSE cang thap cang tot
+eval_step: 1  # Danh gia sau moi epoch

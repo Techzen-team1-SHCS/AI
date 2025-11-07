@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # API Server + ETL Scheduler
+  recbole-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: recbole-api
+    ports:
+      - "5000:5000"
+    environment:
+      - USER_ACTION_LOG_FILE=/app/data/user_actions.log
+      - USER_ACTION_ARCHIVE_FILE=/app/data/user_actions.archive.log
+      - HOTEL_INTER_FILE=/app/dataset/hotel/hotel.inter
+      - ETL_INTERVAL_SECONDS=180
+      - API_KEY=${API_KEY:-}  # Set via .env file
+    volumes:
+      # Persistent data storage
+      - ./dataset:/app/dataset
+      - ./data:/app/data
+      - ./log:/app/log
+      - ./log_tensorboard:/app/log_tensorboard
+      - ./saved:/app/saved
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health').read()"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # ETL Scheduler (runs ETL script every 3 minutes)
+  recbole-etl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: recbole-etl
+    command: >
+      sh -c "
+        while true; do
+          python etl_web_to_hotel_inter.py
+          sleep 180
+        done
+      "
+    environment:
+      - USER_ACTION_LOG_FILE=/app/data/user_actions.log
+      - USER_ACTION_ARCHIVE_FILE=/app/data/user_actions.archive.log
+      - HOTEL_INTER_FILE=/app/dataset/hotel/hotel.inter
+    volumes:
+      - ./dataset:/app/dataset
+      - ./data:/app/data
+    restart: unless-stopped
+    depends_on:
+      - recbole-api
+
+volumes:
+  dataset:
+  data:
+

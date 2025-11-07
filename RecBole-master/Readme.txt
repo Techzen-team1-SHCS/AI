@@ -97,9 +97,15 @@ chú ý:--epochs= : là số lần train. --epochs=10 là train 10 lần
 --DEEPFM
 python run_recbole.py --model=DeepFM --dataset=hotel --config_file_list=recbole/properties/overall.yaml,recbole/properties/dataset/hotel.yaml,deepfm_config.yaml --epochs=3
 
+3. Lệnh chạy server
+Dev: uvicorn api_server:app --reload --port 5000
+Prod: uvicorn api_server:app --host 0.0.0.0 --port 5000
 
-3.Thang điểm 5 mức hành vi người dùng:
+4.Thang điểm 5 mức hành vi người dùng:
 click	0.25
 like	0.5
 share	0.75
 booking	1.0
+
+5. lệnh kiểm tra tiến độ và chất lượng train AI
+.\recbole-env\Scripts\python.exe view_training_progress.py

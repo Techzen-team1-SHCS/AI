@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+recbole-env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Logs and temp
+*.log
+*.tmp
+log/
+log_tensorboard/
+user_actions.log
+user_actions.archive.log
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Tests
+tests/
+test_*.py
+
+# Documentation
+docs/
+*.md
+README*.md
+HUONG_DAN*.md
+
+# Large files
+*.pth
+*.pt
+saved/
+
+# OS
+.DS_Store
+Thumbs.db
+
