@@ -1,0 +1,31 @@
+{
+  "backups": [
+    {
+      "checkpoint": "saved\\DeepFM-Nov-10-2025_15-00-24.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-10-2025_15-00-24.pth.backup_20251110_150132",
+      "backup_time": "2025-11-10T15:01:32.817260",
+      "metrics": null
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-10-2025_15-01-33.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-10-2025_15-01-33.pth.backup_20251110_151136",
+      "backup_time": "2025-11-10T15:11:36.790729",
+      "metrics": {
+        "RMSE": 0.1791,
+        "MAE": 0.116
+      }
+    }
+  ],
+  "last_retrain_time": "2025-11-10T15:11:45.685268",
+  "last_dataset_size": 20012,
+  "last_retrain_metrics": {
+    "RMSE": 0.1791,
+    "MAE": 0.116
+  },
+  "retrain_count": 2,
+  "last_retrain_result": {
+    "rmse": 0.1791,
+    "mae": 0.116,
+    "is_better_than_old": false
+  }
+}

@@ -109,3 +109,9 @@ booking	1.0
 
 5. lệnh kiểm tra tiến độ và chất lượng train AI
 .\recbole-env\Scripts\python.exe view_training_progress.py
+
+6. chạy thủ công retrain model
+python retrain_model.py --force
+
+7. chạy retrain tự động
+python retrain_scheduler.py

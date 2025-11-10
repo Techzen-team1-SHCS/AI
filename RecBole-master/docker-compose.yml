@@ -54,6 +54,27 @@ services:
     depends_on:
       - recbole-api
 
+  # Retraining Scheduler (runs retraining once per day at 2 AM)
+  recbole-retrain:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: recbole-retrain
+    command: python retrain_scheduler.py
+    environment:
+      - RETRAIN_HOUR=${RETRAIN_HOUR:-2}  # Default: 2 AM
+      - RETRAIN_MINUTE=${RETRAIN_MINUTE:-0}  # Default: 0 minutes
+      - RETRAIN_CHECK_INTERVAL=${RETRAIN_CHECK_INTERVAL:-3600}  # Check every hour
+    volumes:
+      - ./dataset:/app/dataset
+      - ./data:/app/data
+      - ./log:/app/log
+      - ./log_tensorboard:/app/log_tensorboard
+      - ./saved:/app/saved
+    restart: unless-stopped
+    depends_on:
+      - recbole-api
+
 volumes:
   dataset:
   data:

@@ -471,21 +471,40 @@ ETL Script (etl_web_to_hotel_inter.py) - Chạy định kỳ mỗi 3 phút
     └─ Truncate user_actions.log (xóa dữ liệu đã xử lý)
 ```
 
-### 5.3. Luồng 3: Retraining (Chạy hàng ngày lúc 2h sáng)
+### 5.3. Luồng 3: Retraining (Chạy hàng ngày lúc 2h sáng) ✅ ĐÃ HOÀN THÀNH
 
 ```
 ETL đã tích lũy dữ liệu mới trong hotel.inter
     ↓
-Retrain Script (sẽ làm sau)
-    ├─ Kiểm tra số lượng interactions mới
-    ├─ Backup checkpoint cũ
+Retrain Scheduler (retrain_scheduler.py) - Chạy mỗi ngày lúc 2h sáng
+    ├─ Kiểm tra số lượng interactions mới (>= 100 interactions)
+    ├─ Kiểm tra thời gian từ lần retrain cuối (>= 12 giờ)
+    ↓
+Retrain Script (retrain_model.py)
+    ├─ Backup checkpoint cũ vào saved/backups/
     ├─ Train model với toàn bộ dữ liệu (cũ + mới)
-    ├─ So sánh metrics (RMSE, MAE)
-    ├─ Nếu tốt hơn → Lưu checkpoint mới
-    └─ Clear model cache (để load model mới)
+    ├─ So sánh metrics (RMSE, MAE) với model cũ
+    ├─ Lưu checkpoint mới (luôn lưu, dù tốt hay không)
+    ├─ Clear model cache (để load model mới)
+    └─ Lưu lịch sử retraining vào retrain_history.json
     ↓
 Inference sẽ tự động dùng model mới (checkpoint mới nhất)
 ```
+
+**Files đã tạo**:
+- `retrain_model.py`: Script retraining chính
+- `retrain_scheduler.py`: Scheduler chạy retraining định kỳ
+- `retrain_history.json`: Lịch sử retraining (tự động tạo)
+- `saved/backups/`: Thư mục backup checkpoints cũ
+
+**Cấu hình** (trong `docker-compose.yml`):
+- `RETRAIN_HOUR=2`: Giờ chạy retraining (mặc định: 2h sáng)
+- `RETRAIN_MINUTE=0`: Phút chạy retraining (mặc định: 0)
+- `RETRAIN_CHECK_INTERVAL=3600`: Kiểm tra mỗi 1 giờ
+
+**Điều kiện retraining**:
+- Số interactions mới >= 100
+- Thời gian từ lần retrain cuối >= 12 giờ
 
 ---
 

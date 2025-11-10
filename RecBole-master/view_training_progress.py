@@ -5,7 +5,6 @@ import io
 from pathlib import Path
 from datetime import datetime
 
-# Fix encoding for Windows console
 if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
