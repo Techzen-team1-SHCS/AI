@@ -28,7 +28,7 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 40s
+      start_period: 120s  # Tăng thời gian để model load (model load mất ~2-3 giây, nhưng để an toàn)
 
   # ETL Scheduler (runs ETL script every 3 minutes)
   recbole-etl:

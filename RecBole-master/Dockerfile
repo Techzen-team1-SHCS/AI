@@ -20,6 +20,9 @@ COPY . .
 # Create necessary directories
 RUN mkdir -p /app/dataset/hotel /app/data /app/log /app/log_tensorboard /app/saved
 
+# Set Python to not buffer output (for better logging in Docker)
+ENV PYTHONUNBUFFERED=1
+
 # Expose API port
 EXPOSE 5000
 
