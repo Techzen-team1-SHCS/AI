@@ -118,9 +118,18 @@ def _get_user_interacted_items(dataset, user_id: str) -> set:
             item_tokens = dataset.id2token(dataset.iid_field, item_internal_ids.tolist())
             # id2token có thể trả về numpy array hoặc list
             if isinstance(item_tokens, np.ndarray):
-                return set(item_tokens.tolist())
+                tokens_list = item_tokens.tolist()
             else:
-                return set(item_tokens)
+                tokens_list = item_tokens
+            
+            # Convert về int nếu có thể
+            result = set()
+            for token in tokens_list:
+                try:
+                    result.add(int(token))
+                except (ValueError, TypeError):
+                    result.add(token)
+            return result
         else:
             return set()
     except ValueError:
@@ -236,11 +245,17 @@ def get_recommendations(
         try:
             item_token = dataset.id2token(dataset.iid_field, item_internal_id)
             
+            # Convert về int nếu có thể (để match với dataset format mới)
+            try:
+                item_id = int(item_token)
+            except (ValueError, TypeError):
+                item_id = item_token  # Giữ nguyên nếu không convert được
+            
             # Skip nếu đã tương tác
-            if exclude_interacted and item_token in interacted_items:
+            if exclude_interacted and item_id in interacted_items:
                 continue
             
-            top_k_items.append(item_token)
+            top_k_items.append(item_id)
             
             if len(top_k_items) >= top_k:
                 break

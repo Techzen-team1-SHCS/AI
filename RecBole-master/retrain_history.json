@@ -14,18 +14,54 @@
         "RMSE": 0.1791,
         "MAE": 0.116
       }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-10-2025_15-11-37.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-10-2025_15-11-37.pth.backup_20251111_160131",
+      "backup_time": "2025-11-11T16:01:31.195492",
+      "metrics": {
+        "RMSE": 0.1791,
+        "MAE": 0.116
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-11-2025_16-01-32.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-11-2025_16-01-32.pth.backup_20251111_161540",
+      "backup_time": "2025-11-11T16:15:40.668391",
+      "metrics": {
+        "RMSE": 0.1842,
+        "MAE": 0.1151
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-11-2025_16-15-41.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-11-2025_16-15-41.pth.backup_20251114_144211",
+      "backup_time": "2025-11-14T14:42:11.564785",
+      "metrics": {
+        "RMSE": 0.1842,
+        "MAE": 0.1151
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-14-2025_08-21-05.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-14-2025_08-21-05.pth.backup_20251114_170835",
+      "backup_time": "2025-11-14T17:08:35.295674",
+      "metrics": {
+        "RMSE": 0.1905,
+        "MAE": 0.1563
+      }
     }
   ],
-  "last_retrain_time": "2025-11-10T15:11:45.685268",
-  "last_dataset_size": 20012,
+  "last_retrain_time": "2025-11-14T17:08:55.567526",
+  "last_dataset_size": 100008,
   "last_retrain_metrics": {
-    "RMSE": 0.1791,
-    "MAE": 0.116
+    "RMSE": 0.1912,
+    "MAE": 0.1563
   },
-  "retrain_count": 2,
+  "retrain_count": 6,
   "last_retrain_result": {
-    "rmse": 0.1791,
-    "mae": 0.116,
+    "rmse": 0.1912,
+    "mae": 0.1563,
     "is_better_than_old": false
   }
 }

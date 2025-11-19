@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # API Server + ETL Scheduler
   recbole-api:
@@ -15,6 +13,7 @@ services:
       - HOTEL_INTER_FILE=/app/dataset/hotel/hotel.inter
       - ETL_INTERVAL_SECONDS=180
       - API_KEY=${API_KEY:-}  # Set via .env file
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-*}
     volumes:
       # Persistent data storage
       - ./dataset:/app/dataset
@@ -23,6 +22,11 @@ services:
       - ./log_tensorboard:/app/log_tensorboard
       - ./saved:/app/saved
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     healthcheck:
       test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health').read()"]
       interval: 30s
@@ -51,6 +55,11 @@ services:
       - ./dataset:/app/dataset
       - ./data:/app/data
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     depends_on:
       - recbole-api
 
@@ -72,6 +81,11 @@ services:
       - ./log_tensorboard:/app/log_tensorboard
       - ./saved:/app/saved
     restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
     depends_on:
       - recbole-api
 

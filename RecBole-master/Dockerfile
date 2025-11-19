@@ -1,5 +1,5 @@
 # Multi-stage Dockerfile for RecBole Hotel Recommendation API
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 # Set working directory
 WORKDIR /app
@@ -9,6 +9,13 @@ RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
     && rm -rf /var/lib/apt/lists/*
+
+# Upgrade pip
+RUN pip install --upgrade pip
+
+# Install PyTorch CPU-only first (theo Readme.txt)
+# Lý do: requirements.txt không có torch để tránh tải CUDA packages nặng
+RUN pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
 # Copy requirements first for better caching
 COPY requirements.txt .

@@ -1,597 +1,597 @@
 item_id:token	style:token_seq	price:float	star:float	score:float	city:token_seq
-h1	Romantic	2836440.0	4.0	9.9	Hoan Kiem
-h2	Quiet Love	3724000.0001	4.0	9.7	Hoan Kiem
-h3	Romantic Modern Lively	1462050.0	4.0	9.9	Hanoi
-h4	Love	1833960.0001	4.0	8.9	Hanoi
-h5	Modern Romantic	1917664.0	4.0	9.3	Hanoi
-h6	Classic Quiet	1178100.0001	3.0	9.1	Hanoi
-h7	Quiet Romantic Love	1810881.0	4.0	9.3	Hanoi
-h8	Love	2562435.0001	4.0	9.6	Hanoi
-h9	Classic Love	1040000.0	4.0	9.0	Hanoi
-h10	Classic Quiet Love	1612800.0	4.0	9.3	Hanoi
-h11	Love	2124745.0	4.0	9.4	Hanoi
-h12	Lively Love	480000.0	3.0	0.0	Cau Giay
-h13	Classic Lively Love	2730000.0	4.0	9.5	Hoan Kiem
-h14	Romantic	4909311.0	5.0	9.5	Hanoi
-h15	Romantic Love	1275000.0	3.0	9.4	Hanoi
-h16	Love	2676240.0	4.0	9.2	Hanoi
-h17	Romantic Classic Quiet	1320000.0	4.0	9.1	Cau Giay
-h18	Love	4819237.0	5.0	9.6	Hanoi
-h19	Classic Romantic Love	2842875.0	5.0	9.4	Hoan Kiem
-h20	Quiet Romantic	1664245.0	4.0	9.5	Hanoi
-h21	Lively Love	1450000.0	4.0	9.7	Hanoi
-h22	Quiet Romantic Love	2185000.0001	5.0	9.6	Hoan Kiem
-h23	Quiet Love	2287350.0	3.0	9.8	Hoan Kiem
-h24	Quiet Romantic Love	1990230.0001	4.0	9.4	Hoan Kiem
-h25	Love	3277500.0	5.0	9.4	Hanoi
-h26	Romantic Love	1244958.0001	4.0	9.6	Hanoi
-h27	Lively	994500.0	3.0	8.8	Hai Ba Trung
-h28	Modern Quiet Romantic	1620000.0	4.0	9.5	Hanoi
-h29	Love	980000.0	3.0	8.5	Hoan Kiem
-h30	Quiet Romantic Love	1749950.0	4.0	9.2	Hoan Kiem
-h31	Lively Romantic Love	2200000.0	5.0	9.5	Hoan Kiem
-h32	Romantic	2451390.0001	4.0	9.2	Hanoi
-h33	Classic Quiet Love	1479576.0	3.0	9.5	Hoan Kiem
-h34	Modern Romantic Love	792000.0	4.0	9.7	Hoan Kiem
-h35	Lively	1338120.0	4.0	9.3	Hanoi
-h36	Classic Lively	1677500.0001	3.0	9.1	Hanoi
-h37	Lively Romantic Love	3708400.0	5.0	9.5	Hanoi
-h38	Modern Lively	1856000.0	4.0	8.3	Hanoi
-h39	Quiet	1775310.0001	4.0	9.5	Hoan Kiem
-h40	Classic Quiet	3934870.0001	5.0	9.6	Hanoi
-h41	Classic	2728440.0	5.0	9.7	Hanoi
-h42	Modern Quiet	2026820.0	4.0	9.5	Hanoi
-h43	Modern Quiet	1139600.0	3.0	9.2	Hanoi
-h44	Modern Lively	1879801.0	4.0	9.6	Hanoi
-h45	Lively	2380950.0	4.0	9.2	Hanoi
-h46	Modern	3207600.0	3.0	9.0	Hoan Kiem
-h47	Quiet	1185462.0	4.0	9.2	Hoan Kiem
-h48	Modern Lively Love	1013760.0	3.0	9.1	Hanoi
-h49	Classic	2242665.0	4.0	9.3	Hanoi
-h50	Modern Quiet Romantic	1867020.0	4.0	9.0	Hoan Kiem
-h51	Romantic Love	2289000.0001	5.0	9.2	Hoan Kiem
-h52	Quiet Love	405000.0	0.0	8.2	Hoan Kiem
-h53	Romantic Love	1864800.0	4.0	9.3	Hoan Kiem
-h54	Modern Quiet Romantic	3024000.0	4.0	9.4	Hoan Kiem
-h55	Lively Modern Love	1793792.0	4.0	8.8	Hoan Kiem
-h56	Quiet	4840000.0	4.0	9.7	Hoan Kiem
-h57	Romantic	1660050.0	4.0	9.1	Hanoi
-h58	Lively Love	2360909.0001	4.0	9.4	Hanoi
-h59	Lively	891000.0	1.0	9.4	Hanoi
-h60	Modern Romantic Lively	2106000.0001	4.0	9.0	Hanoi
-h61	Modern Lively	2469250.0	4.0	9.5	Hoan Kiem
-h62	Modern Lively Love	1548360.0	4.0	8.5	Hanoi
-h63	Romantic Love	1495648.0001	4.0	9.4	Hoan Kiem
-h64	Classic Romantic Love	875327.0	4.0	8.4	Hanoi
-h65	Classic Romantic	4168117.0	5.0	9.3	Hanoi
-h66	Classic	2624501.0001	4.0	9.7	Hanoi
-h67	Quiet	2325600.0	4.0	8.8	Hanoi
-h68	Modern Quiet	2574000.0001	4.0	9.7	Hanoi
-h69	Classic Lively	1470000.0	4.0	9.2	Hoan Kiem
-h70	Quiet	1567500.0	3.0	8.4	Hanoi
-h71	Love	990000.0	4.0	8.8	Hanoi
-h72	Love Quiet Romantic	1839200.0	4.0	9.1	Hanoi
-h73	Classic Lively Romantic	1282500.0	4.0	8.9	Hoan Kiem
-h74	Love	1963500.0001	4.0	9.2	Hanoi
-h75	Romantic Love	3650000.0001	5.0	9.5	Hanoi
-h76	Quiet Romantic Love	1667020.0001	3.0	9.4	Hanoi
-h77	Modern Lively	1036800.0	0.0	8.6	Hanoi
-h78	Lively Romantic Love	1089000.0	4.0	9.0	Hoan Kiem
-h79	Modern Lively Love	1952875.0001	3.0	9.3	Hanoi
-h80	Romantic	1132740.0	4.0	8.8	Hoan Kiem
-h81	Romantic Love	640900.0	2.0	8.9	Hanoi
-h82	Lively Romantic	1616530.0	4.0	9.2	Hoan Kiem
-h83	Love Modern Quiet	652500.0	3.0	8.6	Hanoi
-h84	Love	840000.0	3.0	8.8	Hanoi
-h85	Modern	1089000.0	4.0	9.0	Hoan Kiem
-h86	Modern Lively Romantic	1260000.0	3.0	8.5	Hoan Kiem
-h87	Romantic	1222650.0001	3.0	9.0	Hanoi
-h88	Modern Romantic	2091600.0	4.0	9.5	Hanoi
-h89	Quiet Romantic Love	1620000.0	4.0	9.2	Hanoi
-h90	Love	2752245.0	5.0	9.5	Hanoi
-h91	Modern Quiet	1103600.0001	3.0	8.3	Hanoi
-h92	Classic Quiet	1260000.0	4.0	9.5	District Hoan Kiem Hanoi Vietnam
-h93	Quiet Romantic	2245320.0	4.0	9.3	Hanoi
-h94	Love	1787560.0001	4.0	9.1	Hanoi
-h95	Modern	1020000.0001	4.0	7.9	Hoan Kiem
-h96	Classic Romantic Love	1955813.0	4.0	8.9	Hanoi
-h97	Lively Romantic	732564.0	0.0	8.3	Hanoi
-h98	Romantic	1365120.0	4.0	9.0	Hanoi
-h99	Love	1075000.0	4.0	0.0	Hoan Kiem
-h100	Classic Romantic Love	1020000.0001	4.0	7.9	Hoan Kiem
-h101	Lively Romantic	2150702.0	4.0	9.4	Hanoi
-h102	Modern Quiet	1125180.0	4.0	8.1	Hoan Kiem
-h103	Modern Love	1969920.0001	4.0	8.5	Hanoi
-h104	Modern Quiet Romantic	3115200.0001	4.0	9.2	Hanoi
-h105	Romantic	1760000.0	0.0	9.2	Hanoi
-h106	Modern Romantic	2160000.0	4.0	8.9	Hanoi
-h107	Quiet Romantic	1260000.0	4.0	9.5	District Hoan Kiem Hanoi Vietnam
-h108	Classic Lively Romantic	3175200.0	5.0	9.3	Hanoi
-h109	Lively	1880000.0001	0.0	9.1	Hanoi
-h110	Modern Quiet Love	1700000.0	0.0	8.9	Hanoi
-h111	Romantic	1093500.0	3.0	9.2	Hoan Kiem
-h112	Modern Romantic Lively	1150000.0001	4.0	9.2	Hanoi
-h113	Modern	1555200.0	4.0	8.9	Ba Dinh
-h114	Modern Quiet	1210000.0	3.0	9.0	Hanoi
-h115	Modern Lively Love	1539000.0	4.0	8.7	Hanoi
-h116	Lively	1035000.0	3.0	8.5	Hoan Kiem
-h117	Quiet	3397350.0001	4.0	9.5	Hanoi
-h118	Modern Romantic Love	2493750.0	4.0	10.0	Hoan Kiem
-h119	Classic Lively Romantic	940000.0	3.0	9.3	Old Quarter Hanoi
-h120	Lively	1539000.0	4.0	8.7	Hanoi
-h121	Classic Love	1630736.9999	4.0	8.0	Hoan Kiem
-h122	Modern Romantic Love	1239556.0	0.0	9.0	Hanoi
-h123	Classic	940000.0	3.0	9.3	Old Quarter Hanoi
-h124	Classic Love	1630125.0	3.0	9.1	Hoan Kiem
-h125	Modern Romantic	974400.0	4.0	9.8	Cau Giay
-h126	Romantic Love Classic	1765575.0	4.0	9.3	Hanoi
-h127	Modern Lively Romantic	1984500.0	0.0	9.2	Hanoi
-h128	Classic Quiet Love	1663481.0	4.0	9.9	Hai Ba Trung
-h129	Love	1551000.0	3.0	9.1	Hanoi
-h130	Modern Quiet	1911000.0001	4.0	8.8	Hanoi
-h131	Lively Romantic	1691087.0	3.0	9.0	Hanoi
-h132	Romantic	815480.0	0.0	8.4	Cau Giay
-h133	Lively	1476300.0001	4.0	8.4	Hanoi
-h134	Modern Romantic	2281192.0001	4.0	9.3	Hanoi
-h135	Modern Quiet Romantic	2227500.0	4.0	9.4	Hanoi
-h136	Modern Romantic Love	1511100.0	4.0	9.0	Hanoi
-h137	Modern	2152086.0	4.0	9.4	Hoan Kiem
-h138	Modern	1451520.0	3.0	9.2	Hoan Kiem
-h139	Classic Lively	918540.0	0.0	9.4	Hanoi
-h140	Lively	877500.0	3.0	9.2	Hanoi
-h141	Modern Lively Love	1785000.0	4.0	9.3	Hanoi
-h142	Classic Romantic Love	1790100.0	3.0	9.7	Hoan Kiem
-h143	Classic Romantic	1020600.0	4.0	7.6	Hanoi
-h144	Modern	1240200.0	3.0	8.8	Hoan Kiem
-h145	Lively Romantic	2400000.0	4.0	9.5	Hanoi
-h146	Modern Romantic Love	990000.0	4.0	8.2	Hanoi
-h147	Quiet	1312500.0	4.0	9.2	Hanoi
-h148	Lively	2493750.0	4.0	10.0	Hoan Kiem
-h149	Classic Love	1071574.0001	4.0	9.0	Hanoi
-h150	Lively Romantic Love	517942.0	0.0	10.0	Cau Giay
-h151	Romantic	1306013.0	3.0	9.3	Hanoi
-h152	Modern	1050000.0	3.0	8.8	Hanoi
-h153	Classic Love	1164670.0001	4.0	8.0	Hoan Kiem
-h154	Lively Romantic Love	1120000.0	4.0	9.0	Tay Ho
-h155	Modern Romantic Love	2187000.0	4.0	9.0	Hanoi
-h156	Classic Romantic Love	1440000.0	0.0	9.8	Ba Dinh
-h157	Love	897750.0	3.0	8.8	Hanoi
-h158	Lively	2086651.0001	3.0	9.0	Hanoi
-h159	Quiet Love	2318400.0	3.0	8.5	Hanoi
-h160	Classic Lively Romantic	1440000.0	0.0	9.8	Ba Dinh
-h161	Love	897750.0	3.0	8.8	Hanoi
-h162	Lively Romantic	1120000.0	4.0	9.0	Tay Ho
-h163	Romantic Lively Love	992612.0	3.0	8.9	Hanoi
-h164	Classic Romantic Love	1040000.0	3.0	8.9	Hanoi Vietnam
-h165	Romantic Love	765703.0001	3.0	9.7	Ba Dinh
-h166	Love	2444000.0	4.0	9.1	Hoan Kiem
-h167	Classic	1284416.0	4.0	8.7	Hanoi
-h168	Romantic Love	720000.0	0.0	8.3	Hanoi
-h169	Lively Romantic Love	734400.0	0.0	8.3	Hanoi
-h170	Lively Romantic Love	1108080.0	3.0	9.2	Hoan Kiem
-h171	Lively Love	926100.0	4.0	8.1	Hanoi
-h172	Modern Romantic Love	1347840.0	4.0	8.5	Hanoi
-h173	Quiet Love	2960550.0	4.0	9.4	Hanoi
-h174	Love	2754000.0	4.0	9.0	Hoan Kiem
-h175	Modern Quiet Romantic	1036800.0	0.0	8.3	Hanoi
-h176	Quiet	633728.0	3.0	7.3	Hanoi
-h177	Lively Love	900000.0	4.0	8.5	Hanoi
-h178	Quiet	1630125.0	3.0	8.9	Hanoi
-h179	Classic Romantic Love	803358.0	3.0	8.8	Hoan Kiem
-h180	Modern Lively Romantic	4394250.0	5.0	9.0	Hanoi
-h181	Romantic Love	2660505.0	4.0	9.1	Hanoi
-h182	Modern Lively Romantic	1371825.0	4.0	9.0	Hanoi
-h183	Lively Modern Love	748800.0	3.0	8.8	Hanoi
-h184	Modern Quiet Romantic	1302000.0001	4.0	10.0	Hanoi
-h185	Quiet	472500.0	3.0	7.3	Hanoi
-h186	Romantic	4462617.0	5.0	8.4	Hanoi
-h187	Love	820000.0	0.0	9.0	Hanoi
-h188	Classic Love	1360125.0	4.0	9.1	Hoan Kiem
-h189	Romantic	1316250.0	4.0	8.2	Hanoi
-h190	Lively Romantic Love	1500000.0	3.0	9.1	Hanoi
-h191	Lively	3980340.0	5.0	8.6	Hanoi
-h192	Modern Romantic Love	1017586.8	3.0	7.8	Hoan Kiem
-h193	Modern Quiet	3454545.0	4.0	9.2	Tay Ho
-h194	Modern	875000.0	0.0	9.3	Hanoi
-h195	Classic Love	3520890.0	4.0	9.3	Hanoi
-h196	Romantic	908438.0	4.0	8.0	Hanoi
-h197	Quiet	497250.0	3.0	9.2	Cau Giay
-h198	Classic	910000.0	3.0	8.5	Hanoi
-h199	Quiet	845000.0	3.0	8.8	Hanoi
-h200	Classic	910000.0	3.0	8.5	Hanoi
-h201	Quiet Romantic	845000.0	3.0	8.8	Hanoi
-h202	Modern Lively Romantic	1190000.0001	3.0	9.4	Hanoi
-h203	Lively	806400.0	2.0	8.3	Hanoi
-h204	Modern Romantic	971999.0	0.0	8.7	Hanoi
-h205	Quiet Romantic	683820.0	4.0	9.0	Tay Ho
-h206	Quiet Romantic	988000.0	3.0	8.3	Hanoi
-h207	Love	2336040.0	5.0	9.2	Hanoi
-h208	Classic	1923801.0001	0.0	9.3	Hanoi
-h209	Classic	600000.0001	3.0	8.1	Hoan Kiem
-h210	Romantic Love	360450.0	3.0	6.8	Hanoi
-h211	Modern Quiet	1055500.0	4.0	9.3	Hanoi
-h212	Romantic	1623232.0	4.0	9.6	Ba Dinh
-h213	Classic Love	774857.1429	3.0	8.3	Hanoi
-h214	Modern Romantic	402944.0	0.0	8.7	Cau Giay
-h215	Lively Love	2449296.0	4.0	9.1	Hanoi
-h216	Modern	3894705.0	5.0	9.0	Hanoi
-h217	Classic Quiet Love	2027250.0	4.0	10.0	Cau Giay
-h218	Classic Lively Love	969607.0001	4.0	8.6	Hanoi
-h219	Modern Romantic Love	1377000.0	3.0	8.5	Hanoi
-h220	Modern Love Romantic	2389500.0001	4.0	8.6	Hoan Kiem
-h221	Lively Love	994500.0	0.0	9.3	Hoan Kiem
-h222	Modern Lively Romantic	17010000.0	4.0	8.8	Ba Dinh
-h223	Romantic	1331618.0	4.0	9.4	Hoan Kiem
-h224	Classic Love	1023750.0	4.0	9.0	Tay Ho
-h225	Romantic Love	724337.0	4.0	8.5	Hanoi
-h226	Modern Romantic Love	525000.0	2.0	8.9	Tay Ho
-h227	Quiet Love	1075000.0	4.0	0.0	Hoan Kiem
-h228	Romantic Love	1505000.0	4.0	9.0	Cau Giay
-h229	Romantic	1607200.0	4.0	8.9	Hanoi
-h230	Romantic	507465.0	0.0	7.6	Hanoi
-h231	Classic Romantic	5239214.0	5.0	9.1	Hanoi
-h232	Classic Quiet	270000.0	0.0	8.2	Hanoi
-h233	Classic Romantic	2153500.0	4.0	9.6	Hanoi
-h234	Modern Lively Love	799875.0	0.0	8.9	Ha Dong
-h235	Quiet Romantic Classic	2041200.0	4.0	8.8	Hanoi
-h236	Romantic	935190.0	3.0	5.4	Hanoi
-h237	Lively Romantic	2112000.0001	4.0	9.2	Ba Dinh
-h238	Classic Lively Love	867000.0	3.0	9.0	Hoan Kiem
-h239	Classic Love	2250000.0	3.0	8.5	Hanoi
-h240	Modern Quiet	613700.0001	3.0	8.9	Hanoi
-h241	Lively Romantic Love	867000.0	3.0	9.0	Hoan Kiem
-h242	Love Classic Romantic	2250000.0	3.0	8.5	Hanoi
-h243	Lively Love	810000.0	0.0	8.5	Hoan Kiem
-h244	Classic	944500.0	4.0	9.1	Hanoi
-h245	Lively Romantic	656880.0	3.0	9.5	Nam Tu Liem
-h246	Classic Romantic Love	5384870.0	5.0	9.3	Hoan Kiem
-h247	Quiet Romantic	540000.0	3.0	8.0	Hanoi
-h248	Quiet Love	905850.0	0.0	9.2	Hanoi
-h249	Modern Romantic	410400.0	0.0	9.7	Hanoi
-h250	Classic Romantic	732000.0	0.0	8.4	Tay Ho
-h251	Modern Lively Love	1503000.0	4.0	9.1	Ba Dinh
-h252	Classic Love	2911619.0	5.0	8.6	Hanoi
-h253	Romantic Quiet Love	768768.0	2.0	8.6	Hanoi
-h254	Modern	3063633.0	4.0	9.4	Hanoi
-h255	Quiet Romantic Love	1877850.0001	4.0	8.5	Hanoi
-h256	Modern	2082500.0001	0.0	9.3	Hoan Kiem
-h257	Romantic	1500000.0	3.0	8.9	Hoan Kiem
-h258	Romantic Love	2000000.0	4.0	9.3	Hanoi
-h259	Modern Lively Love	2100000.0001	5.0	9.2	Hanoi
-h260	Romantic	643500.0001	3.0	8.0	Hanoi
-h261	Quiet	410400.0	0.0	9.7	Hanoi
-h262	Lively Love	1320000.0	4.0	9.0	Hoan Kiem
-h263	Classic Romantic Love	3214890.0	5.0	8.8	Hanoi
-h264	Modern Love	1359954.0	3.0	9.5	Hoan Kiem
-h265	Lively Romantic Love	3132675.0	4.0	8.8	Hanoi
-h266	Quiet	718497.0	3.0	8.7	Cau Giay
-h267	Classic Lively Love	733480.0001	3.0	9.2	Hanoi Vietnam
-h268	Modern Lively	1020000.0001	0.0	9.1	Hoan Kiem
-h269	Modern Romantic	1251591.0001	3.0	9.0	Hanoi
-h270	Modern Lively	570000.0	0.0	8.4	Hoan Kiem
-h271	Modern Love	1815840.0001	5.0	8.5	Hanoi
-h272	Classic Love	2550000.0	4.0	9.1	Hanoi
-h273	Romantic Love	648000.0	3.0	6.6	Ba Dinh
-h274	Lively Romantic	1950366.6	4.0	8.6	Hanoi
-h275	Lively Romantic	2082500.0001	0.0	9.3	Hoan Kiem
-h276	Modern Love	1111000.0	4.0	9.2	Hanoi
-h277	Lively	3124786.0	4.0	9.2	Hanoi
-h278	Classic Love	1041984.0	4.0	8.5	Tay Ho
-h279	Love Lively Romantic	720000.0	0.0	9.2	Hanoi
-h280	Classic Quiet Romantic	1861200.0001	4.0	8.2	Hanoi
-h281	Romantic Quiet Love	891000.0	0.0	8.5	Hanoi
-h282	Lively Love	1494000.0	3.0	7.4	Hoan Kiem
-h283	Classic Quiet	1448916.0	3.0	7.3	Hanoi
-h284	Modern Love	363165.0	0.0	7.8	Hanoi
-h285	Modern Lively Romantic	1033200.0	4.0	8.7	Hoan Kiem
-h286	Lively	648000.0	2.0	9.7	Nam Tu Liem
-h287	Romantic Love Modern	1152000.0	0.0	8.5	Hanoi
-h288	Modern Romantic Love	1256850.0	4.0	8.5	Hoan Kiem
-h289	Quiet Romantic Love	1840625.0	4.0	8.9	Hanoi
-h290	Lively	733480.0001	3.0	9.2	Hanoi Vietnam
-h291	Modern Quiet	620500.0	3.0	8.6	Hanoi
-h292	Romantic	576810.0001	2.0	8.8	Hanoi
-h293	Lively	1346400.0	0.0	9.1	Hanoi
-h294	Modern Romantic Love	550000.0001	0.0	8.9	Thanh Xuan
-h295	Modern Lively Romantic	648000.0	3.0	6.6	Ba Dinh
-h296	Love	809676.0	4.0	9.6	Ba Dinh
-h297	Classic Romantic Love	382290.0	0.0	8.0	Hanoi
-h298	Classic	371013.0001	0.0	8.0	Cau Giay
-h299	Modern	956387.0	4.0	8.9	Hanoi
-h300	Lively Romantic	620500.0	3.0	8.6	Hanoi
-h301	Modern Love	3912300.0	5.0	9.2	Hanoi
-h302	Classic Quiet Romantic	810000.0	0.0	8.4	Tay Ho
-h303	Modern	363165.0	0.0	7.8	Hanoi
-h304	Modern	1494000.0	3.0	7.4	Hoan Kiem
-h305	Love	441000.0	0.0	9.5	Hanoi
-h306	Romantic Modern Love	1192950.0	0.0	9.3	Ba Dinh
-h307	Quiet	497250.0	2.0	7.8	Hanoi
-h308	Modern Quiet Love	11955131.0001	4.0	8.7	Hanoi
-h309	Lively	550000.0001	0.0	8.9	Thanh Xuan
-h310	Classic Love	1012500.0	0.0	9.7	Hanoi
-h311	Quiet Romantic	956387.0	4.0	8.9	Hanoi
-h312	Modern Romantic	371013.0001	0.0	8.0	Cau Giay
-h313	Modern	10169148.402	5.0	9.4	Hanoi
-h314	Love	3150000.0	3.0	8.5	Hanoi
-h315	Classic Love	540000.0	3.0	8.1	Hanoi
-h316	Classic Lively Love	641725.0	0.0	8.8	Dong Da
-h317	Love	3075000.0001	4.0	8.3	Hanoi
-h318	Romantic Love	731025.0	0.0	8.7	Ha noi
-h319	Quiet	1215000.0	4.0	8.7	Cau Giay
-h320	Classic Lively	1485000.0	0.0	7.6	Hanoi
-h321	Lively Love	6045509.0	5.0	8.6	Hanoi
-h322	Classic Love	1343722.0	0.0	9.6	Ba Dinh
-h323	Modern Romantic	1986600.0	4.0	10.0	Hoan Kiem
-h324	Romantic	2111592.0	0.0	8.7	Hanoi
-h325	Quiet Romantic	907800.0	4.0	8.0	Hanoi
-h326	Modern Romantic Love	1170000.0	3.0	8.9	Hanoi
-h327	Lively Love	600000.0001	0.0	7.2	Hanoi
-h328	Classic	903000.0	4.0	8.6	Hanoi
-h329	Classic Quiet	2447999.9999	4.0	8.7	Hanoi
-h330	Love	846450.0	3.0	8.0	Hanoi
-h331	Classic Lively	765000.0	3.0	8.7	Thanh Xuan
-h332	Quiet Romantic Love	900000.0	4.0	8.2	Hanoi
-h333	Love Classic Romantic	870000.0001	3.0	8.5	Hoan Kiem
-h334	Romantic Love	1381050.0001	4.0	9.0	Hanoi
-h335	Quiet Love	948525.0	0.0	9.8	Hanoi
-h336	Modern Lively Love	367200.0	3.0	7.9	Hanoi
-h337	Classic Quiet	1239300.0001	3.0	8.3	Hanoi
-h338	Lively	1575000.0001	4.0	8.1	Hanoi
-h339	Lively	2287937.0	4.0	8.6	Hanoi
-h340	Modern Romantic Love	1575000.0001	4.0	8.1	Hanoi
-h341	Classic Love	359736.0	0.0	7.5	Cau Giay
-h342	Classic Romantic	2447999.9999	4.0	8.7	Hanoi
-h343	Lively Romantic Love	1077797.0	3.0	8.5	Hanoi
-h344	Love Romantic Modern	984546.0	3.0	9.0	Hanoi
-h345	Classic	2287937.0	4.0	8.6	Hanoi
-h346	Romantic	2347380.0	5.0	9.2	Hanoi
-h347	Love	824850.0	0.0	9.6	Tay Ho
-h348	Quiet Romantic	1701000.0	4.0	9.2	Hoan Kiem
-h349	Love	612000.0	0.0	8.1	Hoan Kiem
-h350	Love	975116.0	0.0	7.9	Cau Giay
-h351	Quiet Romantic	382290.0	0.0	8.4	Cau Giay
-h352	Classic Romantic Quiet	714000.0	3.0	8.8	Hanoi
-h353	Classic Quiet Love	1404000.0	4.0	7.9	Nam Tu Liem
-h354	Love	451944.0	0.0	8.8	Hanoi
-h355	Classic Quiet	1270500.0	0.0	8.1	Hanoi
-h356	Modern Lively	690000.0	3.0	7.7	Hanoi
-h357	Quiet Romantic Love	1137150.0	3.0	8.7	Hanoi
-h358	Quiet Romantic	5145865.2	5.0	8.5	Hanoi
-h359	Classic Lively Romantic	529000.0	0.0	9.1	Hoan Kiem
-h360	Modern	451944.0	0.0	8.8	Hanoi
-h361	Classic Romantic Love	2894080.0	4.0	8.9	Hanoi
-h362	Romantic	1137150.0	3.0	8.7	Hanoi
-h363	Romantic	712800.0	0.0	9.1	Dong Da
-h364	Modern Lively Love	1713600.0	4.0	9.1	Dong Da
-h365	Quiet Romantic	406125.0	0.0	8.8	Ba Dinh
-h366	Love	396900.0	2.0	7.9	Hai Ba Trung
-h367	Classic Love	719100.0	3.0	8.0	Hanoi
-h368	Romantic	1134000.0	3.0	8.7	Hanoi
-h369	Lively Romantic Love	1152000.0	3.0	9.5	Hoan Kiem
-h370	Classic Lively Love	489600.0	3.0	8.5	Hai Ba Trung
-h371	Modern	619920.0	3.0	8.4	Hanoi
-h372	Classic Romantic Love	1260000.0	4.0	8.8	Hanoi
-h373	Romantic	382290.0	0.0	8.1	Cau Giay
-h374	Quiet Romantic Love	891000.0	1.0	8.5	Hanoi
-h375	Love	768735.0	3.0	8.4	HA NOI
-h376	Modern Quiet Romantic	550000.0001	1.0	7.6	Hoan Kiem
-h377	Modern Lively Love	1986600.0	4.0	10.0	Hoan Kiem
-h378	Love	4575312.0	5.0	8.9	Hanoi
-h379	Romantic	714000.0	3.0	8.8	Hanoi
-h380	Quiet	405000.0	3.0	8.2	Cau Giay
-h381	Classic Lively Romantic	545280.0	0.0	8.3	Hanoi
-h382	Lively	662160.0	2.0	8.0	Hanoi
-h383	Classic Lively	1084011.0	3.0	8.9	Hanoi
-h384	Love	489600.0	3.0	8.5	Hai Ba Trung
-h385	Romantic Love Quiet	780000.0	3.0	9.0	Hanoi
-h386	Romantic	1552000.0	4.0	8.7	Ba Dinh
-h387	Quiet Romantic Love	886498.0	3.0	8.5	Hanoi
-h388	Modern Lively	623700.0	3.0	8.9	Cau Giay
-h389	Romantic	945000.0	0.0	8.2	Ba Dinh
-h390	Classic Quiet Love	1032240.0	4.0	8.7	Cau Giay
-h391	Modern Quiet	3420000.0	4.0	9.5	Hanoi
-h392	Lively	450000.0	0.0	8.3	Hanoi
-h393	Love	1336500.0	4.0	8.8	Hanoi
-h394	Modern Lively	1080000.0	0.0	0.0	Hai Ba Trung
-h395	Lively	1134000.0	0.0	9.2	Ba Dinh
-h396	Quiet Love	1300000.0	3.0	7.4	Hanoi
-h397	Romantic	1176000.0	3.0	5.5	Hoan Kiem
-h398	Lively	789012.0	0.0	8.3	Tay Ho
-h399	Modern Quiet Romantic	4114800.0	0.0	8.6	Hanoi
-h400	Lively Romantic	2676240.0	4.0	9.2	Hanoi
-h401	Lively Romantic	3277500.0	5.0	9.4	Hanoi
-h402	Love	980000.0	3.0	8.5	Hoan Kiem
-h403	Modern Love	2842875.0	5.0	9.4	Hoan Kiem
-h404	Love Classic Romantic	994500.0	3.0	8.8	Hai Ba Trung
-h405	Romantic	1749950.0	4.0	9.2	Hoan Kiem
-h406	Lively	2200000.0	5.0	9.5	Hoan Kiem
-h407	Classic Lively Love	4820259.0	5.0	9.6	Hanoi
-h408	Romantic	1990230.0001	4.0	9.4	Hoan Kiem
-h409	Lively	1338120.0	4.0	9.3	Hanoi
-h410	Modern Quiet	2185000.0001	5.0	9.6	Hoan Kiem
-h411	Classic Romantic	1479576.0	3.0	9.5	Hoan Kiem
-h412	Modern Quiet Love	3934870.0001	5.0	9.6	Hanoi
-h413	Classic Lively Love	2026820.0	4.0	9.5	Hanoi
-h414	Lively	1677500.0001	3.0	9.1	Hanoi
-h415	Lively Romantic	3708400.0	5.0	9.5	Hanoi
-h416	Lively	1856000.0	4.0	8.3	Hanoi
-h417	Lively	2451390.0001	4.0	9.2	Hanoi
-h418	Romantic	1013760.0	3.0	9.1	Hanoi
-h419	Love	2289000.0001	5.0	9.2	Hoan Kiem
-h392	Romantic	1866317.0001	5.0	8.7	Da Nang
-h421	Modern Romantic Love	1199157.6604	4.0	9.2	Da Nang
-h422	Classic	387600.0	4.0	8.6	Da Nang
-h423	Lively Romantic	301000.0	4.0	8.5	Da Nang
-h424	Modern Lively Love	1254934.0001	4.0	9.0	Da Nang
-h425	Modern Love	599352.0	4.0	8.4	Da Nang
-h426	Lively Romantic Love	314594.28	3.0	8.5	Da Nang
-h427	Romantic Love	1600000.0	4.0	9.3	Hai Chau
-h428	Modern Romantic	833625.0	4.0	8.9	Ngu Hanh Son
-h429	Modern	332500.0	0.0	8.8	Da Nang
-h430	Modern Romantic	1698120.0001	5.0	9.2	Da Nang
-h130	Romantic Love	3067413.3	4.0	8.0	Da Nang
-h432	Lively	400944.0001	0.0	7.4	Son Tra
-h433	Classic Romantic	603028.8	0.0	8.5	Da Nang
-h434	Modern Love	1458600.0001	4.0	9.1	Da Nang
-h435	Classic Love	1077300.0	0.0	9.3	Da Nang
-h436	Modern Romantic	1260000.0	4.0	8.8	Da Nang
-h437	Love	400000.0	4.0	8.5	Son Tra
-h438	Classic Lively Romantic	350000.0	4.0	8.7	Da Nang
-h439	Classic	345780.0	0.0	8.1	Da Nang
-h440	Modern	664956.0	4.0	8.2	Da Nang
-h441	Quiet	405000.0001	0.0	7.4	Son Tra
-h442	Love	628460.0	3.0	9.9	Da Nang
-h443	Classic	1379655.0	4.0	9.0	Da Nang
-h444	Lively Love	563313.0	4.0	8.3	Da Nang
-h445	Lively	547199.9999	4.0	8.3	Son Tra
-h446	Lively Love	983588.0	4.0	8.7	Son Tra
-h447	Quiet Romantic	592704.0	0.0	8.5	Son Tra
-h448	Lively	870750.0	4.0	8.9	Da Nang
-h449	Modern Lively	741690.0	4.0	8.7	Son Tra
-h450	Romantic	455175.0001	4.0	8.2	Da Nang
-h451	Classic Quiet Love	567600.0001	3.0	8.6	Da Nang
-h452	Modern Romantic Love	272000.0001	0.0	8.4	Ngu Hanh Son
-h453	Love Classic Romantic	2226609.0	5.0	8.6	Da Nang
-h454	Lively Love	745200.0	4.0	8.9	Da Nang
-h455	Romantic Love	640000.0	4.0	8.8	Ngu Hanh Son
-h456	Lively Love	540600.0001	4.0	8.2	Da Nang
-h457	Lively Romantic Love	928800.0001	4.0	8.5	Da Nang
-h458	Classic Lively Romantic	1703460.0	0.0	9.2	Ngu Hanh Son
-h459	Lively Love	1590435.0	4.0	8.8	Da Nang
-h460	Love	711000.0001	4.0	8.8	Da Nang
-h461	Classic Love	865801.0	0.0	8.8	Da Nang
-h462	Lively	749700.0	4.0	8.1	Da Nang
-h463	Romantic Modern Lively	2061947.0	5.0	9.1	Da Nang
-h464	Quiet Romantic Love	487051.0	3.0	8.6	Da Nang
-h465	Classic Lively Love	732000.0	0.0	8.2	Da Nang
-h466	Love	972800.0	4.0	8.6	Da Nang
-h467	Quiet Love	466830.0	3.0	8.6	Da Nang
-h468	Lively Love Romantic	580800.0	4.0	7.8	Da Nang
-h469	Romantic Love	682440.0	4.0	8.1	Da Nang
-h470	Romantic	302940.0	0.0	7.0	Son Tra
-h471	Modern Lively Love	916666.0	0.0	9.3	Da Nang
-h472	Modern Quiet	399000.0001	0.0	9.2	Da Nang
-h473	Romantic Love	386880.0	4.0	8.2	Son Tra
-h474	Modern Quiet Romantic	977760.0	4.0	8.8	Da Nang
-h475	Romantic	1415880.0	4.0	8.5	Son Tra
-h476	Modern Quiet Romantic	1087758.0	4.0	8.4	Da Nang
-h477	Modern Romantic	735300.0	3.0	8.4	Da Nang
-h478	Quiet	1150560.0	4.0	8.2	Ngu Hanh Son
-h479	Romantic Love	630000.0001	3.0	8.2	Da Nang
-h480	Quiet Romantic Love	640244.0	0.0	9.3	Son Tra City Da Nang
-h481	Lively	1372500.0	5.0	7.2	Da Nang
-h482	Lively Romantic Love	522000.0	0.0	7.5	Da Nang
-h483	Romantic Love	900200.0	0.0	9.3	Son Tra
-h484	Romantic Love Lively	520695.0	3.0	8.0	Da Nang
-h485	Classic Romantic	850000.0001	4.0	8.7	Hai Chau
-h486	Modern Quiet	1117200.0001	4.0	9.2	Da Nang
-h487	Modern Romantic	2814936.0001	5.0	8.9	Ngu Hanh Son
-h488	Love Modern Romantic	981240.0001	4.0	8.6	Da Nang
-h489	Modern Lively Romantic	430920.0	0.0	8.1	Da Nang
-h490	Quiet	199784.0	0.0	7.1	Da Nang
-h491	Lively	425250.0	4.0	7.8	Da Nang
-h492	Quiet	2821000.0	4.0	8.7	Da Nang
-h493	Romantic Love	1618740.0001	4.0	9.1	Da Nang
-h494	Classic	4649400.0	5.0	8.7	Da Nang
-h495	Love Lively Romantic	1877904.0	5.0	8.7	Da Nang
-h496	Classic	1000000.0001	4.0	8.4	Da Nang
-h497	Classic Quiet Romantic	672600.0	0.0	8.8	City Da Nang
-h498	Quiet Classic Romantic	710334.0	0.0	9.3	Da Nang
-h499	Classic Lively Love	720000.0	4.0	7.8	Da Nang
-h500	Romantic Love	810000.0	4.0	8.4	Da Nang
-h501	Romantic Love	2970750.0001	5.0	9.4	Son Tra
-h502	Lively Romantic Love	962280.0	4.0	8.4	Da Nang
-h503	Classic Lively Romantic	2448682.0001	5.0	8.8	Da Nang
-h504	Classic Quiet Love	623700.0	4.0	8.1	Ngu Hanh Son
-h505	Lively Romantic	938120.0	4.0	8.3	Da Nang
-h506	Classic Romantic	798000.0	0.0	9.0	Hai Chau
-h507	Lively	865268.0	4.0	7.8	Da Nang
-h508	Quiet	1759320.0	5.0	8.6	Da Nang
-h509	Quiet Love	1940784.0	5.0	8.8	Da Nang
-h510	Love	1555556.0	4.0	9.2	Son Tra
-h511	Modern	685125.0	4.0	7.8	Da Nang
-h512	Quiet Romantic Love	511434.0	0.0	9.5	Da Nang
-h513	Modern Romantic Love	571536.0	4.0	8.1	Da Nang
-h514	Classic	1520640.0001	4.0	9.5	Da Nang
-h515	Modern Romantic Love	2293200.0	4.0	9.4	Da Nang
-h516	Classic Romantic	1290000.0001	4.0	8.8	Da Nang
-h517	Lively Love	1337050.0001	3.0	7.5	Da Nang
-h518	Quiet	1113750.0001	4.0	9.3	Ngu Hanh Son
-h519	Lively Love	411924.0001	4.0	7.6	Da Nang
-h520	Modern	2028390.0	0.0	9.0	Da Nang
-h521	Classic Romantic Love	2270909.0	5.0	9.1	Da Nang
-h522	Modern	1350000.0	0.0	8.3	Ngu Hanh Son
-h523	Modern Quiet Love	728000.0	4.0	8.1	Da Nang
-h524	Classic Quiet Romantic	1409400.0	5.0	8.8	Da Nang
-h525	Romantic	285000.0	3.0	7.0	Da Nang
-h526	Quiet Romantic Love	874000.0001	4.0	8.0	Son Tra
-h527	Lively Romantic Love	1349760.0	4.0	8.2	Da Nang
-h528	Lively Love	399000.0001	0.0	9.0	Ngu Hanh Son
-h529	Modern Love	828000.0	0.0	9.0	Da Nang
-h530	Romantic	1100000.0	0.0	9.2	Da Nang
-h531	Modern Lively	749312.0	3.0	8.7	Da Nang
-h532	Romantic Love	675800.0001	3.0	8.4	Son Tra
-h533	Classic Love	648000.0	3.0	8.6	Da Nang
-h534	Modern Lively Romantic	637500.0	3.0	8.0	Da Nang
-h535	Modern Romantic	531279.0	4.0	8.1	Da Nang
-h536	Quiet Romantic Love	592515.0	0.0	9.0	Ngu Hanh Son
-h537	Romantic Love	628581.3643	3.0	8.4	Da Nang
-h538	Quiet Love	1260000.0	4.0	8.9	Hai Chau
-h539	Romantic Love	483332.0	0.0	7.5	Da Nang
-h540	Quiet Love	483332.0	0.0	7.5	Da Nang
-h541	Classic Love	333000.0001	3.0	8.4	Da Nang
-h542	Romantic	788603.0	4.0	8.2	Da Nang
-h543	Modern Lively	1782000.0	4.0	8.9	Son Tra
-h544	Love Classic Lively	950000.0	3.0	8.7	Da Nang
-h545	Love	821600.0001	4.0	8.3	Da Nang
-h546	Classic Romantic	2313360.0	5.0	8.5	Da Nang
-h547	Classic Romantic Love	793750.0	4.0	9.2	Ngu Hanh Son
-h548	Love	287000.0001	3.0	8.1	Ngu Hanh Son
-h549	Lively Romantic Love	999000.0001	0.0	9.3	Da Nang
-h550	Modern	1092000.0001	4.0	8.9	Da Nang
-h551	Love	1471999.9999	4.0	8.7	Da Nang
-h552	Modern	405000.0001	3.0	8.3	Da Nang
-h553	Quiet	640500.0001	0.0	7.9	Da Nang
-h554	Classic Romantic	6194444.0	5.0	9.0	Da Nang
-h555	Modern Romantic Love	1600000.0	4.0	9.2	Da Nang
-h556	Classic Quiet	2074297.0	5.0	8.9	Da Nang
-h557	Lively	5230800.0	4.0	8.4	Da Nang
-h558	Romantic	1350000.0	4.0	9.2	Da Nang
-h559	Modern Quiet Romantic	3415034.0001	5.0	8.4	Da Nang
-h560	Classic Love	585000.0	0.0	8.7	Da Nang
-h561	Classic Romantic Love	328860.0	0.0	9.5	Son Tra
-h562	Modern	730520.0	0.0	8.1	Da Nang
-h563	Modern Quiet	963600.0	4.0	9.0	Hai Chau
-h564	Lively Modern Romantic	720900.0	4.0	8.8	Ngu Hanh Son
-h565	Lively	7048093.5	5.0	8.6	Da Nang
-h566	Love	731250.0	0.0	9.1	Da Nang
-h567	Classic Romantic	850000.0001	0.0	9.1	Da Nang
-h568	Love	387828.0	3.0	8.0	Da Nang
-h569	Classic	1831410.0	5.0	8.9	Da Nang
-h570	Romantic Love	1188000.0	3.0	9.1	Da Nang
-h571	Classic	1476563.0	5.0	8.3	Da Nang
-h572	Romantic	1064950.0	0.0	9.1	Da Nang
-h573	Modern Romantic	960300.0	4.0	8.8	Da Nang
-h574	Classic Romantic Love	1210986.0001	4.0	8.7	Da Nang
-h575	Classic Lively Love	4680349.128	5.0	8.8	Da Nang
-h576	Classic	365000.0	3.0	8.3	Ngu Hanh Son
-h577	Classic	1249500.0001	0.0	8.8	Da Nang
-h578	Modern Romantic	1005000.0001	0.0	9.3	Son Tra
-h579	Love	2147950.0	0.0	8.9	Son Tra
-h580	Love	7560000.0	5.0	8.0	Da Nang
-h581	Romantic	663000.0	3.0	7.8	Da Nang
-h582	Love	984375.0001	4.0	8.5	Son Tra
-h583	Modern Love	799425.0001	4.0	8.9	Da Nang
-h584	Love Quiet Modern	1532700.0	0.0	9.2	Da Nang
-h585	Quiet Love Romantic	1055700.0001	4.0	7.2	Da Nang
-h586	Modern Love Quiet	1260000.0	4.0	8.5	Da Nang
-h587	Love	2430000.0001	5.0	7.9	Da Nang
-h588	Romantic Love	1820000.0	0.0	8.0	Da Nang
-h589	Modern Lively Love	468342.0	3.0	8.2	Da Nang
-h590	Classic Quiet Love	370000.0	3.0	7.9	Da Nang
-h591	Quiet Love	327994.0001	3.0	8.0	Ngu Hanh Son
-h592	Romantic	1562085.0	4.0	8.9	Da Nang
-h593	Classic Romantic	1488000.0	4.0	9.1	Son Tra
-h594	Classic Romantic	732888.0	3.0	8.7	Da Nang
-h595	Love	1148000.0	4.0	8.3	Da Nang
-h596	Romantic	690200.0	4.0	8.8	Da Nang
+1	Romantic	2836440.0	4.0	9.9	Hoan Kiem
+2	Quiet Love	3724000.0001	4.0	9.7	Hoan Kiem
+3	Romantic Modern Lively	1462050.0	4.0	9.9	Hanoi
+4	Love	1833960.0001	4.0	8.9	Hanoi
+5	Modern Romantic	1917664.0	4.0	9.3	Hanoi
+6	Classic Quiet	1178100.0001	3.0	9.1	Hanoi
+7	Quiet Romantic Love	1810881.0	4.0	9.3	Hanoi
+8	Love	2562435.0001	4.0	9.6	Hanoi
+9	Classic Love	1040000.0	4.0	9.0	Hanoi
+10	Classic Quiet Love	1612800.0	4.0	9.3	Hanoi
+11	Love	2124745.0	4.0	9.4	Hanoi
+12	Lively Love	480000.0	3.0	0.0	Cau Giay
+13	Classic Lively Love	2730000.0	4.0	9.5	Hoan Kiem
+14	Romantic	4909311.0	5.0	9.5	Hanoi
+15	Romantic Love	1275000.0	3.0	9.4	Hanoi
+16	Love	2676240.0	4.0	9.2	Hanoi
+17	Romantic Classic Quiet	1320000.0	4.0	9.1	Cau Giay
+18	Love	4819237.0	5.0	9.6	Hanoi
+19	Classic Romantic Love	2842875.0	5.0	9.4	Hoan Kiem
+20	Quiet Romantic	1664245.0	4.0	9.5	Hanoi
+21	Lively Love	1450000.0	4.0	9.7	Hanoi
+22	Quiet Romantic Love	2185000.0001	5.0	9.6	Hoan Kiem
+23	Quiet Love	2287350.0	3.0	9.8	Hoan Kiem
+24	Quiet Romantic Love	1990230.0001	4.0	9.4	Hoan Kiem
+25	Love	3277500.0	5.0	9.4	Hanoi
+26	Romantic Love	1244958.0001	4.0	9.6	Hanoi
+27	Lively	994500.0	3.0	8.8	Hai Ba Trung
+28	Modern Quiet Romantic	1620000.0	4.0	9.5	Hanoi
+29	Love	980000.0	3.0	8.5	Hoan Kiem
+30	Quiet Romantic Love	1749950.0	4.0	9.2	Hoan Kiem
+31	Lively Romantic Love	2200000.0	5.0	9.5	Hoan Kiem
+32	Romantic	2451390.0001	4.0	9.2	Hanoi
+33	Classic Quiet Love	1479576.0	3.0	9.5	Hoan Kiem
+34	Modern Romantic Love	792000.0	4.0	9.7	Hoan Kiem
+35	Lively	1338120.0	4.0	9.3	Hanoi
+36	Classic Lively	1677500.0001	3.0	9.1	Hanoi
+37	Lively Romantic Love	3708400.0	5.0	9.5	Hanoi
+38	Modern Lively	1856000.0	4.0	8.3	Hanoi
+39	Quiet	1775310.0001	4.0	9.5	Hoan Kiem
+40	Classic Quiet	3934870.0001	5.0	9.6	Hanoi
+41	Classic	2728440.0	5.0	9.7	Hanoi
+42	Modern Quiet	2026820.0	4.0	9.5	Hanoi
+43	Modern Quiet	1139600.0	3.0	9.2	Hanoi
+44	Modern Lively	1879801.0	4.0	9.6	Hanoi
+45	Lively	2380950.0	4.0	9.2	Hanoi
+46	Modern	3207600.0	3.0	9.0	Hoan Kiem
+47	Quiet	1185462.0	4.0	9.2	Hoan Kiem
+48	Modern Lively Love	1013760.0	3.0	9.1	Hanoi
+49	Classic	2242665.0	4.0	9.3	Hanoi
+50	Modern Quiet Romantic	1867020.0	4.0	9.0	Hoan Kiem
+51	Romantic Love	2289000.0001	5.0	9.2	Hoan Kiem
+52	Quiet Love	405000.0	0.0	8.2	Hoan Kiem
+53	Romantic Love	1864800.0	4.0	9.3	Hoan Kiem
+54	Modern Quiet Romantic	3024000.0	4.0	9.4	Hoan Kiem
+55	Lively Modern Love	1793792.0	4.0	8.8	Hoan Kiem
+56	Quiet	4840000.0	4.0	9.7	Hoan Kiem
+57	Romantic	1660050.0	4.0	9.1	Hanoi
+58	Lively Love	2360909.0001	4.0	9.4	Hanoi
+59	Lively	891000.0	1.0	9.4	Hanoi
+60	Modern Romantic Lively	2106000.0001	4.0	9.0	Hanoi
+61	Modern Lively	2469250.0	4.0	9.5	Hoan Kiem
+62	Modern Lively Love	1548360.0	4.0	8.5	Hanoi
+63	Romantic Love	1495648.0001	4.0	9.4	Hoan Kiem
+64	Classic Romantic Love	875327.0	4.0	8.4	Hanoi
+65	Classic Romantic	4168117.0	5.0	9.3	Hanoi
+66	Classic	2624501.0001	4.0	9.7	Hanoi
+67	Quiet	2325600.0	4.0	8.8	Hanoi
+68	Modern Quiet	2574000.0001	4.0	9.7	Hanoi
+69	Classic Lively	1470000.0	4.0	9.2	Hoan Kiem
+70	Quiet	1567500.0	3.0	8.4	Hanoi
+71	Love	990000.0	4.0	8.8	Hanoi
+72	Love Quiet Romantic	1839200.0	4.0	9.1	Hanoi
+73	Classic Lively Romantic	1282500.0	4.0	8.9	Hoan Kiem
+74	Love	1963500.0001	4.0	9.2	Hanoi
+75	Romantic Love	3650000.0001	5.0	9.5	Hanoi
+76	Quiet Romantic Love	1667020.0001	3.0	9.4	Hanoi
+77	Modern Lively	1036800.0	0.0	8.6	Hanoi
+78	Lively Romantic Love	1089000.0	4.0	9.0	Hoan Kiem
+79	Modern Lively Love	1952875.0001	3.0	9.3	Hanoi
+80	Romantic	1132740.0	4.0	8.8	Hoan Kiem
+81	Romantic Love	640900.0	2.0	8.9	Hanoi
+82	Lively Romantic	1616530.0	4.0	9.2	Hoan Kiem
+83	Love Modern Quiet	652500.0	3.0	8.6	Hanoi
+84	Love	840000.0	3.0	8.8	Hanoi
+85	Modern	1089000.0	4.0	9.0	Hoan Kiem
+86	Modern Lively Romantic	1260000.0	3.0	8.5	Hoan Kiem
+87	Romantic	1222650.0001	3.0	9.0	Hanoi
+88	Modern Romantic	2091600.0	4.0	9.5	Hanoi
+89	Quiet Romantic Love	1620000.0	4.0	9.2	Hanoi
+90	Love	2752245.0	5.0	9.5	Hanoi
+91	Modern Quiet	1103600.0001	3.0	8.3	Hanoi
+92	Classic Quiet	1260000.0	4.0	9.5	District Hoan Kiem Hanoi Vietnam
+93	Quiet Romantic	2245320.0	4.0	9.3	Hanoi
+94	Love	1787560.0001	4.0	9.1	Hanoi
+95	Modern	1020000.0001	4.0	7.9	Hoan Kiem
+96	Classic Romantic Love	1955813.0	4.0	8.9	Hanoi
+97	Lively Romantic	732564.0	0.0	8.3	Hanoi
+98	Romantic	1365120.0	4.0	9.0	Hanoi
+99	Love	1075000.0	4.0	0.0	Hoan Kiem
+100	Classic Romantic Love	1020000.0001	4.0	7.9	Hoan Kiem
+101	Lively Romantic	2150702.0	4.0	9.4	Hanoi
+102	Modern Quiet	1125180.0	4.0	8.1	Hoan Kiem
+103	Modern Love	1969920.0001	4.0	8.5	Hanoi
+104	Modern Quiet Romantic	3115200.0001	4.0	9.2	Hanoi
+105	Romantic	1760000.0	0.0	9.2	Hanoi
+106	Modern Romantic	2160000.0	4.0	8.9	Hanoi
+107	Quiet Romantic	1260000.0	4.0	9.5	District Hoan Kiem Hanoi Vietnam
+108	Classic Lively Romantic	3175200.0	5.0	9.3	Hanoi
+109	Lively	1880000.0001	0.0	9.1	Hanoi
+110	Modern Quiet Love	1700000.0	0.0	8.9	Hanoi
+111	Romantic	1093500.0	3.0	9.2	Hoan Kiem
+112	Modern Romantic Lively	1150000.0001	4.0	9.2	Hanoi
+113	Modern	1555200.0	4.0	8.9	Ba Dinh
+114	Modern Quiet	1210000.0	3.0	9.0	Hanoi
+115	Modern Lively Love	1539000.0	4.0	8.7	Hanoi
+116	Lively	1035000.0	3.0	8.5	Hoan Kiem
+117	Quiet	3397350.0001	4.0	9.5	Hanoi
+118	Modern Romantic Love	2493750.0	4.0	10.0	Hoan Kiem
+119	Classic Lively Romantic	940000.0	3.0	9.3	Old Quarter Hanoi
+120	Lively	1539000.0	4.0	8.7	Hanoi
+121	Classic Love	1630736.9999	4.0	8.0	Hoan Kiem
+122	Modern Romantic Love	1239556.0	0.0	9.0	Hanoi
+123	Classic	940000.0	3.0	9.3	Old Quarter Hanoi
+124	Classic Love	1630125.0	3.0	9.1	Hoan Kiem
+125	Modern Romantic	974400.0	4.0	9.8	Cau Giay
+126	Romantic Love Classic	1765575.0	4.0	9.3	Hanoi
+127	Modern Lively Romantic	1984500.0	0.0	9.2	Hanoi
+128	Classic Quiet Love	1663481.0	4.0	9.9	Hai Ba Trung
+129	Love	1551000.0	3.0	9.1	Hanoi
+130	Modern Quiet	1911000.0001	4.0	8.8	Hanoi
+131	Lively Romantic	1691087.0	3.0	9.0	Hanoi
+132	Romantic	815480.0	0.0	8.4	Cau Giay
+133	Lively	1476300.0001	4.0	8.4	Hanoi
+134	Modern Romantic	2281192.0001	4.0	9.3	Hanoi
+135	Modern Quiet Romantic	2227500.0	4.0	9.4	Hanoi
+136	Modern Romantic Love	1511100.0	4.0	9.0	Hanoi
+137	Modern	2152086.0	4.0	9.4	Hoan Kiem
+138	Modern	1451520.0	3.0	9.2	Hoan Kiem
+139	Classic Lively	918540.0	0.0	9.4	Hanoi
+140	Lively	877500.0	3.0	9.2	Hanoi
+141	Modern Lively Love	1785000.0	4.0	9.3	Hanoi
+142	Classic Romantic Love	1790100.0	3.0	9.7	Hoan Kiem
+143	Classic Romantic	1020600.0	4.0	7.6	Hanoi
+144	Modern	1240200.0	3.0	8.8	Hoan Kiem
+145	Lively Romantic	2400000.0	4.0	9.5	Hanoi
+146	Modern Romantic Love	990000.0	4.0	8.2	Hanoi
+147	Quiet	1312500.0	4.0	9.2	Hanoi
+148	Lively	2493750.0	4.0	10.0	Hoan Kiem
+149	Classic Love	1071574.0001	4.0	9.0	Hanoi
+150	Lively Romantic Love	517942.0	0.0	10.0	Cau Giay
+151	Romantic	1306013.0	3.0	9.3	Hanoi
+152	Modern	1050000.0	3.0	8.8	Hanoi
+153	Classic Love	1164670.0001	4.0	8.0	Hoan Kiem
+154	Lively Romantic Love	1120000.0	4.0	9.0	Tay Ho
+155	Modern Romantic Love	2187000.0	4.0	9.0	Hanoi
+156	Classic Romantic Love	1440000.0	0.0	9.8	Ba Dinh
+157	Love	897750.0	3.0	8.8	Hanoi
+158	Lively	2086651.0001	3.0	9.0	Hanoi
+159	Quiet Love	2318400.0	3.0	8.5	Hanoi
+160	Classic Lively Romantic	1440000.0	0.0	9.8	Ba Dinh
+161	Love	897750.0	3.0	8.8	Hanoi
+162	Lively Romantic	1120000.0	4.0	9.0	Tay Ho
+163	Romantic Lively Love	992612.0	3.0	8.9	Hanoi
+164	Classic Romantic Love	1040000.0	3.0	8.9	Hanoi Vietnam
+165	Romantic Love	765703.0001	3.0	9.7	Ba Dinh
+166	Love	2444000.0	4.0	9.1	Hoan Kiem
+167	Classic	1284416.0	4.0	8.7	Hanoi
+168	Romantic Love	720000.0	0.0	8.3	Hanoi
+169	Lively Romantic Love	734400.0	0.0	8.3	Hanoi
+170	Lively Romantic Love	1108080.0	3.0	9.2	Hoan Kiem
+171	Lively Love	926100.0	4.0	8.1	Hanoi
+172	Modern Romantic Love	1347840.0	4.0	8.5	Hanoi
+173	Quiet Love	2960550.0	4.0	9.4	Hanoi
+174	Love	2754000.0	4.0	9.0	Hoan Kiem
+175	Modern Quiet Romantic	1036800.0	0.0	8.3	Hanoi
+176	Quiet	633728.0	3.0	7.3	Hanoi
+177	Lively Love	900000.0	4.0	8.5	Hanoi
+178	Quiet	1630125.0	3.0	8.9	Hanoi
+179	Classic Romantic Love	803358.0	3.0	8.8	Hoan Kiem
+180	Modern Lively Romantic	4394250.0	5.0	9.0	Hanoi
+181	Romantic Love	2660505.0	4.0	9.1	Hanoi
+182	Modern Lively Romantic	1371825.0	4.0	9.0	Hanoi
+183	Lively Modern Love	748800.0	3.0	8.8	Hanoi
+184	Modern Quiet Romantic	1302000.0001	4.0	10.0	Hanoi
+185	Quiet	472500.0	3.0	7.3	Hanoi
+186	Romantic	4462617.0	5.0	8.4	Hanoi
+187	Love	820000.0	0.0	9.0	Hanoi
+188	Classic Love	1360125.0	4.0	9.1	Hoan Kiem
+189	Romantic	1316250.0	4.0	8.2	Hanoi
+190	Lively Romantic Love	1500000.0	3.0	9.1	Hanoi
+191	Lively	3980340.0	5.0	8.6	Hanoi
+192	Modern Romantic Love	1017586.8	3.0	7.8	Hoan Kiem
+193	Modern Quiet	3454545.0	4.0	9.2	Tay Ho
+194	Modern	875000.0	0.0	9.3	Hanoi
+195	Classic Love	3520890.0	4.0	9.3	Hanoi
+196	Romantic	908438.0	4.0	8.0	Hanoi
+197	Quiet	497250.0	3.0	9.2	Cau Giay
+198	Classic	910000.0	3.0	8.5	Hanoi
+199	Quiet	845000.0	3.0	8.8	Hanoi
+200	Classic	910000.0	3.0	8.5	Hanoi
+201	Quiet Romantic	845000.0	3.0	8.8	Hanoi
+202	Modern Lively Romantic	1190000.0001	3.0	9.4	Hanoi
+203	Lively	806400.0	2.0	8.3	Hanoi
+204	Modern Romantic	971999.0	0.0	8.7	Hanoi
+205	Quiet Romantic	683820.0	4.0	9.0	Tay Ho
+206	Quiet Romantic	988000.0	3.0	8.3	Hanoi
+207	Love	2336040.0	5.0	9.2	Hanoi
+208	Classic	1923801.0001	0.0	9.3	Hanoi
+209	Classic	600000.0001	3.0	8.1	Hoan Kiem
+210	Romantic Love	360450.0	3.0	6.8	Hanoi
+211	Modern Quiet	1055500.0	4.0	9.3	Hanoi
+212	Romantic	1623232.0	4.0	9.6	Ba Dinh
+213	Classic Love	774857.1429	3.0	8.3	Hanoi
+214	Modern Romantic	402944.0	0.0	8.7	Cau Giay
+215	Lively Love	2449296.0	4.0	9.1	Hanoi
+216	Modern	3894705.0	5.0	9.0	Hanoi
+217	Classic Quiet Love	2027250.0	4.0	10.0	Cau Giay
+218	Classic Lively Love	969607.0001	4.0	8.6	Hanoi
+219	Modern Romantic Love	1377000.0	3.0	8.5	Hanoi
+220	Modern Love Romantic	2389500.0001	4.0	8.6	Hoan Kiem
+221	Lively Love	994500.0	0.0	9.3	Hoan Kiem
+222	Modern Lively Romantic	17010000.0	4.0	8.8	Ba Dinh
+223	Romantic	1331618.0	4.0	9.4	Hoan Kiem
+224	Classic Love	1023750.0	4.0	9.0	Tay Ho
+225	Romantic Love	724337.0	4.0	8.5	Hanoi
+226	Modern Romantic Love	525000.0	2.0	8.9	Tay Ho
+227	Quiet Love	1075000.0	4.0	0.0	Hoan Kiem
+228	Romantic Love	1505000.0	4.0	9.0	Cau Giay
+229	Romantic	1607200.0	4.0	8.9	Hanoi
+230	Romantic	507465.0	0.0	7.6	Hanoi
+231	Classic Romantic	5239214.0	5.0	9.1	Hanoi
+232	Classic Quiet	270000.0	0.0	8.2	Hanoi
+233	Classic Romantic	2153500.0	4.0	9.6	Hanoi
+234	Modern Lively Love	799875.0	0.0	8.9	Ha Dong
+235	Quiet Romantic Classic	2041200.0	4.0	8.8	Hanoi
+236	Romantic	935190.0	3.0	5.4	Hanoi
+237	Lively Romantic	2112000.0001	4.0	9.2	Ba Dinh
+238	Classic Lively Love	867000.0	3.0	9.0	Hoan Kiem
+239	Classic Love	2250000.0	3.0	8.5	Hanoi
+240	Modern Quiet	613700.0001	3.0	8.9	Hanoi
+241	Lively Romantic Love	867000.0	3.0	9.0	Hoan Kiem
+242	Love Classic Romantic	2250000.0	3.0	8.5	Hanoi
+243	Lively Love	810000.0	0.0	8.5	Hoan Kiem
+244	Classic	944500.0	4.0	9.1	Hanoi
+245	Lively Romantic	656880.0	3.0	9.5	Nam Tu Liem
+246	Classic Romantic Love	5384870.0	5.0	9.3	Hoan Kiem
+247	Quiet Romantic	540000.0	3.0	8.0	Hanoi
+248	Quiet Love	905850.0	0.0	9.2	Hanoi
+249	Modern Romantic	410400.0	0.0	9.7	Hanoi
+250	Classic Romantic	732000.0	0.0	8.4	Tay Ho
+251	Modern Lively Love	1503000.0	4.0	9.1	Ba Dinh
+252	Classic Love	2911619.0	5.0	8.6	Hanoi
+253	Romantic Quiet Love	768768.0	2.0	8.6	Hanoi
+254	Modern	3063633.0	4.0	9.4	Hanoi
+255	Quiet Romantic Love	1877850.0001	4.0	8.5	Hanoi
+256	Modern	2082500.0001	0.0	9.3	Hoan Kiem
+257	Romantic	1500000.0	3.0	8.9	Hoan Kiem
+258	Romantic Love	2000000.0	4.0	9.3	Hanoi
+259	Modern Lively Love	2100000.0001	5.0	9.2	Hanoi
+260	Romantic	643500.0001	3.0	8.0	Hanoi
+261	Quiet	410400.0	0.0	9.7	Hanoi
+262	Lively Love	1320000.0	4.0	9.0	Hoan Kiem
+263	Classic Romantic Love	3214890.0	5.0	8.8	Hanoi
+264	Modern Love	1359954.0	3.0	9.5	Hoan Kiem
+265	Lively Romantic Love	3132675.0	4.0	8.8	Hanoi
+266	Quiet	718497.0	3.0	8.7	Cau Giay
+267	Classic Lively Love	733480.0001	3.0	9.2	Hanoi Vietnam
+268	Modern Lively	1020000.0001	0.0	9.1	Hoan Kiem
+269	Modern Romantic	1251591.0001	3.0	9.0	Hanoi
+270	Modern Lively	570000.0	0.0	8.4	Hoan Kiem
+271	Modern Love	1815840.0001	5.0	8.5	Hanoi
+272	Classic Love	2550000.0	4.0	9.1	Hanoi
+273	Romantic Love	648000.0	3.0	6.6	Ba Dinh
+274	Lively Romantic	1950366.6	4.0	8.6	Hanoi
+275	Lively Romantic	2082500.0001	0.0	9.3	Hoan Kiem
+276	Modern Love	1111000.0	4.0	9.2	Hanoi
+277	Lively	3124786.0	4.0	9.2	Hanoi
+278	Classic Love	1041984.0	4.0	8.5	Tay Ho
+279	Love Lively Romantic	720000.0	0.0	9.2	Hanoi
+280	Classic Quiet Romantic	1861200.0001	4.0	8.2	Hanoi
+281	Romantic Quiet Love	891000.0	0.0	8.5	Hanoi
+282	Lively Love	1494000.0	3.0	7.4	Hoan Kiem
+283	Classic Quiet	1448916.0	3.0	7.3	Hanoi
+284	Modern Love	363165.0	0.0	7.8	Hanoi
+285	Modern Lively Romantic	1033200.0	4.0	8.7	Hoan Kiem
+286	Lively	648000.0	2.0	9.7	Nam Tu Liem
+287	Romantic Love Modern	1152000.0	0.0	8.5	Hanoi
+288	Modern Romantic Love	1256850.0	4.0	8.5	Hoan Kiem
+289	Quiet Romantic Love	1840625.0	4.0	8.9	Hanoi
+290	Lively	733480.0001	3.0	9.2	Hanoi Vietnam
+291	Modern Quiet	620500.0	3.0	8.6	Hanoi
+292	Romantic	576810.0001	2.0	8.8	Hanoi
+293	Lively	1346400.0	0.0	9.1	Hanoi
+294	Modern Romantic Love	550000.0001	0.0	8.9	Thanh Xuan
+295	Modern Lively Romantic	648000.0	3.0	6.6	Ba Dinh
+296	Love	809676.0	4.0	9.6	Ba Dinh
+297	Classic Romantic Love	382290.0	0.0	8.0	Hanoi
+298	Classic	371013.0001	0.0	8.0	Cau Giay
+299	Modern	956387.0	4.0	8.9	Hanoi
+300	Lively Romantic	620500.0	3.0	8.6	Hanoi
+301	Modern Love	3912300.0	5.0	9.2	Hanoi
+302	Classic Quiet Romantic	810000.0	0.0	8.4	Tay Ho
+303	Modern	363165.0	0.0	7.8	Hanoi
+304	Modern	1494000.0	3.0	7.4	Hoan Kiem
+305	Love	441000.0	0.0	9.5	Hanoi
+306	Romantic Modern Love	1192950.0	0.0	9.3	Ba Dinh
+307	Quiet	497250.0	2.0	7.8	Hanoi
+308	Modern Quiet Love	11955131.0001	4.0	8.7	Hanoi
+309	Lively	550000.0001	0.0	8.9	Thanh Xuan
+310	Classic Love	1012500.0	0.0	9.7	Hanoi
+311	Quiet Romantic	956387.0	4.0	8.9	Hanoi
+312	Modern Romantic	371013.0001	0.0	8.0	Cau Giay
+313	Modern	10169148.402	5.0	9.4	Hanoi
+314	Love	3150000.0	3.0	8.5	Hanoi
+315	Classic Love	540000.0	3.0	8.1	Hanoi
+316	Classic Lively Love	641725.0	0.0	8.8	Dong Da
+317	Love	3075000.0001	4.0	8.3	Hanoi
+318	Romantic Love	731025.0	0.0	8.7	Ha noi
+319	Quiet	1215000.0	4.0	8.7	Cau Giay
+320	Classic Lively	1485000.0	0.0	7.6	Hanoi
+321	Lively Love	6045509.0	5.0	8.6	Hanoi
+322	Classic Love	1343722.0	0.0	9.6	Ba Dinh
+323	Modern Romantic	1986600.0	4.0	10.0	Hoan Kiem
+324	Romantic	2111592.0	0.0	8.7	Hanoi
+325	Quiet Romantic	907800.0	4.0	8.0	Hanoi
+326	Modern Romantic Love	1170000.0	3.0	8.9	Hanoi
+327	Lively Love	600000.0001	0.0	7.2	Hanoi
+328	Classic	903000.0	4.0	8.6	Hanoi
+329	Classic Quiet	2447999.9999	4.0	8.7	Hanoi
+330	Love	846450.0	3.0	8.0	Hanoi
+331	Classic Lively	765000.0	3.0	8.7	Thanh Xuan
+332	Quiet Romantic Love	900000.0	4.0	8.2	Hanoi
+333	Love Classic Romantic	870000.0001	3.0	8.5	Hoan Kiem
+334	Romantic Love	1381050.0001	4.0	9.0	Hanoi
+335	Quiet Love	948525.0	0.0	9.8	Hanoi
+336	Modern Lively Love	367200.0	3.0	7.9	Hanoi
+337	Classic Quiet	1239300.0001	3.0	8.3	Hanoi
+338	Lively	1575000.0001	4.0	8.1	Hanoi
+339	Lively	2287937.0	4.0	8.6	Hanoi
+340	Modern Romantic Love	1575000.0001	4.0	8.1	Hanoi
+341	Classic Love	359736.0	0.0	7.5	Cau Giay
+342	Classic Romantic	2447999.9999	4.0	8.7	Hanoi
+343	Lively Romantic Love	1077797.0	3.0	8.5	Hanoi
+344	Love Romantic Modern	984546.0	3.0	9.0	Hanoi
+345	Classic	2287937.0	4.0	8.6	Hanoi
+346	Romantic	2347380.0	5.0	9.2	Hanoi
+347	Love	824850.0	0.0	9.6	Tay Ho
+348	Quiet Romantic	1701000.0	4.0	9.2	Hoan Kiem
+349	Love	612000.0	0.0	8.1	Hoan Kiem
+350	Love	975116.0	0.0	7.9	Cau Giay
+351	Quiet Romantic	382290.0	0.0	8.4	Cau Giay
+352	Classic Romantic Quiet	714000.0	3.0	8.8	Hanoi
+353	Classic Quiet Love	1404000.0	4.0	7.9	Nam Tu Liem
+354	Love	451944.0	0.0	8.8	Hanoi
+355	Classic Quiet	1270500.0	0.0	8.1	Hanoi
+356	Modern Lively	690000.0	3.0	7.7	Hanoi
+357	Quiet Romantic Love	1137150.0	3.0	8.7	Hanoi
+358	Quiet Romantic	5145865.2	5.0	8.5	Hanoi
+359	Classic Lively Romantic	529000.0	0.0	9.1	Hoan Kiem
+360	Modern	451944.0	0.0	8.8	Hanoi
+361	Classic Romantic Love	2894080.0	4.0	8.9	Hanoi
+362	Romantic	1137150.0	3.0	8.7	Hanoi
+363	Romantic	712800.0	0.0	9.1	Dong Da
+364	Modern Lively Love	1713600.0	4.0	9.1	Dong Da
+365	Quiet Romantic	406125.0	0.0	8.8	Ba Dinh
+366	Love	396900.0	2.0	7.9	Hai Ba Trung
+367	Classic Love	719100.0	3.0	8.0	Hanoi
+368	Romantic	1134000.0	3.0	8.7	Hanoi
+369	Lively Romantic Love	1152000.0	3.0	9.5	Hoan Kiem
+370	Classic Lively Love	489600.0	3.0	8.5	Hai Ba Trung
+371	Modern	619920.0	3.0	8.4	Hanoi
+372	Classic Romantic Love	1260000.0	4.0	8.8	Hanoi
+373	Romantic	382290.0	0.0	8.1	Cau Giay
+374	Quiet Romantic Love	891000.0	1.0	8.5	Hanoi
+375	Love	768735.0	3.0	8.4	HA NOI
+376	Modern Quiet Romantic	550000.0001	1.0	7.6	Hoan Kiem
+377	Modern Lively Love	1986600.0	4.0	10.0	Hoan Kiem
+378	Love	4575312.0	5.0	8.9	Hanoi
+379	Romantic	714000.0	3.0	8.8	Hanoi
+380	Quiet	405000.0	3.0	8.2	Cau Giay
+381	Classic Lively Romantic	545280.0	0.0	8.3	Hanoi
+382	Lively	662160.0	2.0	8.0	Hanoi
+383	Classic Lively	1084011.0	3.0	8.9	Hanoi
+384	Love	489600.0	3.0	8.5	Hai Ba Trung
+385	Romantic Love Quiet	780000.0	3.0	9.0	Hanoi
+386	Romantic	1552000.0	4.0	8.7	Ba Dinh
+387	Quiet Romantic Love	886498.0	3.0	8.5	Hanoi
+388	Modern Lively	623700.0	3.0	8.9	Cau Giay
+389	Romantic	945000.0	0.0	8.2	Ba Dinh
+390	Classic Quiet Love	1032240.0	4.0	8.7	Cau Giay
+391	Modern Quiet	3420000.0	4.0	9.5	Hanoi
+392	Lively	450000.0	0.0	8.3	Hanoi
+393	Love	1336500.0	4.0	8.8	Hanoi
+394	Modern Lively	1080000.0	0.0	0.0	Hai Ba Trung
+395	Lively	1134000.0	0.0	9.2	Ba Dinh
+396	Quiet Love	1300000.0	3.0	7.4	Hanoi
+397	Romantic	1176000.0	3.0	5.5	Hoan Kiem
+398	Lively	789012.0	0.0	8.3	Tay Ho
+399	Modern Quiet Romantic	4114800.0	0.0	8.6	Hanoi
+400	Lively Romantic	2676240.0	4.0	9.2	Hanoi
+401	Lively Romantic	3277500.0	5.0	9.4	Hanoi
+402	Love	980000.0	3.0	8.5	Hoan Kiem
+403	Modern Love	2842875.0	5.0	9.4	Hoan Kiem
+404	Love Classic Romantic	994500.0	3.0	8.8	Hai Ba Trung
+405	Romantic	1749950.0	4.0	9.2	Hoan Kiem
+406	Lively	2200000.0	5.0	9.5	Hoan Kiem
+407	Classic Lively Love	4820259.0	5.0	9.6	Hanoi
+408	Romantic	1990230.0001	4.0	9.4	Hoan Kiem
+409	Lively	1338120.0	4.0	9.3	Hanoi
+410	Modern Quiet	2185000.0001	5.0	9.6	Hoan Kiem
+411	Classic Romantic	1479576.0	3.0	9.5	Hoan Kiem
+412	Modern Quiet Love	3934870.0001	5.0	9.6	Hanoi
+413	Classic Lively Love	2026820.0	4.0	9.5	Hanoi
+414	Lively	1677500.0001	3.0	9.1	Hanoi
+415	Lively Romantic	3708400.0	5.0	9.5	Hanoi
+416	Lively	1856000.0	4.0	8.3	Hanoi
+417	Lively	2451390.0001	4.0	9.2	Hanoi
+418	Romantic	1013760.0	3.0	9.1	Hanoi
+419	Love	2289000.0001	5.0	9.2	Hoan Kiem
+392	Romantic	1866317.0001	5.0	8.7	Da Nang
+421	Modern Romantic Love	1199157.6604	4.0	9.2	Da Nang
+422	Classic	387600.0	4.0	8.6	Da Nang
+423	Lively Romantic	301000.0	4.0	8.5	Da Nang
+424	Modern Lively Love	1254934.0001	4.0	9.0	Da Nang
+425	Modern Love	599352.0	4.0	8.4	Da Nang
+426	Lively Romantic Love	314594.28	3.0	8.5	Da Nang
+427	Romantic Love	1600000.0	4.0	9.3	Hai Chau
+428	Modern Romantic	833625.0	4.0	8.9	Ngu Hanh Son
+429	Modern	332500.0	0.0	8.8	Da Nang
+430	Modern Romantic	1698120.0001	5.0	9.2	Da Nang
+130	Romantic Love	3067413.3	4.0	8.0	Da Nang
+432	Lively	400944.0001	0.0	7.4	Son Tra
+433	Classic Romantic	603028.8	0.0	8.5	Da Nang
+434	Modern Love	1458600.0001	4.0	9.1	Da Nang
+435	Classic Love	1077300.0	0.0	9.3	Da Nang
+436	Modern Romantic	1260000.0	4.0	8.8	Da Nang
+437	Love	400000.0	4.0	8.5	Son Tra
+438	Classic Lively Romantic	350000.0	4.0	8.7	Da Nang
+439	Classic	345780.0	0.0	8.1	Da Nang
+440	Modern	664956.0	4.0	8.2	Da Nang
+441	Quiet	405000.0001	0.0	7.4	Son Tra
+442	Love	628460.0	3.0	9.9	Da Nang
+443	Classic	1379655.0	4.0	9.0	Da Nang
+444	Lively Love	563313.0	4.0	8.3	Da Nang
+445	Lively	547199.9999	4.0	8.3	Son Tra
+446	Lively Love	983588.0	4.0	8.7	Son Tra
+447	Quiet Romantic	592704.0	0.0	8.5	Son Tra
+448	Lively	870750.0	4.0	8.9	Da Nang
+449	Modern Lively	741690.0	4.0	8.7	Son Tra
+450	Romantic	455175.0001	4.0	8.2	Da Nang
+451	Classic Quiet Love	567600.0001	3.0	8.6	Da Nang
+452	Modern Romantic Love	272000.0001	0.0	8.4	Ngu Hanh Son
+453	Love Classic Romantic	2226609.0	5.0	8.6	Da Nang
+454	Lively Love	745200.0	4.0	8.9	Da Nang
+455	Romantic Love	640000.0	4.0	8.8	Ngu Hanh Son
+456	Lively Love	540600.0001	4.0	8.2	Da Nang
+457	Lively Romantic Love	928800.0001	4.0	8.5	Da Nang
+458	Classic Lively Romantic	1703460.0	0.0	9.2	Ngu Hanh Son
+459	Lively Love	1590435.0	4.0	8.8	Da Nang
+460	Love	711000.0001	4.0	8.8	Da Nang
+461	Classic Love	865801.0	0.0	8.8	Da Nang
+462	Lively	749700.0	4.0	8.1	Da Nang
+463	Romantic Modern Lively	2061947.0	5.0	9.1	Da Nang
+464	Quiet Romantic Love	487051.0	3.0	8.6	Da Nang
+465	Classic Lively Love	732000.0	0.0	8.2	Da Nang
+466	Love	972800.0	4.0	8.6	Da Nang
+467	Quiet Love	466830.0	3.0	8.6	Da Nang
+468	Lively Love Romantic	580800.0	4.0	7.8	Da Nang
+469	Romantic Love	682440.0	4.0	8.1	Da Nang
+470	Romantic	302940.0	0.0	7.0	Son Tra
+471	Modern Lively Love	916666.0	0.0	9.3	Da Nang
+472	Modern Quiet	399000.0001	0.0	9.2	Da Nang
+473	Romantic Love	386880.0	4.0	8.2	Son Tra
+474	Modern Quiet Romantic	977760.0	4.0	8.8	Da Nang
+475	Romantic	1415880.0	4.0	8.5	Son Tra
+476	Modern Quiet Romantic	1087758.0	4.0	8.4	Da Nang
+477	Modern Romantic	735300.0	3.0	8.4	Da Nang
+478	Quiet	1150560.0	4.0	8.2	Ngu Hanh Son
+479	Romantic Love	630000.0001	3.0	8.2	Da Nang
+480	Quiet Romantic Love	640244.0	0.0	9.3	Son Tra City Da Nang
+481	Lively	1372500.0	5.0	7.2	Da Nang
+482	Lively Romantic Love	522000.0	0.0	7.5	Da Nang
+483	Romantic Love	900200.0	0.0	9.3	Son Tra
+484	Romantic Love Lively	520695.0	3.0	8.0	Da Nang
+485	Classic Romantic	850000.0001	4.0	8.7	Hai Chau
+486	Modern Quiet	1117200.0001	4.0	9.2	Da Nang
+487	Modern Romantic	2814936.0001	5.0	8.9	Ngu Hanh Son
+488	Love Modern Romantic	981240.0001	4.0	8.6	Da Nang
+489	Modern Lively Romantic	430920.0	0.0	8.1	Da Nang
+490	Quiet	199784.0	0.0	7.1	Da Nang
+491	Lively	425250.0	4.0	7.8	Da Nang
+492	Quiet	2821000.0	4.0	8.7	Da Nang
+493	Romantic Love	1618740.0001	4.0	9.1	Da Nang
+494	Classic	4649400.0	5.0	8.7	Da Nang
+495	Love Lively Romantic	1877904.0	5.0	8.7	Da Nang
+496	Classic	1000000.0001	4.0	8.4	Da Nang
+497	Classic Quiet Romantic	672600.0	0.0	8.8	City Da Nang
+498	Quiet Classic Romantic	710334.0	0.0	9.3	Da Nang
+499	Classic Lively Love	720000.0	4.0	7.8	Da Nang
+500	Romantic Love	810000.0	4.0	8.4	Da Nang
+501	Romantic Love	2970750.0001	5.0	9.4	Son Tra
+502	Lively Romantic Love	962280.0	4.0	8.4	Da Nang
+503	Classic Lively Romantic	2448682.0001	5.0	8.8	Da Nang
+504	Classic Quiet Love	623700.0	4.0	8.1	Ngu Hanh Son
+505	Lively Romantic	938120.0	4.0	8.3	Da Nang
+506	Classic Romantic	798000.0	0.0	9.0	Hai Chau
+507	Lively	865268.0	4.0	7.8	Da Nang
+508	Quiet	1759320.0	5.0	8.6	Da Nang
+509	Quiet Love	1940784.0	5.0	8.8	Da Nang
+510	Love	1555556.0	4.0	9.2	Son Tra
+511	Modern	685125.0	4.0	7.8	Da Nang
+512	Quiet Romantic Love	511434.0	0.0	9.5	Da Nang
+513	Modern Romantic Love	571536.0	4.0	8.1	Da Nang
+514	Classic	1520640.0001	4.0	9.5	Da Nang
+515	Modern Romantic Love	2293200.0	4.0	9.4	Da Nang
+516	Classic Romantic	1290000.0001	4.0	8.8	Da Nang
+517	Lively Love	1337050.0001	3.0	7.5	Da Nang
+518	Quiet	1113750.0001	4.0	9.3	Ngu Hanh Son
+519	Lively Love	411924.0001	4.0	7.6	Da Nang
+520	Modern	2028390.0	0.0	9.0	Da Nang
+521	Classic Romantic Love	2270909.0	5.0	9.1	Da Nang
+522	Modern	1350000.0	0.0	8.3	Ngu Hanh Son
+523	Modern Quiet Love	728000.0	4.0	8.1	Da Nang
+524	Classic Quiet Romantic	1409400.0	5.0	8.8	Da Nang
+525	Romantic	285000.0	3.0	7.0	Da Nang
+526	Quiet Romantic Love	874000.0001	4.0	8.0	Son Tra
+527	Lively Romantic Love	1349760.0	4.0	8.2	Da Nang
+528	Lively Love	399000.0001	0.0	9.0	Ngu Hanh Son
+529	Modern Love	828000.0	0.0	9.0	Da Nang
+530	Romantic	1100000.0	0.0	9.2	Da Nang
+531	Modern Lively	749312.0	3.0	8.7	Da Nang
+532	Romantic Love	675800.0001	3.0	8.4	Son Tra
+533	Classic Love	648000.0	3.0	8.6	Da Nang
+534	Modern Lively Romantic	637500.0	3.0	8.0	Da Nang
+535	Modern Romantic	531279.0	4.0	8.1	Da Nang
+536	Quiet Romantic Love	592515.0	0.0	9.0	Ngu Hanh Son
+537	Romantic Love	628581.3643	3.0	8.4	Da Nang
+538	Quiet Love	1260000.0	4.0	8.9	Hai Chau
+539	Romantic Love	483332.0	0.0	7.5	Da Nang
+540	Quiet Love	483332.0	0.0	7.5	Da Nang
+541	Classic Love	333000.0001	3.0	8.4	Da Nang
+542	Romantic	788603.0	4.0	8.2	Da Nang
+543	Modern Lively	1782000.0	4.0	8.9	Son Tra
+544	Love Classic Lively	950000.0	3.0	8.7	Da Nang
+545	Love	821600.0001	4.0	8.3	Da Nang
+546	Classic Romantic	2313360.0	5.0	8.5	Da Nang
+547	Classic Romantic Love	793750.0	4.0	9.2	Ngu Hanh Son
+548	Love	287000.0001	3.0	8.1	Ngu Hanh Son
+549	Lively Romantic Love	999000.0001	0.0	9.3	Da Nang
+550	Modern	1092000.0001	4.0	8.9	Da Nang
+551	Love	1471999.9999	4.0	8.7	Da Nang
+552	Modern	405000.0001	3.0	8.3	Da Nang
+553	Quiet	640500.0001	0.0	7.9	Da Nang
+554	Classic Romantic	6194444.0	5.0	9.0	Da Nang
+555	Modern Romantic Love	1600000.0	4.0	9.2	Da Nang
+556	Classic Quiet	2074297.0	5.0	8.9	Da Nang
+557	Lively	5230800.0	4.0	8.4	Da Nang
+558	Romantic	1350000.0	4.0	9.2	Da Nang
+559	Modern Quiet Romantic	3415034.0001	5.0	8.4	Da Nang
+560	Classic Love	585000.0	0.0	8.7	Da Nang
+561	Classic Romantic Love	328860.0	0.0	9.5	Son Tra
+562	Modern	730520.0	0.0	8.1	Da Nang
+563	Modern Quiet	963600.0	4.0	9.0	Hai Chau
+564	Lively Modern Romantic	720900.0	4.0	8.8	Ngu Hanh Son
+565	Lively	7048093.5	5.0	8.6	Da Nang
+566	Love	731250.0	0.0	9.1	Da Nang
+567	Classic Romantic	850000.0001	0.0	9.1	Da Nang
+568	Love	387828.0	3.0	8.0	Da Nang
+569	Classic	1831410.0	5.0	8.9	Da Nang
+570	Romantic Love	1188000.0	3.0	9.1	Da Nang
+571	Classic	1476563.0	5.0	8.3	Da Nang
+572	Romantic	1064950.0	0.0	9.1	Da Nang
+573	Modern Romantic	960300.0	4.0	8.8	Da Nang
+574	Classic Romantic Love	1210986.0001	4.0	8.7	Da Nang
+575	Classic Lively Love	4680349.128	5.0	8.8	Da Nang
+576	Classic	365000.0	3.0	8.3	Ngu Hanh Son
+577	Classic	1249500.0001	0.0	8.8	Da Nang
+578	Modern Romantic	1005000.0001	0.0	9.3	Son Tra
+579	Love	2147950.0	0.0	8.9	Son Tra
+580	Love	7560000.0	5.0	8.0	Da Nang
+581	Romantic	663000.0	3.0	7.8	Da Nang
+582	Love	984375.0001	4.0	8.5	Son Tra
+583	Modern Love	799425.0001	4.0	8.9	Da Nang
+584	Love Quiet Modern	1532700.0	0.0	9.2	Da Nang
+585	Quiet Love Romantic	1055700.0001	4.0	7.2	Da Nang
+586	Modern Love Quiet	1260000.0	4.0	8.5	Da Nang
+587	Love	2430000.0001	5.0	7.9	Da Nang
+588	Romantic Love	1820000.0	0.0	8.0	Da Nang
+589	Modern Lively Love	468342.0	3.0	8.2	Da Nang
+590	Classic Quiet Love	370000.0	3.0	7.9	Da Nang
+591	Quiet Love	327994.0001	3.0	8.0	Ngu Hanh Son
+592	Romantic	1562085.0	4.0	8.9	Da Nang
+593	Classic Romantic	1488000.0	4.0	9.1	Son Tra
+594	Classic Romantic	732888.0	3.0	8.7	Da Nang
+595	Love	1148000.0	4.0	8.3	Da Nang
+596	Romantic	690200.0	4.0	8.8	Da Nang

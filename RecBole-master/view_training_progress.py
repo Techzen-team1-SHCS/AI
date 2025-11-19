@@ -10,7 +10,7 @@ if sys.platform == 'win32':
 
 
 def find_latest_log_file():
-    """Tìm file log mới nhất"""
+    """Tìm file log mới nhất có dữ liệu training"""
     log_dir = Path("log/DeepFM")
     if not log_dir.exists():
         return None
@@ -19,7 +19,22 @@ def find_latest_log_file():
     if not log_files:
         return None
     
-    return max(log_files, key=os.path.getctime)
+    # Sắp xếp theo thời gian tạo (mới nhất trước)
+    log_files_sorted = sorted(log_files, key=os.path.getctime, reverse=True)
+    
+    # Tìm file đầu tiên có dữ liệu training
+    for log_file in log_files_sorted:
+        try:
+            with open(log_file, 'r', encoding='utf-8') as f:
+                content = f.read()
+                # Kiểm tra xem có epoch training không (phải có pattern "epoch X training")
+                if re.search(r'epoch \d+ training', content, re.IGNORECASE):
+                    return log_file
+        except:
+            continue
+    
+    # Nếu không tìm thấy, trả về file mới nhất
+    return log_files_sorted[0]
 
 
 def parse_training_log(log_path):
@@ -27,9 +42,9 @@ def parse_training_log(log_path):
     with open(log_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
-    # Tìm tất cả các epoch
+    # Tìm tất cả các epoch (case insensitive)
     epoch_pattern = r'epoch (\d+) training.*?train loss: ([0-9.]+)'
-    epochs = re.findall(epoch_pattern, content)
+    epochs = re.findall(epoch_pattern, content, re.IGNORECASE)
     
     # Tìm tất cả các valid result
     valid_pattern = r'epoch (\d+) evaluating.*?valid_score: ([0-9.]+).*?valid result:\s*(.*?)(?=\n\n|\n[A-Z]|\Z)'
@@ -188,6 +203,38 @@ def analyze_training_progress(epochs, valid_results):
     return analysis
 
 
+def check_training_status(data):
+    """Kiểm tra trạng thái training dựa trên dữ liệu"""
+    # Nếu có finished_epoch → đã hoàn thành
+    if data['finished_epoch']:
+        return "completed", data['finished_epoch']
+    
+    # Nếu có test_result → đã hoàn thành (test chỉ chạy sau khi training xong)
+    if data['test_result']:
+        # Tìm epoch cuối cùng
+        last_epoch = data['epochs'][-1][0] if data['epochs'] else "unknown"
+        return "completed", last_epoch
+    
+    # Nếu có best_valid → có thể đã hoàn thành
+    if data['best_valid']:
+        # Tìm epoch từ valid_results có score cao nhất
+        if data['valid_results']:
+            best_epoch = max(data['valid_results'], key=lambda x: float(x[1]))[0]
+            return "completed", best_epoch
+    
+    # Nếu có epochs và valid_results → đã train (có thể đang chạy hoặc đã xong)
+    if data['epochs'] and data['valid_results']:
+        last_epoch = data['epochs'][-1][0]
+        return "trained", last_epoch
+    
+    # Nếu chỉ có epochs → đang train hoặc chưa có valid
+    if data['epochs']:
+        return "training", data['epochs'][-1][0]
+    
+    # Không có gì → chưa train
+    return "not_started", None
+
+
 def print_training_summary(log_path, data):
     """In tóm tắt kết quả training"""
     print("=" * 80)
@@ -196,11 +243,20 @@ def print_training_summary(log_path, data):
     print(f"\nFile log: {log_path}")
     print(f"Thoi gian: {datetime.fromtimestamp(os.path.getctime(log_path)).strftime('%Y-%m-%d %H:%M:%S')}")
     
-    if data['finished_epoch']:
+    # Kiểm tra trạng thái
+    status, epoch = check_training_status(data)
+    
+    if status == "completed":
         print(f"\n[STATUS] Training da HOAN THANH")
-        print(f"  Best epoch: {data['finished_epoch']}")
+        print(f"  Best epoch: {epoch}")
+    elif status == "trained":
+        print(f"\n[STATUS] Training da HOAN THANH (co epochs va valid results)")
+        print(f"  Last epoch: {epoch}")
+    elif status == "training":
+        print(f"\n[STATUS] Training DANG CHAY hoac chua co valid results")
+        print(f"  Last epoch: {epoch}")
     else:
-        print(f"\n[STATUS] Training chua hoan thanh hoac dang chay")
+        print(f"\n[STATUS] Chua co du lieu training")
     
     # Hiển thị các epoch
     if data['epochs']:

@@ -13,7 +13,7 @@ CORS: Allowed for all origins by default (tune for production).
 """
 import json
 import os
-from typing import List, Optional
+from typing import List, Optional, Union
 
 from fastapi import FastAPI, Header, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
@@ -26,33 +26,42 @@ from inference import get_recommendations as inference_get_recommendations, load
 # -----------------------------
 # Configs
 # -----------------------------
-LOG_FILE = os.getenv("USER_ACTION_LOG_FILE", "user_actions.log")
+LOG_FILE = os.getenv("USER_ACTION_LOG_FILE", "data/user_actions.log")
 API_KEY = os.getenv("API_KEY", "")  # set to a non-empty string in production
+_allowed_origins_raw = os.getenv("ALLOWED_ORIGINS", "*")
+if not _allowed_origins_raw or _allowed_origins_raw.strip() == "*" or _allowed_origins_raw.strip() == "":
+    CORS_ALLOW_ORIGINS = ["*"]
+    CORS_ALLOW_CREDENTIALS = False
+else:
+    CORS_ALLOW_ORIGINS = [origin.strip() for origin in _allowed_origins_raw.split(",") if origin.strip()]
+    CORS_ALLOW_CREDENTIALS = True
 ALLOWED_ACTIONS = {"click", "like", "share", "booking"}
 
 # -----------------------------
 # Pydantic models
 # -----------------------------
 class UserAction(BaseModel):
-    user_id: str
-    item_id: str
+    user_id: Union[str, int]  # Chấp nhận cả string và int
+    item_id: Union[str, int]  # Chấp nhận cả string và int
     action_type: str  # 'click' | 'like' | 'share' | 'booking'
     timestamp: float
 
-    @field_validator("user_id")
+    @field_validator("user_id", mode="before")
     @classmethod
-    def validate_user_id(cls, v: str) -> str:
-        v = v.strip()
+    def validate_user_id(cls, v) -> str:
+        # Convert int → str để xử lý thống nhất
+        v = str(v).strip()
         if not v:
             raise ValueError("user_id cannot be empty")
         if len(v) > 100:
             raise ValueError(f"user_id too long (max 100 characters), got {len(v)}")
         return v
     
-    @field_validator("item_id")
+    @field_validator("item_id", mode="before")
     @classmethod
-    def validate_item_id(cls, v: str) -> str:
-        v = v.strip()
+    def validate_item_id(cls, v) -> str:
+        # Convert int → str để xử lý thống nhất
+        v = str(v).strip()
         if not v:
             raise ValueError("item_id cannot be empty")
         if len(v) > 100:
@@ -81,11 +90,32 @@ class UserAction(BaseModel):
 # Helpers
 # -----------------------------
 def _append_log_line(payload: dict) -> None:
-    """Append một dòng JSON vào log file với error handling."""
+    """Append một dòng JSON vào log file với error handling.
+    
+    Convert user_id và item_id về int nếu có thể để giữ nguyên format từ web.
+    JSON serialize int sẽ giữ nguyên int (không phải float).
+    """
     try:
+        # Convert user_id và item_id về int nếu có thể (để giữ nguyên format từ web)
+        # JSON serialize int sẽ giữ nguyên int, không phải float
+        log_payload = payload.copy()
+        try:
+            if 'user_id' in log_payload and isinstance(log_payload['user_id'], str):
+                # Chỉ convert nếu là string (từ Pydantic validator)
+                log_payload['user_id'] = int(log_payload['user_id'])
+        except (ValueError, TypeError):
+            pass  # Giữ nguyên nếu không convert được
+        
+        try:
+            if 'item_id' in log_payload and isinstance(log_payload['item_id'], str):
+                # Chỉ convert nếu là string (từ Pydantic validator)
+                log_payload['item_id'] = int(log_payload['item_id'])
+        except (ValueError, TypeError):
+            pass  # Giữ nguyên nếu không convert được
+        
         os.makedirs(os.path.dirname(LOG_FILE) or ".", exist_ok=True)
         with open(LOG_FILE, "a", encoding="utf-8") as f:
-            f.write(json.dumps(payload, ensure_ascii=False) + "\n")
+            f.write(json.dumps(log_payload, ensure_ascii=False) + "\n")
     except IOError as e:
         # Log error nhưng không crash server
         print(f"[API] ERROR: Không thể ghi vào log file {LOG_FILE}: {e}")
@@ -114,11 +144,11 @@ def _require_api_key(authorization: Optional[str]) -> None:
 # -----------------------------
 app = FastAPI(title="RecBole Recommendation API", version="1.0.0")
 
-# CORS - allow all by default (customize in production)
+# CORS - configurable via environment variable (default: allow all, no credentials)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=CORS_ALLOW_ORIGINS,
+    allow_credentials=CORS_ALLOW_CREDENTIALS,
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -140,6 +170,15 @@ def health():
         }
     except:
         return {"ok": True, "model_loaded": False}
+
+@app.get("/metrics")
+def metrics():
+    """Metrics endpoint - trả về thống kê API usage."""
+    try:
+        from monitoring import get_metrics
+        return get_metrics()
+    except ImportError:
+        return {"error": "Monitoring not available"}
 
 @app.get("/schema")
 def schema():
@@ -201,7 +240,11 @@ def startup_event():
 
 
 @app.get("/recommendations/{user_id}")
-def get_recommendations(user_id: str, top_k: int = 10):
+def get_recommendations(
+    user_id: str,
+    top_k: int = 10,
+    authorization: Optional[str] = Header(default=None)
+):
     """Lấy recommendations cho user từ model đã train.
     
     Args:
@@ -211,6 +254,9 @@ def get_recommendations(user_id: str, top_k: int = 10):
     Returns:
         Dict với user_id, recommendations (list of item IDs), và model_version
     """
+    # Auth (nếu bật)
+    _require_api_key(authorization)
+
     # Validate user_id
     user_id = user_id.strip()
     if not user_id:

@@ -43,9 +43,11 @@ README*.md
 HUONG_DAN*.md
 
 # Large files
+# Note: Model files (*.pth) are excluded to keep image size small
+# Models will be loaded from host via volume mount (./saved:/app/saved)
 *.pth
 *.pt
-saved/
+saved/backups/
 
 # OS
 .DS_Store

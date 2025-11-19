@@ -95,6 +95,11 @@ def _group_and_append(rows: List[Dict], output_file: str) -> int:
         elif 'hotel_id' not in df.columns:
             raise ValueError("No hotel_id or item_id found in data")
         
+        # Convert user_id và hotel_id về string trước (để tránh pandas tự động convert thành float)
+        # Sau đó sẽ convert về int khi ghi file
+        df['user_id'] = df['user_id'].astype(str).str.strip()
+        df['hotel_id'] = df['hotel_id'].astype(str).str.strip()
+        
         # Normalize action_type to lowercase
         df['action_type'] = df['action_type'].str.strip().str.lower()
         
@@ -116,6 +121,8 @@ def _group_and_append(rows: List[Dict], output_file: str) -> int:
         grouped = df.groupby(['user_id', 'hotel_id']).apply(get_max_score_and_timestamp).reset_index()
         grouped = grouped.rename(columns={'action_score': 'action_type'})
         grouped = grouped.sort_values('timestamp')
+        
+        # user_id và hotel_id đã là string từ trước, không cần convert lại
 
         _ensure_parent_dir(output_file)
         file_exists = os.path.exists(output_file)
@@ -127,11 +134,32 @@ def _group_and_append(rows: List[Dict], output_file: str) -> int:
                     f.write('user_id:token\titem_id:token\taction_type:float\ttimestamp:float\n')
                 for _, row in grouped.iterrows():
                     # Validate before writing
-                    user_id = str(row['user_id']).strip()
-                    hotel_id = str(row['hotel_id']).strip()
+                    # Convert về int nếu có thể (để match với dataset format mới)
+                    # Đảm bảo ghi ra file là int, không phải float
+                    try:
+                        # user_id đã là string, convert về int
+                        user_id_str = str(row['user_id']).strip()
+                        # Loại bỏ .0 nếu có (từ float khi pandas groupby)
+                        if user_id_str.endswith('.0'):
+                            user_id_str = user_id_str[:-2]
+                        user_id = int(float(user_id_str))
+                    except (ValueError, TypeError):
+                        user_id = str(row['user_id']).strip()
+                    
+                    try:
+                        # hotel_id đã là string, convert về int
+                        hotel_id_str = str(row['hotel_id']).strip()
+                        # Loại bỏ .0 nếu có (từ float khi pandas groupby)
+                        if hotel_id_str.endswith('.0'):
+                            hotel_id_str = hotel_id_str[:-2]
+                        hotel_id = int(float(hotel_id_str))
+                    except (ValueError, TypeError):
+                        hotel_id = str(row['hotel_id']).strip()
+                    
                     action_type = float(row['action_type'])
                     timestamp = int(float(row['timestamp']))
                     
+                    # Ghi ra file: user_id và hotel_id là int (không có .0)
                     f.write(f"{user_id}\t{hotel_id}\t{action_type}\t{timestamp}\n")
             
             return len(grouped)
@@ -315,8 +343,8 @@ def create_sample_web_data():
 
 if __name__ == "__main__":
     # Resolve defaults relative to repo dir
-    default_log = os.path.join(BASE_DIR, 'user_actions.log')
-    default_archive = os.path.join(BASE_DIR, 'user_actions.archive.log')
+    default_log = os.path.join(BASE_DIR, 'data', 'user_actions.log')
+    default_archive = os.path.join(BASE_DIR, 'data', 'user_actions.archive.log')
     default_inter = os.path.join(BASE_DIR, 'dataset', 'hotel', 'hotel.inter')
 
     log_path = os.getenv('USER_ACTION_LOG_FILE', default_log)

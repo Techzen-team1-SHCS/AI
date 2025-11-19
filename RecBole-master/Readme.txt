@@ -115,3 +115,50 @@ python retrain_model.py --force
 
 7. chạy retrain tự động
 python retrain_scheduler.py
+
+===============================================================================
+                  Chạy nội bộ và cho web team kết nối
+1. Khởi động các dịch vụ Docker
+docker-compose up -d(chỉ cần làm 1 lần, có thì khỏi làm lạilại)
+docker-compose ps(kiểm tra trạng tháithái)
+
+-> Bạn cần thấy recbole-api, recbole-etl, recbole-retrain đều “Up”.
+
+2. Lấy địa chỉ IP nội bộ máy bạn
+Mở PowerShell:
+ipconfig | Select-String "IPv4"
+IPv4 Address. . . . . . . . . . . : 192.168.2.70
+
+3. Mở port nếu Windows Firewall chặn
+- PowerShell (Run as Administrator), chỉ cần làm một lần:
+- New-NetFirewallRule -DisplayName "RecBole API" -Direction Inbound -LocalPort 5000 -Protocol TCP -Action Allow
+
+4. Kiểm tra từ máy khác trong cùng mạng
+- Từ máy khác (hoặc nhờ web team):
+- Invoke-WebRequest -Uri "http://192.168.2.70:5000/health"
+- 192.168.2.70 là IP của bạn. Nếu trả về JSON {"ok": true, ...}, mọi thứ ok.
+
+5. Cung cấp thông tin cho web team
+Base URL: http://<IP_MACHINE_BAN>:5000( của tôi: "http://192.168.2.70:5000")
+Các endpoint chính:
+- GET /health – kiểm tra trạng thái (trả JSON với ok và model_loaded).
+- GET /schema – mô tả format request cho team web.
+- POST /user_action – gửi 1 hành động (JSON: user_id, item_id, action_type, timestamp).
+- POST /user_actions_batch – gửi nhiều hành động cùng lúc (array JSON).
+- GET /recommendations/{user_id}?top_k=10 – lấy danh sách gợi ý.
+Nếu bạn đặt API_KEY:
+Nếu bạn chưa đặt API_KEY trong .env, các endpoint mở sẵn; nếu muốn bật bảo vệ:
+
+Tạo .env (copy từ .env.example)
+     API_KEY=dev-secret     ALLOWED_ORIGINS=http://web-team-domain.com     ```  2. Restart Docker (`docker-compose down`, rồi `docker-compose up -d`)  3. Web team gửi thêm header `Authorization: Bearer dev-secret`.### 6. Theo dõi hoạt động```powershelldocker-compose logs -f recbole-apidocker-compose logs -f recbole-etl```Nhấn `Ctrl+C` để thoát khỏi chế độ xem log.### 7. Lưu ý- Máy bạn phải bật và cùng mạng với web team.- Nếu IP đổi (do modem), lặp lại bước 2 & 5.- Khi xong việc, tắt dịch vụ: `docker-compose down`.Cần thêm lệnh mẫu hay test cụ thể cứ nói nhé.
+Restart Docker (docker-compose down, rồi docker-compose up -d)
+Web team gửi thêm header Authorization: Bearer dev-secret.
+
+6. Theo dõi hoạt động
+docker-compose logs -f recbole-apidocker-compose logs -f recbole-etl
+Nhấn Ctrl+C để thoát khỏi chế độ xem log.
+
+7. Lưu ý
+Máy bạn phải bật và cùng mạng với web team.
+Nếu IP đổi (do modem), lặp lại bước 2 & 5.
+Khi xong việc, tắt dịch vụ: docker-compose down.
