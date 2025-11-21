@@ -243,13 +243,30 @@ def startup_event():
 def get_recommendations(
     user_id: str,
     top_k: int = 10,
+    use_behavior_boost: bool = True,
+    use_similarity_boost: bool = True,  # NEW: Phase 2
+    alpha: float = 0.3,
+    decay_rate: float = 0.1,
+    behavior_hours: int = 24,
+    similarity_threshold: float = 0.5,  # NEW: Phase 2
+    similarity_boost_factor: float = 0.5,  # NEW: Phase 2
     authorization: Optional[str] = Header(default=None)
 ):
     """Lấy recommendations cho user từ model đã train.
     
+    NEW (Phase 1): Hỗ trợ behavior boost từ user_actions.log để recommendations real-time và personalized.
+    NEW (Phase 2): Hỗ trợ similarity boost - boost hotels tương tự hotels đã tương tác.
+    
     Args:
         user_id: ID của user (external token)
         top_k: Số lượng recommendations cần trả về (mặc định: 10, tối đa: 100)
+        use_behavior_boost: Nếu True, áp dụng behavior boost từ user_actions.log (default: True, Phase 1)
+        use_similarity_boost: Nếu True, áp dụng similarity boost (default: True, Phase 2) - chỉ hoạt động nếu use_behavior_boost=True
+        alpha: Boost coefficient (0.3 = tối đa 30% boost, default: 0.3)
+        decay_rate: Time decay rate (0.1 = giảm ~10% mỗi giờ, default: 0.1)
+        behavior_hours: Số giờ gần đây cần lấy actions (default: 24)
+        similarity_threshold: Chỉ boost items có similarity >= threshold (default: 0.5, Phase 2)
+        similarity_boost_factor: Trọng số cho similarity boost (0.5 = boost 50% của direct boost, default: 0.5, Phase 2)
         
     Returns:
         Dict với user_id, recommendations (list of item IDs), và model_version
@@ -283,11 +300,32 @@ def get_recommendations(
                     detail=f"Model không thể load được: {str(e)}"
                 )
         
+        # Validate behavior boost parameters
+        if alpha < 0 or alpha > 1:
+            raise HTTPException(status_code=400, detail="alpha must be between 0 and 1")
+        if decay_rate < 0 or decay_rate > 1:
+            raise HTTPException(status_code=400, detail="decay_rate must be between 0 and 1")
+        if behavior_hours < 1 or behavior_hours > 168:  # 1 hour to 7 days
+            raise HTTPException(status_code=400, detail="behavior_hours must be between 1 and 168")
+        
+        # Validate similarity boost parameters (Phase 2)
+        if similarity_threshold < 0 or similarity_threshold > 1:
+            raise HTTPException(status_code=400, detail="similarity_threshold must be between 0 and 1")
+        if similarity_boost_factor < 0 or similarity_boost_factor > 2:
+            raise HTTPException(status_code=400, detail="similarity_boost_factor must be between 0 and 2")
+        
         # Lấy recommendations từ inference module
         recommendations = inference_get_recommendations(
             user_id=user_id,
             top_k=top_k,
-            exclude_interacted=True
+            exclude_interacted=True,
+            use_behavior_boost=use_behavior_boost,
+            use_similarity_boost=use_similarity_boost,
+            alpha=alpha,
+            decay_rate=decay_rate,
+            behavior_hours=behavior_hours,
+            similarity_threshold=similarity_threshold,
+            similarity_boost_factor=similarity_boost_factor
         )
         
         # Lấy model version (tên file checkpoint mới nhất)

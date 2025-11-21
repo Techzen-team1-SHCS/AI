@@ -28,8 +28,7 @@ user_actions.log
 user_actions.archive.log
 
 # Docker
-Dockerfile
-docker-compose.yml
+# Note: Dockerfile and docker-compose.yml are needed for build, so don't ignore them
 .dockerignore
 
 # Tests

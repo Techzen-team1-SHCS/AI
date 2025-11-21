@@ -50,18 +50,36 @@
         "RMSE": 0.1905,
         "MAE": 0.1563
       }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-14-2025_17-08-35.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-14-2025_17-08-35.pth.backup_20251121_144309",
+      "backup_time": "2025-11-21T14:43:09.339848",
+      "metrics": {
+        "RMSE": 0.1912,
+        "MAE": 0.1563
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-21-2025_14-46-13.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-21-2025_14-46-13.pth.backup_20251121_144725",
+      "backup_time": "2025-11-21T14:47:25.753423",
+      "metrics": {
+        "RMSE": 0.1909,
+        "MAE": 0.1564
+      }
     }
   ],
-  "last_retrain_time": "2025-11-14T17:08:55.567526",
-  "last_dataset_size": 100008,
+  "last_retrain_time": "2025-11-21T14:47:56.284195",
+  "last_dataset_size": 100000,
   "last_retrain_metrics": {
-    "RMSE": 0.1912,
-    "MAE": 0.1563
+    "RMSE": 0.1909,
+    "MAE": 0.1564
   },
-  "retrain_count": 6,
+  "retrain_count": 9,
   "last_retrain_result": {
-    "rmse": 0.1912,
-    "mae": 0.1563,
+    "rmse": 0.1909,
+    "mae": 0.1564,
     "is_better_than_old": false
   }
 }

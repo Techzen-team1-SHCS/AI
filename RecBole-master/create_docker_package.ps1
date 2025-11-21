@@ -33,15 +33,24 @@ $filesToCopy = @(
     "retrain_model.py",
     "retrain_scheduler.py",
     "run_recbole.py",
+    "monitoring.py",
+    "view_training_progress.py",
     "Dockerfile",
     "docker-compose.yml",
     "requirements.txt",
     "deepfm_config.yaml",
-    ".env.example",
-    ".dockerignore",
-    "README_FOR_TEAM.md",
-    "HUONG_DAN_BUILD_DOCKER.md"
+    ".dockerignore"
 )
+
+# Copy thư mục docs/project (documentation)
+Write-Host "Bước 2a: Copy thư mục docs/project (documentation)..." -ForegroundColor Yellow
+if (Test-Path "docs\project") {
+    New-Item -ItemType Directory -Path "$tempDir\docs\project" -Force | Out-Null
+    Copy-Item -Path "docs\project\*" -Destination "$tempDir\docs\project\" -Recurse -Force
+    Write-Host "  ✓ docs/project/" -ForegroundColor Green
+} else {
+    Write-Host "  ⚠ docs/project/ (không tìm thấy)" -ForegroundColor Yellow
+}
 
 # Copy các file
 foreach ($file in $filesToCopy) {
@@ -49,7 +58,7 @@ foreach ($file in $filesToCopy) {
         Copy-Item -Path $file -Destination $tempDir -Force
         Write-Host "  ✓ $file" -ForegroundColor Green
     } else {
-        Write-Host "  ✗ $file (không tìm thấy)" -ForegroundColor Red
+        Write-Host "  ⚠ $file (không tìm thấy, có thể bỏ qua)" -ForegroundColor Yellow
     }
 }
 
