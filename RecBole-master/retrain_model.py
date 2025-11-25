@@ -236,7 +236,9 @@ def main(force: bool = False):
     if old_checkpoint:
         print(f"[INFO] Tìm thấy checkpoint cũ: {old_checkpoint}")
         if old_metrics:
-            print(f"[INFO] Metrics model cũ: RMSE={old_metrics.get('RMSE', 'N/A'):.4f}, MAE={old_metrics.get('MAE', 'N/A'):.4f}")
+            print(f"[INFO] Metrics model cũ (từ history): RMSE={old_metrics.get('RMSE', 'N/A'):.4f}, MAE={old_metrics.get('MAE', 'N/A'):.4f}")
+        else:
+            print("[WARNING] Không có metrics trong history, sẽ so sánh với model mới sau khi train")
         # Backup checkpoint cũ
         backup_path = backup_checkpoint(old_checkpoint)
         if backup_path:
@@ -248,6 +250,10 @@ def main(force: bool = False):
             })
     else:
         print("[INFO] Không tìm thấy checkpoint cũ, sẽ train model mới")
+        if old_metrics:
+            print("[WARNING] Có metrics trong history nhưng không tìm thấy model file!")
+            print("[WARNING] Metrics từ history có thể không tương ứng với model hiện tại.")
+            print("[INFO] Sẽ so sánh model mới với metrics từ history (nếu có)")
     
     # Train model mới
     try:

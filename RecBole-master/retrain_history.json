@@ -68,18 +68,27 @@
         "RMSE": 0.1909,
         "MAE": 0.1564
       }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-24-2025_08-39-20.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-24-2025_08-39-20.pth.backup_20251124_091138",
+      "backup_time": "2025-11-24T09:11:38.577946",
+      "metrics": {
+        "RMSE": 0.1913,
+        "MAE": 0.1567
+      }
     }
   ],
-  "last_retrain_time": "2025-11-21T14:47:56.284195",
+  "last_retrain_time": "2025-11-24T09:12:00.266215",
   "last_dataset_size": 100000,
   "last_retrain_metrics": {
     "RMSE": 0.1909,
     "MAE": 0.1564
   },
-  "retrain_count": 9,
+  "retrain_count": 11,
   "last_retrain_result": {
     "rmse": 0.1909,
     "mae": 0.1564,
-    "is_better_than_old": false
+    "is_better_than_old": true
   }
 }
