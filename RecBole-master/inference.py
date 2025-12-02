@@ -15,6 +15,12 @@ from recbole.quick_start import load_data_and_model
 from recbole.data import create_dataset
 from recbole.data.interaction import Interaction
 from recbole.config import Config
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from recbole.data.dataset import Dataset
+else:
+    Dataset = object  # Runtime type, will be replaced by actual Dataset instance
 
 # Global variables for caching
 _model_cache = None
@@ -41,7 +47,7 @@ def _get_latest_checkpoint(saved_dir: str = "saved") -> Optional[str]:
     return latest
 
 
-def load_model(model_path: Optional[str] = None, force_reload: bool = False) -> Tuple[Config, torch.nn.Module, any]:
+def load_model(model_path: Optional[str] = None, force_reload: bool = False) -> Tuple[Config, torch.nn.Module, Dataset]:
     """Load model và dataset từ checkpoint.
     
     Args:
@@ -58,7 +64,7 @@ def load_model(model_path: Optional[str] = None, force_reload: bool = False) -> 
     global _model_cache, _config_cache, _dataset_cache
     
     # Nếu đã có trong cache và không force reload, trả về cache
-    if not force_reload and _model_cache is not None:
+    if not force_reload and _model_cache is not None and _config_cache is not None and _dataset_cache is not None:
         return _config_cache, _model_cache, _dataset_cache
     
     # Tìm checkpoint
@@ -568,20 +574,31 @@ def calculate_item_similarity(
         
         # Chỉ tính với items sau item_id1 (tránh duplicate, similarity(A,B) = similarity(B,A))
         for item_id2, internal_id2 in all_items.items():
-            if item_id1 >= item_id2:  # Skip nếu item_id1 >= item_id2 (chỉ tính một chiều)
-                continue
+            try:
+                id1_int = int(item_id1) if not isinstance(item_id1, int) else item_id1
+                id2_int = int(item_id2) if not isinstance(item_id2, int) else item_id2
+                if id1_int >= id2_int:
+                    continue
+            except (ValueError, TypeError):
+                if str(item_id1) >= str(item_id2):
+                    continue
             
             similarity = _calculate_item_pair_similarity(
                 dataset, internal_id1, internal_id2, item_features
             )
             
-            # Chỉ lưu nếu similarity >= threshold
-            if similarity >= similarity_threshold:
-                similarity_dict[item_id1][item_id2] = similarity
-                # Đối xứng: similarity(A,B) = similarity(B,A)
-                if item_id2 not in similarity_dict:
-                    similarity_dict[item_id2] = {}
-                similarity_dict[item_id2][item_id1] = similarity
+            # Chỉ lưu nếu similarity >= threshold (đảm bảo similarity là float)
+            try:
+                similarity_float = float(similarity) if not isinstance(similarity, (int, float)) else similarity
+                if similarity_float >= similarity_threshold:
+                    similarity_dict[item_id1][item_id2] = similarity_float
+                    # Đối xứng: similarity(A,B) = similarity(B,A)
+                    if item_id2 not in similarity_dict:
+                        similarity_dict[item_id2] = {}
+                    similarity_dict[item_id2][item_id1] = similarity_float
+            except (ValueError, TypeError) as e:
+                # Skip nếu không convert được similarity
+                continue
             
             processed += 1
             if processed % 10000 == 0:
@@ -625,9 +642,60 @@ def _calculate_item_pair_similarity(
             
             # Convert tensor to value nếu cần
             if isinstance(feat1, torch.Tensor):
-                feat1 = feat1.item() if feat1.numel() == 1 else str(feat1.item())
+                if feat1.numel() == 1:
+                    # Scalar tensor → convert sang Python value
+                    feat1 = feat1.item()
+                else:
+                    # Tensor có nhiều phần tử (TOKEN_SEQ) → convert sang list và join
+                    # Loại bỏ padding (0) và convert sang string
+                    try:
+                        feat1_list = feat1.cpu().numpy().tolist()
+                        # Xử lý list hoặc nested list
+                        if isinstance(feat1_list, list):
+                            # Flatten nếu là nested list
+                            flat_list = []
+                            for x in feat1_list:
+                                if isinstance(x, list):
+                                    flat_list.extend([y for y in x if y != 0])
+                                else:
+                                    if x != 0:
+                                        flat_list.append(x)
+                            feat1 = ' '.join(str(x) for x in flat_list) if flat_list else ''
+                        else:
+                            feat1 = str(feat1_list)
+                    except Exception:
+                        # Fallback: convert to string
+                        feat1 = str(feat1.cpu().numpy())
+            elif not isinstance(feat1, (str, int, float)):
+                # Nếu không phải tensor, string, int, float → convert sang string
+                feat1 = str(feat1)
+                
             if isinstance(feat2, torch.Tensor):
-                feat2 = feat2.item() if feat2.numel() == 1 else str(feat2.item())
+                if feat2.numel() == 1:
+                    # Scalar tensor → convert sang Python value
+                    feat2 = feat2.item()
+                else:
+                    # Tensor có nhiều phần tử (TOKEN_SEQ) → convert sang list và join
+                    try:
+                        feat2_list = feat2.cpu().numpy().tolist()
+                        if isinstance(feat2_list, list):
+                            # Flatten nếu là nested list
+                            flat_list = []
+                            for x in feat2_list:
+                                if isinstance(x, list):
+                                    flat_list.extend([y for y in x if y != 0])
+                                else:
+                                    if x != 0:
+                                        flat_list.append(x)
+                            feat2 = ' '.join(str(x) for x in flat_list) if flat_list else ''
+                        else:
+                            feat2 = str(feat2_list)
+                    except Exception:
+                        # Fallback: convert to string
+                        feat2 = str(feat2.cpu().numpy())
+            elif not isinstance(feat2, (str, int, float)):
+                # Nếu không phải tensor, string, int, float → convert sang string
+                feat2 = str(feat2)
             
             # Tính similarity tùy theo field type
             if field in ['style', 'city']:
@@ -741,13 +809,19 @@ def calculate_behavior_boost_with_similarity(
         similar_items = similarity_dict.get(item_id, {})
         
         for similar_item_id, similarity_score in similar_items.items():
-            if similarity_score >= similarity_threshold and similar_item_id != item_id:
-                # Boost hotels tương tự với trọng số similarity
-                # similarity_boost = direct_boost * similarity_score * similarity_boost_factor
-                similarity_boost = direct_boost_value * similarity_score * similarity_boost_factor
-                
-                # Cộng dồn với boost hiện tại (có thể đã có direct boost hoặc similarity boost từ items khác)
-                final_boost[similar_item_id] = final_boost.get(similar_item_id, 0) + similarity_boost
+            try:
+                # Đảm bảo similarity_score là float
+                score_float = float(similarity_score) if not isinstance(similarity_score, (int, float)) else similarity_score
+                if score_float >= similarity_threshold and similar_item_id != item_id:
+                    # Boost hotels tương tự với trọng số similarity
+                    # similarity_boost = direct_boost * similarity_score * similarity_boost_factor
+                    similarity_boost = direct_boost_value * score_float * similarity_boost_factor
+                    
+                    # Cộng dồn với boost hiện tại (có thể đã có direct boost hoặc similarity boost từ items khác)
+                    final_boost[similar_item_id] = final_boost.get(similar_item_id, 0) + similarity_boost
+            except (ValueError, TypeError):
+                # Skip nếu không convert được similarity_score
+                continue
     
     return final_boost
 

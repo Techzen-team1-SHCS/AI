@@ -9,7 +9,7 @@ import time
 import os
 import urllib.request
 import urllib.error
-from typing import Dict, List, Tuple, Optional
+from typing import Dict, List, Tuple, Optional, Union
 from datetime import datetime
 
 # Fix encoding cho Windows
@@ -70,7 +70,7 @@ def http_get(url: str, params: Optional[Dict] = None) -> Tuple[int, Dict]:
     except Exception as e:
         raise
 
-def http_post(url: str, data: Dict) -> Tuple[int, Dict]:
+def http_post(url: str, data: Union[Dict, List]) -> Tuple[int, Dict]:
     """Helper function để gọi POST request"""
     json_data = json.dumps(data).encode('utf-8')
     req = urllib.request.Request(

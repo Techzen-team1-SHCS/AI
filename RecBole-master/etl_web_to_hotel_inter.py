@@ -118,7 +118,8 @@ def _group_and_append(rows: List[Dict], output_file: str) -> int:
                 'timestamp': max_timestamp
             })
         
-        grouped = df.groupby(['user_id', 'hotel_id']).apply(get_max_score_and_timestamp).reset_index()
+        # Use group_keys=False instead of include_groups=False for pandas < 2.0 compatibility
+        grouped = df.groupby(['user_id', 'hotel_id'], group_keys=False).apply(get_max_score_and_timestamp).reset_index()
         grouped = grouped.rename(columns={'action_score': 'action_type'})
         grouped = grouped.sort_values('timestamp')
         

@@ -296,7 +296,7 @@ item_id:token	style:token_seq	price:float	star:float	score:float	city:token_seq
 295	Modern Lively Romantic	648000.0	3.0	6.6	Ba Dinh
 296	Love	809676.0	4.0	9.6	Ba Dinh
 297	Classic Romantic Love	382290.0	0.0	8.0	Hanoi
-298	Classic	371013.0001	0.0	8.0	Cau Giay
+298	Classic	9213.0001	0.0	8.0	Cau Giay
 299	Modern	956387.0	4.0	8.9	Hanoi
 300	Lively Romantic	620500.0	3.0	8.6	Hanoi
 301	Modern Love	3912300.0	5.0	9.2	Hanoi
@@ -310,7 +310,7 @@ item_id:token	style:token_seq	price:float	star:float	score:float	city:token_seq
 309	Lively	550000.0001	0.0	8.9	Thanh Xuan
 310	Classic Love	1012500.0	0.0	9.7	Hanoi
 311	Quiet Romantic	956387.0	4.0	8.9	Hanoi
-312	Modern Romantic	371013.0001	0.0	8.0	Cau Giay
+312	Modern Romantic	9213.0001	0.0	8.0	Cau Giay
 313	Modern	10169148.402	5.0	9.4	Hanoi
 314	Love	3150000.0	3.0	8.5	Hanoi
 315	Classic Love	540000.0	3.0	8.1	Hanoi

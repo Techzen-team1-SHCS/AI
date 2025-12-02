@@ -21,6 +21,14 @@ from inference import (
     load_model
 )
 
+# Check if we can test end-to-end (require torch and recbole)
+try:
+    import torch
+    import recbole
+    CAN_TEST_END_TO_END = True
+except ImportError:
+    CAN_TEST_END_TO_END = False
+
 
 def test_action_score():
     """Test 1: Kiểm tra get_action_score()"""
@@ -236,7 +244,13 @@ def test_read_log_function():
             item_ids_found = set()
             for action in actions:
                 if str(action.get('user_id')) == test_user_id:
-                    item_ids_found.add(int(action.get('item_id')))
+                    item_id = action.get('item_id')
+                    if item_id is not None:
+                        try:
+                            item_ids_found.add(int(item_id))
+                        except (ValueError, TypeError):
+                            # Skip invalid item_id
+                            continue
             
             expected_items = {501, 502, 503}
             if item_ids_found >= expected_items:

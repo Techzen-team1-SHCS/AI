@@ -10,12 +10,30 @@ import io
 if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
-# Add current directory to path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Add root directory to path (go up 2 levels from tests/integration/)
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 
-from inference import load_model, get_recommendations, is_model_loaded
-from recbole.data import create_dataset
-from recbole.config import Config
+# Check if dependencies are available
+try:
+    import torch
+    import recbole
+    DEPENDENCIES_AVAILABLE = True
+except ImportError as e:
+    DEPENDENCIES_AVAILABLE = False
+    MISSING_DEPENDENCY = str(e)
+
+if DEPENDENCIES_AVAILABLE:
+    from inference import load_model, get_recommendations, is_model_loaded
+    from recbole.data import create_dataset
+    from recbole.config import Config
+else:
+    # Dummy functions để test không crash
+    def load_model(*args, **kwargs):
+        raise ImportError(f"Dependencies không có sẵn: {MISSING_DEPENDENCY}. Vui lòng chạy trong Docker hoặc virtualenv có đầy đủ dependencies.")
+    def get_recommendations(*args, **kwargs):
+        raise ImportError(f"Dependencies không có sẵn: {MISSING_DEPENDENCY}")
+    def is_model_loaded():
+        return False
 
 def test_load_model():
     """Test load model."""
@@ -163,6 +181,21 @@ if __name__ == "__main__":
     print("\n" + "=" * 70)
     print("BẮT ĐẦU TEST INFERENCE")
     print("=" * 70 + "\n")
+    
+    # Check dependencies
+    if not DEPENDENCIES_AVAILABLE:
+        print("⚠️  WARNING: Không tìm thấy dependencies (torch, recbole)")
+        print(f"   Lỗi: {MISSING_DEPENDENCY}")
+        print("\n💡 HƯỚNG DẪN:")
+        print("   1. Chạy trong Docker container:")
+        print("      docker-compose exec recbole-api python tests/integration/test_inference.py")
+        print("   2. Hoặc kích hoạt virtualenv:")
+        print("      recbole-env\\Scripts\\activate (Windows)")
+        print("      source recbole-env/bin/activate (Linux/Mac)")
+        print("   3. Hoặc cài đặt dependencies:")
+        print("      pip install torch recbole")
+        print("\n⏭️  Skip tất cả tests...")
+        sys.exit(0)
     
     # Test 1: Load model
     config, model, dataset = test_load_model()

@@ -122,8 +122,12 @@ def backup_checkpoint(checkpoint_path: str) -> Optional[str]:
         return None
 
 
-def train_new_model() -> Dict:
-    """Train model mới với dữ liệu hiện tại."""
+def train_new_model() -> Optional[Dict]:
+    """Train model mới với dữ liệu hiện tại.
+    
+    Returns:
+        Dict chứa kết quả training hoặc None nếu training thất bại
+    """
     print("[INFO] Bắt đầu training model mới...")
     
     try:
@@ -138,6 +142,11 @@ def train_new_model() -> Dict:
                 "show_progress": True,
             }
         )
+        
+        # Kiểm tra result (có thể None trong một số edge cases)
+        if result is None:
+            print("[ERROR] Training trả về None, có thể training thất bại")
+            return None
         
         return result
     except Exception as e:
@@ -258,6 +267,12 @@ def main(force: bool = False):
     # Train model mới
     try:
         result = train_new_model()
+        
+        # Kiểm tra result trước khi sử dụng
+        if result is None:
+            print("[ERROR] Training thất bại, không thể tiếp tục")
+            save_retrain_history(history)
+            return
         
         # Lấy metrics từ kết quả training
         new_metrics = result.get('best_valid_result', {})

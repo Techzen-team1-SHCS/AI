@@ -348,7 +348,7 @@ Test result: RMSE = 0.80, MAE = 0.70
 - "Thêm dữ liệu → chạy nhiều epochs hơn"
 - "Ít dữ liệu → chạy ít epochs hơn"
 
-**Sự thật**:
+**Thực tếtế**:
 - Số epochs phụ thuộc vào:
   - `epochs` (max epochs) trong config
   - `stopping_step` (early stopping)
