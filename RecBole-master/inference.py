@@ -1,6 +1,14 @@
 """
-Inference module for RecBole DeepFM model.
-Loads trained model and provides recommendation functionality.
+Inference Module cho RecBole DeepFM Model.
+
+Module này cung cấp chức năng:
+1. Load model và dataset từ checkpoint
+2. Generate recommendations cho users
+3. Behavior Boost (Phase 1): Boost items dựa trên hành vi gần đây
+4. Similarity Boost (Phase 2): Boost items tương tự items đã tương tác
+5. Cache management để tối ưu performance
+
+Sử dụng global cache để tránh load model nhiều lần không cần thiết.
 """
 import os
 import glob
@@ -17,23 +25,29 @@ from recbole.data.interaction import Interaction
 from recbole.config import Config
 from typing import TYPE_CHECKING
 
+# Type checking để tránh circular import
 if TYPE_CHECKING:
     from recbole.data.dataset import Dataset
 else:
-    Dataset = object  # Runtime type, will be replaced by actual Dataset instance
+    Dataset = object  # Runtime type, sẽ được thay thế bởi Dataset instance thực tế
 
-# Global variables for caching
+# ============================================================================
+# GLOBAL CACHE - Tránh load model nhiều lần
+# ============================================================================
+
+# Cache cho model, config, dataset để tăng tốc inference
 _model_cache = None
 _config_cache = None
 _dataset_cache = None
-_similarity_matrix_cache = None  # NEW: Cache for similarity matrix
+_similarity_matrix_cache = None  # Cache cho similarity matrix (Phase 2)
 
 
 def _get_latest_checkpoint(saved_dir: str = "saved") -> Optional[str]:
-    """Tìm checkpoint mới nhất trong thư mục saved.
+    """
+    Tìm checkpoint mới nhất trong thư mục saved dựa trên thời gian modified.
     
     Args:
-        saved_dir: Thư mục chứa checkpoints
+        saved_dir: Thư mục chứa checkpoints (default: "saved")
         
     Returns:
         Đường dẫn đến checkpoint mới nhất hoặc None nếu không tìm thấy
@@ -42,13 +56,20 @@ def _get_latest_checkpoint(saved_dir: str = "saved") -> Optional[str]:
     checkpoints = glob.glob(pattern)
     if not checkpoints:
         return None
+    
     # Sắp xếp theo thời gian modified, lấy file mới nhất
     latest = max(checkpoints, key=os.path.getmtime)
     return latest
 
 
 def load_model(model_path: Optional[str] = None, force_reload: bool = False) -> Tuple[Config, torch.nn.Module, Dataset]:
-    """Load model và dataset từ checkpoint.
+    """
+    Load model và dataset từ checkpoint với caching mechanism.
+    
+    Logic:
+    - Nếu đã có trong cache và không force reload → trả về cache
+    - Nếu chưa có hoặc force reload → load từ checkpoint
+    - Cache kết quả để dùng lại lần sau
     
     Args:
         model_path: Đường dẫn đến checkpoint. Nếu None, tự động tìm checkpoint mới nhất
@@ -63,29 +84,30 @@ def load_model(model_path: Optional[str] = None, force_reload: bool = False) -> 
     """
     global _model_cache, _config_cache, _dataset_cache
     
-    # Nếu đã có trong cache và không force reload, trả về cache
+    # Kiểm tra cache: nếu đã có và không force reload, trả về cache
     if not force_reload and _model_cache is not None and _config_cache is not None and _dataset_cache is not None:
         return _config_cache, _model_cache, _dataset_cache
     
-    # Tìm checkpoint
+    # Tìm checkpoint nếu không được chỉ định
     if model_path is None:
         model_path = _get_latest_checkpoint()
         if model_path is None:
             raise FileNotFoundError("Không tìm thấy checkpoint trong thư mục saved/")
     
+    # Kiểm tra file tồn tại
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Checkpoint không tồn tại: {model_path}")
     
     print(f"[INFERENCE] Đang load model từ: {model_path}")
     
     try:
-        # Load model và dataset
+        # Load model và dataset từ checkpoint
         config, model, dataset, train_data, valid_data, test_data = load_data_and_model(model_path)
         
-        # Set model to eval mode
+        # Set model về evaluation mode (tắt dropout, batch norm, etc.)
         model.eval()
         
-        # Cache kết quả
+        # Cache kết quả để dùng lại
         _config_cache = config
         _model_cache = model
         _dataset_cache = dataset
@@ -100,39 +122,43 @@ def load_model(model_path: Optional[str] = None, force_reload: bool = False) -> 
 
 
 def _get_user_interacted_items(dataset, user_id: str) -> set:
-    """Lấy danh sách items mà user đã tương tác.
+    """
+    Lấy danh sách items mà user đã tương tác từ dataset.
+    
+    Sử dụng interaction matrix (sparse matrix) để truy vấn nhanh.
     
     Args:
-        dataset: RecBole dataset
-        user_id: ID của user (external token)
+        dataset: RecBole dataset object
+        user_id: ID của user (external token, ví dụ: "123")
         
     Returns:
-        Set của item IDs (external tokens) mà user đã tương tác
+        Set chứa item IDs (external tokens) mà user đã tương tác
     """
     try:
-        # Convert user_id (external token) to internal id
+        # Convert user_id (external token) sang internal ID
         user_internal_id = dataset.token2id(dataset.uid_field, user_id)
         
-        # Sử dụng inter_matrix để lấy items user đã tương tác
-        # inter_matrix là sparse matrix có shape (user_num, item_num)
+        # Sử dụng interaction matrix để lấy items user đã tương tác
+        # inter_matrix là sparse matrix (CSR format) có shape (user_num, item_num)
         inter_matrix = dataset.inter_matrix(form="csr")
         
-        # Lấy row tương ứng với user
+        # Lấy row tương ứng với user (chứa tất cả items user đã tương tác)
         user_row = inter_matrix[user_internal_id, :]
         
         # Lấy item indices (internal IDs) mà user đã tương tác
         item_internal_ids = user_row.indices
         
-        # Convert internal ids to external tokens
+        # Convert internal IDs sang external tokens
         if len(item_internal_ids) > 0:
             item_tokens = dataset.id2token(dataset.iid_field, item_internal_ids.tolist())
+            
             # id2token có thể trả về numpy array hoặc list
             if isinstance(item_tokens, np.ndarray):
                 tokens_list = item_tokens.tolist()
             else:
                 tokens_list = item_tokens
             
-            # Convert về int nếu có thể
+            # Convert về int nếu có thể, giữ nguyên nếu không
             result = set()
             for token in tokens_list:
                 try:
@@ -156,22 +182,30 @@ def get_recommendations(
     model_path: Optional[str] = None,
     exclude_interacted: bool = True,
     use_behavior_boost: bool = True,
-    use_similarity_boost: bool = True,  # NEW: Phase 2
+    use_similarity_boost: bool = True,
     alpha: float = 0.3,
     decay_rate: float = 0.1,
     behavior_hours: int = 24,
     log_file: str = "data/user_actions.log",
-    similarity_threshold: float = 0.5,  # NEW: Phase 2
-    similarity_boost_factor: float = 0.5  # NEW: Phase 2
+    similarity_threshold: float = 0.5,
+    similarity_boost_factor: float = 0.5
 ) -> List[str]:
-    """Lấy recommendations cho user.
+    """
+    Generate recommendations cho user với hỗ trợ Behavior Boost và Similarity Boost.
     
-    NEW (Phase 1): Hỗ trợ behavior boost từ user_actions.log để recommendations real-time và personalized.
-    NEW (Phase 2): Hỗ trợ similarity boost - boost hotels tương tự hotels đã tương tác.
+    Quy trình:
+    1. Load model và dataset (sử dụng cache nếu có)
+    2. Kiểm tra user có tồn tại trong dataset không
+    3. Tạo interaction cho user với tất cả items
+    4. Predict scores từ model
+    5. Áp dụng Behavior Boost (Phase 1) nếu enabled
+    6. Áp dụng Similarity Boost (Phase 2) nếu enabled
+    7. Combine scores: final_score = base_score * (1 + alpha * boost)
+    8. Sort và filter để lấy top-K items
     
     Args:
         user_id: ID của user (external token, ví dụ: "123")
-        top_k: Số lượng recommendations cần trả về
+        top_k: Số lượng recommendations cần trả về (default: 10)
         model_path: Đường dẫn đến checkpoint (None = dùng checkpoint mới nhất)
         exclude_interacted: Nếu True, loại bỏ items user đã tương tác (từ hotel.inter)
         use_behavior_boost: Nếu True, áp dụng behavior boost từ user_actions.log (Phase 1)
@@ -196,14 +230,14 @@ def get_recommendations(
     # Kiểm tra user có tồn tại trong dataset không
     try:
         user_internal_id = dataset.token2id(dataset.uid_field, user_id)
-        # Skip padding token
+        # Skip padding token (không phải user thật)
         if user_id == "[PAD]" or user_internal_id == 0:
             print(f"[INFERENCE] User '{user_id}' là padding token, skip")
             return []
     except ValueError:
-        # User mới (cold start) - trả về empty list hoặc popular items
+        # User mới (cold start) - không có trong dataset
         print(f"[INFERENCE] User '{user_id}' không tồn tại trong dataset (cold start)")
-        return []  # Hoặc có thể trả về popular items
+        return []  # Có thể trả về popular items thay vì empty list
     
     # Lấy items user đã tương tác (để filter ra nếu cần)
     interacted_items = set()
@@ -211,12 +245,11 @@ def get_recommendations(
         interacted_items = _get_user_interacted_items(dataset, user_id)
         print(f"[INFERENCE] User '{user_id}' đã tương tác với {len(interacted_items)} items")
     
-    # Sử dụng dataset để tạo interaction cho user với tất cả items
-    # RecBole có method để tạo interaction cho full sort prediction
-    # Tạo interaction với user và tất cả items
+    # Tạo interaction cho user với tất cả items để predict
+    # RecBole yêu cầu tạo Interaction object với user_id và item_id
     device = config["device"]
     
-    # Tạo user tensor (chỉ 1 user, nhưng repeat cho tất cả items)
+    # Tạo tensors: user_id repeat cho tất cả items, và list tất cả item IDs
     all_item_internal_ids = torch.arange(dataset.item_num, dtype=torch.long, device=device)
     user_internal_ids = torch.full((dataset.item_num,), user_internal_id, dtype=torch.long, device=device)
     
@@ -226,25 +259,28 @@ def get_recommendations(
         dataset.iid_field: all_item_internal_ids,
     }
     
-    # Thêm user features nếu có (dataset.user_feat là Interaction object)
+    # Thêm user features nếu có (age, gender, region, etc.)
     if dataset.user_feat is not None:
         # Tìm user trong user_feat
         user_mask = dataset.user_feat[dataset.uid_field] == user_internal_id
         user_indices = user_mask.nonzero(as_tuple=True)[0]
         if len(user_indices) > 0:
             user_idx = user_indices[0].item()
+            # Thêm tất cả user features vào interaction
             for field in dataset.user_feat.columns:
                 if field != dataset.uid_field:
                     feature_value = dataset.user_feat[field][user_idx]
                     if isinstance(feature_value, torch.Tensor):
                         if feature_value.dim() == 0:
-                            # Scalar value - repeat for all items
+                            # Scalar value - repeat cho tất cả items
                             interaction_dict[field] = feature_value.unsqueeze(0).repeat(dataset.item_num).to(device)
                         else:
-                            # Sequence or multi-dim - repeat along batch
-                            interaction_dict[field] = feature_value.unsqueeze(0).repeat(dataset.item_num, *([1] * (feature_value.dim()))).to(device)
+                            # Sequence hoặc multi-dim - repeat along batch dimension
+                            interaction_dict[field] = feature_value.unsqueeze(0).repeat(
+                                dataset.item_num, *([1] * (feature_value.dim()))
+                            ).to(device)
     
-    # Thêm item features nếu có (dataset.item_feat là Interaction object)
+    # Thêm item features nếu có (style, price, star, score, city, etc.)
     if dataset.item_feat is not None:
         # item_feat được sắp xếp theo item_id, nên có thể index trực tiếp
         for field in dataset.item_feat.columns:
@@ -254,25 +290,27 @@ def get_recommendations(
                 if hasattr(dataset.item_feat[field], '__getitem__'):
                     interaction_dict[field] = dataset.item_feat[field].to(device)
     
-    # Tạo Interaction object
+    # Tạo Interaction object từ dict
     interaction = Interaction(interaction_dict)
     interaction = interaction.to(device)
     
-    # Predict sử dụng predict (DeepFM không có full_sort_predict)
-    with torch.no_grad():
-        # DeepFM sử dụng predict method
+    # Predict scores sử dụng model (DeepFM sử dụng predict method)
+    with torch.no_grad():  # Tắt gradient computation để tăng tốc
         scores = model.predict(interaction)
         scores = scores.cpu().numpy().flatten()
     
-    # ========== NEW: Behavior Boost (Phase 1 + Phase 2) ==========
+    # ============================================================================
+    # BEHAVIOR BOOST (Phase 1 + Phase 2)
+    # ============================================================================
     behavior_boost_dict = {}
     if use_behavior_boost:
         try:
             current_time = time.time()
+            # Lấy actions gần đây của user từ log file
             recent_actions = get_recent_user_actions(user_id, hours=behavior_hours, log_file=log_file)
             
             if use_similarity_boost and len(recent_actions) > 0:
-                # Phase 2: Use similarity boost (boost hotels tương tự)
+                # Phase 2: Sử dụng similarity boost (boost hotels tương tự)
                 behavior_boost_dict = calculate_behavior_boost_with_similarity(
                     recent_actions,
                     current_time,
@@ -284,23 +322,24 @@ def get_recommendations(
                 if len(recent_actions) > 0:
                     print(f"[INFERENCE] Found {len(recent_actions)} recent actions, boost with similarity for {len(behavior_boost_dict)} items")
             else:
-                # Phase 1: Only direct boost (boost hotels đã tương tác)
+                # Phase 1: Chỉ boost trực tiếp (boost hotels đã tương tác)
                 behavior_boost_dict = calculate_behavior_boost(recent_actions, current_time, decay_rate)
                 if len(recent_actions) > 0:
                     print(f"[INFERENCE] Found {len(recent_actions)} recent actions, boost for {len(behavior_boost_dict)} items")
         except Exception as e:
             # Nếu có lỗi khi đọc log hoặc tính boost, skip boost nhưng không crash
+            # Điều này đảm bảo hệ thống vẫn hoạt động ngay cả khi log file có vấn đề
             print(f"[WARNING] Lỗi khi tính behavior boost: {e}. Skip boost.")
             behavior_boost_dict = {}
-    # ========== END Behavior Boost ==========
     
     # Combine scores: final_score = base_score * (1 + alpha * boost)
+    # alpha giới hạn boost tối đa (0.3 = tối đa 30% boost)
     final_scores = {}
     for idx, item_internal_id in enumerate(all_item_internal_ids):
         item_internal_id_int = int(item_internal_id.item())
         base_score = float(scores[idx])
         
-        # Convert internal ID to external token
+        # Convert internal ID sang external token
         try:
             item_token = dataset.id2token(dataset.iid_field, item_internal_id_int)
             try:
@@ -308,24 +347,29 @@ def get_recommendations(
             except (ValueError, TypeError):
                 item_id = item_token  # Giữ nguyên nếu không convert được
             
-            # Apply behavior boost
+            # Áp dụng behavior boost nếu có
             if use_behavior_boost and item_id in behavior_boost_dict:
                 boost = behavior_boost_dict[item_id]
+                # Công thức: final_score = base_score * (1 + alpha * boost)
+                # Ví dụ: base_score=0.6, boost=1.0, alpha=0.3
+                # → final_score = 0.6 * (1 + 0.3 * 1.0) = 0.6 * 1.3 = 0.78 (tăng 30%)
                 final_score = base_score * (1 + alpha * boost)
             else:
                 final_score = base_score
             
             final_scores[item_id] = final_score
         except (ValueError, IndexError):
-            # Skip nếu có lỗi khi convert
+            # Skip nếu có lỗi khi convert (item không hợp lệ)
             continue
     
-    # Sort by final_score (descending)
+    # Sắp xếp theo final_score giảm dần
+    # LƯU Ý: sorted() không stable khi có items cùng score → có thể dẫn đến kết quả không nhất quán
     sorted_items = sorted(final_scores.items(), key=lambda x: x[1], reverse=True)
     
     # Filter interacted items và lấy top-K
     top_k_items = []
     for item_id, final_score in sorted_items:
+        # Bỏ qua items user đã tương tác nếu exclude_interacted=True
         if exclude_interacted and item_id in interacted_items:
             continue
         top_k_items.append(item_id)
@@ -337,14 +381,15 @@ def get_recommendations(
 
 
 def get_popular_items(dataset, top_k: int = 10) -> List[str]:
-    """Lấy popular items (cho cold start users).
+    """
+    Lấy popular items (items được tương tác nhiều nhất) - dùng cho cold start users.
     
     Args:
-        dataset: RecBole dataset
-        top_k: Số lượng items cần trả về
+        dataset: RecBole dataset object
+        top_k: Số lượng items cần trả về (default: 10)
         
     Returns:
-        List of item IDs (external tokens)
+        List of item IDs (external tokens) được sắp xếp theo độ phổ biến
     """
     # Đếm số lần tương tác của mỗi item
     item_counter = dataset.item_counter()
@@ -352,12 +397,13 @@ def get_popular_items(dataset, top_k: int = 10) -> List[str]:
     # Lấy top-K items phổ biến nhất
     top_items = item_counter.most_common(top_k)
     
-    # Convert to external tokens
+    # Convert sang external tokens
     return [item_id for item_id, count in top_items]
 
 
 def is_model_loaded() -> bool:
-    """Kiểm tra model đã được load chưa.
+    """
+    Kiểm tra model đã được load và cache chưa.
     
     Returns:
         True nếu model đã được load, False nếu chưa
@@ -366,20 +412,27 @@ def is_model_loaded() -> bool:
 
 
 def clear_cache():
-    """Xóa cache của model (dùng khi cần reload model mới)."""
+    """
+    Xóa cache của model và dataset (dùng khi cần reload model mới).
+    
+    Nên gọi sau khi retrain model để đảm bảo load model mới thay vì dùng cache cũ.
+    """
     global _model_cache, _config_cache, _dataset_cache, _similarity_matrix_cache
     _model_cache = None
     _config_cache = None
     _dataset_cache = None
-    _similarity_matrix_cache = None  # Clear similarity cache too
+    _similarity_matrix_cache = None  # Clear similarity cache cũng
 
 
 # ============================================================================
-# BEHAVIOR BOOST FUNCTIONS (NEW - Phase 1)
+# BEHAVIOR BOOST FUNCTIONS (Phase 1)
 # ============================================================================
 
 def get_recent_user_actions(user_id: str, hours: int = 24, log_file: str = "data/user_actions.log") -> List[Dict]:
-    """Đọc user_actions.log và lấy actions gần đây của user.
+    """
+    Đọc user_actions.log và lấy actions gần đây của user.
+    
+    File log có format: mỗi dòng là 1 JSON object chứa thông tin hành động.
     
     Args:
         user_id: ID của user (external token, có thể là string hoặc int)
@@ -388,10 +441,12 @@ def get_recent_user_actions(user_id: str, hours: int = 24, log_file: str = "data
     
     Returns:
         List of actions: [{"user_id": ..., "item_id": ..., "action_type": ..., "timestamp": ...}, ...]
+        Trả về empty list nếu không tìm thấy hoặc có lỗi
     """
     if not os.path.exists(log_file):
         return []
     
+    # Tính thời gian cutoff (chỉ lấy actions sau thời điểm này)
     current_time = time.time()
     cutoff_time = current_time - (hours * 3600)
     
@@ -403,19 +458,21 @@ def get_recent_user_actions(user_id: str, hours: int = 24, log_file: str = "data
                 if not line:
                     continue
                 try:
+                    # Parse JSON từ mỗi dòng
                     action = json.loads(line)
-                    # Filter by user_id (so sánh dạng string để đảm bảo match)
+                    # Filter theo user_id (so sánh dạng string để đảm bảo match)
                     if str(action.get('user_id')) != str(user_id):
                         continue
-                    # Filter by timestamp (lấy actions trong khoảng thời gian gần đây)
+                    # Filter theo timestamp (chỉ lấy actions trong khoảng thời gian gần đây)
                     if action.get('timestamp', 0) < cutoff_time:
                         continue
                     actions.append(action)
                 except json.JSONDecodeError:
-                    # Skip invalid JSON lines
+                    # Skip dòng không phải JSON hợp lệ
                     continue
     except IOError:
         # Log file đang bị lock (ETL đang xử lý) → skip boost, không crash
+        # Điều này đảm bảo hệ thống vẫn hoạt động ngay cả khi ETL đang chạy
         pass
     except Exception as e:
         print(f"[WARNING] Lỗi khi đọc log file: {e}")
@@ -424,13 +481,20 @@ def get_recent_user_actions(user_id: str, hours: int = 24, log_file: str = "data
 
 
 def get_action_score(action_type: str) -> float:
-    """Map action_type thành điểm số.
+    """
+    Map loại hành động thành điểm số tương ứng.
+    
+    Điểm số phản ánh mức độ quan tâm:
+    - Booking: Quan tâm cao nhất (1.0)
+    - Share: Quan tâm cao (0.75)
+    - Like: Quan tâm trung bình (0.5)
+    - Click: Quan tâm thấp (0.25)
     
     Args:
-        action_type: "click" | "like" | "share" | "booking"
+        action_type: Loại hành động ("click" | "like" | "share" | "booking")
     
     Returns:
-        Action score (0.25, 0.5, 0.75, hoặc 1.0)
+        Điểm số từ 0.0 đến 1.0, hoặc 0.0 nếu không hợp lệ
     """
     action_scores = {
         'booking': 1.0,
@@ -442,15 +506,19 @@ def get_action_score(action_type: str) -> float:
 
 
 def calculate_time_weight(timestamp: float, current_time: float, decay_rate: float = 0.1) -> float:
-    """Tính trọng số theo thời gian (exponential decay).
+    """
+    Tính trọng số theo thời gian sử dụng exponential decay.
+    
+    Hành động càng gần hiện tại càng có trọng số cao.
+    Công thức: weight = exp(-decay_rate * hours_ago)
     
     Args:
         timestamp: Unix timestamp của action
         current_time: Unix timestamp hiện tại
-        decay_rate: Decay rate (default: 0.1)
+        decay_rate: Decay rate (default: 0.1 = giảm ~10% mỗi giờ)
     
     Returns:
-        Time weight (0-1), càng gần hiện tại càng cao
+        Time weight từ 0 đến 1, càng gần hiện tại càng cao
     
     Example:
         Action 1 giờ trước với decay_rate=0.1:
@@ -464,9 +532,10 @@ def calculate_time_weight(timestamp: float, current_time: float, decay_rate: flo
 
 
 def calculate_behavior_boost(actions: List[Dict], current_time: float, decay_rate: float = 0.1) -> Dict[int, float]:
-    """Tính boost cho từng item dựa trên hành vi gần đây.
+    """
+    Tính boost cho từng item dựa trên hành vi gần đây của user (Phase 1).
     
-    IMPORTANT: Nếu nhiều actions cùng hotel, boost được CỘNG LẠI (không lấy max).
+    QUAN TRỌNG: Nếu nhiều actions cùng hotel, boost được CỘNG LẠI (không lấy max).
     
     Lý do:
     - Mỗi action thể hiện sự quan tâm khác nhau (click < like < booking)
@@ -487,7 +556,7 @@ def calculate_behavior_boost(actions: List[Dict], current_time: float, decay_rat
     Args:
         actions: List of actions từ get_recent_user_actions()
         current_time: Unix timestamp hiện tại
-        decay_rate: Decay rate (default: 0.1)
+        decay_rate: Decay rate cho time weight (default: 0.1)
     
     Returns:
         Dict: {item_id: boost_score, ...}
@@ -499,11 +568,12 @@ def calculate_behavior_boost(actions: List[Dict], current_time: float, decay_rat
             action_type = action['action_type']
             timestamp = float(action['timestamp'])
             
+            # Tính điểm số và trọng số thời gian
             action_score = get_action_score(action_type)
             weight = calculate_time_weight(timestamp, current_time, decay_rate)
             boosted_score = action_score * weight
             
-            # CỘNG LẠI (không lấy max)
+            # CỘNG LẠI (không lấy max) - nhiều actions = quan tâm cao hơn
             boost[item_id] = boost.get(item_id, 0) + boosted_score
         except (ValueError, KeyError, TypeError) as e:
             # Skip nếu có lỗi (item_id không phải int, thiếu field, ...)
@@ -513,7 +583,7 @@ def calculate_behavior_boost(actions: List[Dict], current_time: float, decay_rat
 
 
 # ============================================================================
-# SIMILARITY BOOST FUNCTIONS (NEW - Phase 2)
+# SIMILARITY BOOST FUNCTIONS (Phase 2)
 # ============================================================================
 
 def calculate_item_similarity(
@@ -521,16 +591,19 @@ def calculate_item_similarity(
     item_features: List[str] = ['style', 'price', 'star', 'score', 'city'],
     similarity_threshold: float = 0.5
 ) -> Dict[int, Dict[int, float]]:
-    """Tính similarity giữa các items dựa trên features.
+    """
+    Tính similarity matrix giữa các items dựa trên features (pre-compute và cache).
     
     Similarity được tính dựa trên:
     - style, city: Jaccard similarity (set overlap)
-    - price, star, score: Normalized cosine similarity
+    - price, star, score: Normalized distance similarity
+    
+    Matrix được cache để tránh tính lại nhiều lần (tốn thời gian).
     
     Args:
-        dataset: RecBole dataset
-        item_features: List of feature names để tính similarity
-        similarity_threshold: Chỉ giữ similarities >= threshold (default: 0.5)
+        dataset: RecBole dataset object
+        item_features: List of feature names để tính similarity (default: ['style', 'price', 'star', 'score', 'city'])
+        similarity_threshold: Chỉ giữ similarities >= threshold để giảm memory (default: 0.5)
     
     Returns:
         Dict: {item_id: {similar_item_id: similarity_score, ...}, ...}
@@ -538,7 +611,7 @@ def calculate_item_similarity(
     """
     global _similarity_matrix_cache
     
-    # Check cache
+    # Kiểm tra cache: nếu đã tính rồi, trả về cache
     if _similarity_matrix_cache is not None:
         return _similarity_matrix_cache
     
@@ -546,6 +619,7 @@ def calculate_item_similarity(
     
     similarity_dict = {}
     
+    # Kiểm tra dataset có item features không
     if dataset.item_feat is None:
         print("[WARNING] Dataset không có item features, skip similarity calculation")
         return similarity_dict
@@ -575,19 +649,22 @@ def calculate_item_similarity(
         # Chỉ tính với items sau item_id1 (tránh duplicate, similarity(A,B) = similarity(B,A))
         for item_id2, internal_id2 in all_items.items():
             try:
+                # So sánh item IDs để chỉ tính một nửa matrix (đối xứng)
                 id1_int = int(item_id1) if not isinstance(item_id1, int) else item_id1
                 id2_int = int(item_id2) if not isinstance(item_id2, int) else item_id2
                 if id1_int >= id2_int:
                     continue
             except (ValueError, TypeError):
+                # Fallback: so sánh string
                 if str(item_id1) >= str(item_id2):
                     continue
             
+            # Tính similarity giữa 2 items
             similarity = _calculate_item_pair_similarity(
                 dataset, internal_id1, internal_id2, item_features
             )
             
-            # Chỉ lưu nếu similarity >= threshold (đảm bảo similarity là float)
+            # Chỉ lưu nếu similarity >= threshold (để giảm memory)
             try:
                 similarity_float = float(similarity) if not isinstance(similarity, (int, float)) else similarity
                 if similarity_float >= similarity_threshold:
@@ -606,7 +683,7 @@ def calculate_item_similarity(
     
     print(f"[INFERENCE] Tính similarity hoàn tất! Tìm thấy similarities cho {len(similarity_dict)} items")
     
-    # Cache kết quả
+    # Cache kết quả để dùng lại
     _similarity_matrix_cache = similarity_dict
     
     return similarity_dict
@@ -618,15 +695,20 @@ def _calculate_item_pair_similarity(
     internal_id2: int,
     item_features: List[str]
 ) -> float:
-    """Tính similarity giữa 2 items dựa trên features.
+    """
+    Tính similarity giữa 2 items dựa trên features.
+    
+    Similarity được tính bằng weighted average của similarities từ các features:
+    - style, city: Jaccard similarity (tokens overlap)
+    - price, star, score: Normalized distance similarity
     
     Args:
-        dataset: RecBole dataset
+        dataset: RecBole dataset object
         internal_id1, internal_id2: Internal IDs của 2 items
-        item_features: List of feature names
+        item_features: List of feature names để tính similarity
     
     Returns:
-        Similarity score (0-1), càng cao càng giống nhau
+        Similarity score từ 0 đến 1, càng cao càng giống nhau
     """
     similarities = []
     weights = []
@@ -640,7 +722,7 @@ def _calculate_item_pair_similarity(
             feat1 = dataset.item_feat[field][internal_id1]
             feat2 = dataset.item_feat[field][internal_id2]
             
-            # Convert tensor to value nếu cần
+            # Convert tensor sang Python value nếu cần
             if isinstance(feat1, torch.Tensor):
                 if feat1.numel() == 1:
                     # Scalar tensor → convert sang Python value
@@ -669,17 +751,15 @@ def _calculate_item_pair_similarity(
             elif not isinstance(feat1, (str, int, float)):
                 # Nếu không phải tensor, string, int, float → convert sang string
                 feat1 = str(feat1)
-                
+            
+            # Xử lý feat2 tương tự
             if isinstance(feat2, torch.Tensor):
                 if feat2.numel() == 1:
-                    # Scalar tensor → convert sang Python value
                     feat2 = feat2.item()
                 else:
-                    # Tensor có nhiều phần tử (TOKEN_SEQ) → convert sang list và join
                     try:
                         feat2_list = feat2.cpu().numpy().tolist()
                         if isinstance(feat2_list, list):
-                            # Flatten nếu là nested list
                             flat_list = []
                             for x in feat2_list:
                                 if isinstance(x, list):
@@ -691,26 +771,25 @@ def _calculate_item_pair_similarity(
                         else:
                             feat2 = str(feat2_list)
                     except Exception:
-                        # Fallback: convert to string
                         feat2 = str(feat2.cpu().numpy())
             elif not isinstance(feat2, (str, int, float)):
-                # Nếu không phải tensor, string, int, float → convert sang string
                 feat2 = str(feat2)
             
-            # Tính similarity tùy theo field type
+            # Tính similarity tùy theo loại field
             if field in ['style', 'city']:
-                # Token_seq fields: Jaccard similarity
+                # Token_seq fields: Jaccard similarity (set overlap)
                 # Chuyển string thành set (split by space)
                 set1 = set(str(feat1).split())
                 set2 = set(str(feat2).split())
                 if len(set1 | set2) == 0:
                     sim = 1.0  # Cả 2 đều empty → giống nhau
                 else:
+                    # Jaccard similarity = |intersection| / |union|
                     sim = len(set1 & set2) / len(set1 | set2)
                 weight = 0.3  # Style và city có trọng số thấp hơn
                 
             elif field in ['price', 'star', 'score']:
-                # Float fields: Normalized cosine similarity
+                # Float fields: Normalized distance similarity
                 # Convert về float
                 try:
                     val1 = float(feat1) if isinstance(feat1, str) else float(feat1)
@@ -770,7 +849,8 @@ def calculate_behavior_boost_with_similarity(
     similarity_threshold: float = 0.5,
     similarity_boost_factor: float = 0.5
 ) -> Dict[int, float]:
-    """Tính boost cho từng item, bao gồm cả similarity boost (Phase 2).
+    """
+    Tính boost cho từng item, bao gồm cả similarity boost (Phase 2).
     
     Logic:
     1. Tính direct boost từ actions (giống Phase 1)
@@ -781,14 +861,14 @@ def calculate_behavior_boost_with_similarity(
         actions: List of actions từ get_recent_user_actions()
         current_time: Unix timestamp hiện tại
         dataset: RecBole dataset (để tính similarity)
-        decay_rate: Decay rate cho time weight
-        similarity_threshold: Chỉ boost items có similarity >= threshold
-        similarity_boost_factor: Trọng số cho similarity boost (0.5 = boost 50% của direct boost)
+        decay_rate: Decay rate cho time weight (default: 0.1)
+        similarity_threshold: Chỉ boost items có similarity >= threshold (default: 0.5)
+        similarity_boost_factor: Trọng số cho similarity boost (0.5 = boost 50% của direct boost) (default: 0.5)
     
     Returns:
         Dict: {item_id: boost_score, ...}
     """
-    # Bước 1: Tính direct boost (Phase 1)
+    # Bước 1: Tính direct boost (Phase 1) - boost hotels đã tương tác trực tiếp
     direct_boost = calculate_behavior_boost(actions, current_time, decay_rate)
     
     if len(direct_boost) == 0:
@@ -801,11 +881,11 @@ def calculate_behavior_boost_with_similarity(
         print(f"[WARNING] Lỗi khi tính similarity: {e}. Chỉ dùng direct boost.")
         return direct_boost
     
-    # Bước 3: Boost hotels tương tự
+    # Bước 3: Boost hotels tương tự hotels đã tương tác
     final_boost = direct_boost.copy()
     
     for item_id, direct_boost_value in direct_boost.items():
-        # Tìm hotels tương tự
+        # Tìm hotels tương tự với hotel đã tương tác
         similar_items = similarity_dict.get(item_id, {})
         
         for similar_item_id, similarity_score in similar_items.items():
@@ -815,6 +895,7 @@ def calculate_behavior_boost_with_similarity(
                 if score_float >= similarity_threshold and similar_item_id != item_id:
                     # Boost hotels tương tự với trọng số similarity
                     # similarity_boost = direct_boost * similarity_score * similarity_boost_factor
+                    # similarity_boost_factor giảm trọng số của similarity boost so với direct boost
                     similarity_boost = direct_boost_value * score_float * similarity_boost_factor
                     
                     # Cộng dồn với boost hiện tại (có thể đã có direct boost hoặc similarity boost từ items khác)
@@ -827,7 +908,7 @@ def calculate_behavior_boost_with_similarity(
 
 
 if __name__ == "__main__":
-    # Test inference
+    # Test inference module
     print("Testing inference...")
     
     # Load model
@@ -846,4 +927,3 @@ if __name__ == "__main__":
     print(f"\nTest với user mới: new_user_999")
     recommendations = get_recommendations("new_user_999", top_k=10)
     print(f"Recommendations (cold start): {recommendations}")
-

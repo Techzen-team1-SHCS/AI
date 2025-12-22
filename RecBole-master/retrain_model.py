@@ -1,12 +1,16 @@
 """
 Retraining Pipeline - Tự động retrain model mỗi ngày 1 lần.
-Script này sẽ:
+
+Script này thực hiện quy trình retraining tự động:
 1. Kiểm tra số lượng interactions mới (so với lần train trước)
-2. Backup checkpoint cũ trước khi retrain
-3. Train model với toàn bộ dữ liệu (cũ + mới)
+2. Backup checkpoint cũ trước khi retrain (để có thể rollback nếu cần)
+3. Train model mới với toàn bộ dữ liệu (cũ + mới)
 4. So sánh metrics (RMSE, MAE) với model cũ
-5. Chỉ thay thế model nếu metrics tốt hơn
+5. Lưu model mới (ngay cả khi metrics không tốt hơn - để có dữ liệu mới nhất)
 6. Clear model cache để load model mới
+
+Lưu ý: Model mới luôn được lưu, không phụ thuộc vào metrics. 
+Điều này đảm bảo model luôn được cập nhật với dữ liệu mới nhất.
 """
 import os
 import sys
@@ -18,6 +22,7 @@ from pathlib import Path
 from typing import Optional, Dict, Tuple
 import io
 
+# Fix encoding cho Windows console
 if sys.platform == 'win32':
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
@@ -34,7 +39,10 @@ except ImportError:
     clear_cache = None
     _get_latest_checkpoint = None
 
-# Constants
+# ============================================================================
+# CONSTANTS
+# ============================================================================
+
 SAVED_DIR = "saved"
 DATASET_DIR = "dataset/hotel"
 CONFIG_FILE = "deepfm_config.yaml"
@@ -44,7 +52,19 @@ BACKUP_DIR = os.path.join(SAVED_DIR, "backups")
 
 
 def load_retrain_history() -> Dict:
-    """Load lịch sử retraining từ file."""
+    """
+    Load lịch sử retraining từ file JSON.
+    
+    History chứa:
+    - last_retrain_time: Thời gian retrain cuối cùng
+    - last_dataset_size: Số lượng interactions tại thời điểm retrain cuối
+    - last_retrain_metrics: Metrics của model cuối cùng
+    - retrain_count: Số lần đã retrain
+    - backups: Danh sách các backup đã tạo
+    
+    Returns:
+        Dictionary chứa lịch sử retraining, hoặc empty dict nếu chưa có
+    """
     if os.path.exists(RETRAIN_HISTORY_FILE):
         try:
             with open(RETRAIN_HISTORY_FILE, 'r', encoding='utf-8') as f:
@@ -56,7 +76,12 @@ def load_retrain_history() -> Dict:
 
 
 def save_retrain_history(history: Dict):
-    """Lưu lịch sử retraining vào file."""
+    """
+    Lưu lịch sử retraining vào file JSON.
+    
+    Args:
+        history: Dictionary chứa lịch sử retraining
+    """
     try:
         with open(RETRAIN_HISTORY_FILE, 'w', encoding='utf-8') as f:
             json.dump(history, f, indent=2, ensure_ascii=False)
@@ -65,7 +90,12 @@ def save_retrain_history(history: Dict):
 
 
 def get_dataset_size() -> int:
-    """Đếm số dòng interactions trong dataset."""
+    """
+    Đếm số dòng interactions trong dataset (hotel.inter).
+    
+    Returns:
+        Số lượng interactions (không tính header)
+    """
     inter_file = os.path.join(DATASET_DIR, "hotel.inter")
     if not os.path.exists(inter_file):
         return 0
@@ -80,8 +110,15 @@ def get_dataset_size() -> int:
 
 
 def get_latest_checkpoint_metrics() -> Optional[Dict]:
-    """Lấy metrics từ checkpoint mới nhất hoặc từ history."""
-    # Ưu tiên lấy từ history (nhanh hơn)
+    """
+    Lấy metrics từ checkpoint mới nhất hoặc từ history.
+    
+    Ưu tiên lấy từ history (nhanh hơn) vì không cần load checkpoint.
+    
+    Returns:
+        Dictionary chứa metrics (RMSE, MAE, ...) hoặc None nếu không có
+    """
+    # Ưu tiên lấy từ history (nhanh hơn, không cần load checkpoint)
     history = load_retrain_history()
     if 'last_retrain_metrics' in history:
         return history['last_retrain_metrics']
@@ -100,7 +137,17 @@ def get_latest_checkpoint_metrics() -> Optional[Dict]:
 
 
 def backup_checkpoint(checkpoint_path: str) -> Optional[str]:
-    """Backup checkpoint cũ vào thư mục backups."""
+    """
+    Backup checkpoint cũ vào thư mục backups trước khi retrain.
+    
+    Backup được đặt tên với timestamp để tránh trùng lặp.
+    
+    Args:
+        checkpoint_path: Đường dẫn đến checkpoint cần backup
+    
+    Returns:
+        Đường dẫn đến file backup, hoặc None nếu backup thất bại
+    """
     if not os.path.exists(checkpoint_path):
         return None
     
@@ -114,6 +161,7 @@ def backup_checkpoint(checkpoint_path: str) -> Optional[str]:
     backup_path = os.path.join(BACKUP_DIR, backup_name)
     
     try:
+        # Copy file với metadata (timestamp, permissions, etc.)
         shutil.copy2(checkpoint_path, backup_path)
         print(f"[INFO] Đã backup checkpoint: {backup_path}")
         return backup_path
@@ -123,23 +171,26 @@ def backup_checkpoint(checkpoint_path: str) -> Optional[str]:
 
 
 def train_new_model() -> Optional[Dict]:
-    """Train model mới với dữ liệu hiện tại.
+    """
+    Train model mới với dữ liệu hiện tại.
+    
+    Sử dụng RecBole's run() function để train DeepFM model.
     
     Returns:
-        Dict chứa kết quả training hoặc None nếu training thất bại
+        Dictionary chứa kết quả training (metrics, best epoch, ...) hoặc None nếu training thất bại
     """
     print("[INFO] Bắt đầu training model mới...")
     
     try:
-        # Chạy training
+        # Chạy training với RecBole
         result = run(
             model="DeepFM",
             dataset="hotel",
             config_file_list=[CONFIG_FILE],
             config_dict={
-                "save_result": True,
-                "save_log": True,
-                "show_progress": True,
+                "save_result": True,      # Lưu kết quả vào file
+                "save_log": True,         # Lưu log training
+                "show_progress": True,    # Hiển thị progress bar
             }
         )
         
@@ -155,7 +206,16 @@ def train_new_model() -> Optional[Dict]:
 
 
 def compare_models(old_metrics: Optional[Dict], new_metrics: Dict) -> bool:
-    """So sánh metrics của model cũ và mới.
+    """
+    So sánh metrics của model cũ và mới.
+    
+    So sánh dựa trên RMSE (Root Mean Square Error):
+    - RMSE càng thấp càng tốt
+    - Model mới tốt hơn nếu RMSE thấp hơn
+    
+    Args:
+        old_metrics: Metrics của model cũ (có thể None nếu không có)
+        new_metrics: Metrics của model mới
     
     Returns:
         True nếu model mới tốt hơn, False nếu không
@@ -177,10 +237,17 @@ def compare_models(old_metrics: Optional[Dict], new_metrics: Dict) -> bool:
 
 
 def should_retrain() -> Tuple[bool, str]:
-    """Kiểm tra xem có nên retrain không.
+    """
+    Kiểm tra xem có nên retrain không dựa trên điều kiện.
+    
+    Điều kiện retrain:
+    1. Số lượng interactions mới >= MIN_NEW_INTERACTIONS
+    2. Thời gian từ lần retrain cuối >= 12 giờ
     
     Returns:
-        (should_retrain, reason)
+        Tuple (should_retrain: bool, reason: str)
+        - should_retrain: True nếu nên retrain, False nếu không
+        - reason: Lý do retrain hoặc lý do skip
     """
     history = load_retrain_history()
     
@@ -195,11 +262,11 @@ def should_retrain() -> Tuple[bool, str]:
     # Kiểm tra thời gian từ lần retrain cuối
     last_retrain = history.get('last_retrain_time')
     if last_retrain:
-        # Parse timestamp
+        # Parse timestamp từ ISO format
         last_time = datetime.fromisoformat(last_retrain)
         hours_since_last = (datetime.now() - last_time).total_seconds() / 3600
         
-        # Nếu retrain gần đây (< 12 giờ), bỏ qua
+        # Nếu retrain gần đây (< 12 giờ), bỏ qua để tránh retrain quá thường xuyên
         if hours_since_last < 12:
             return False, f"Đã retrain gần đây ({hours_since_last:.1f} giờ trước)"
     
@@ -207,7 +274,16 @@ def should_retrain() -> Tuple[bool, str]:
 
 
 def main(force: bool = False):
-    """Hàm main để chạy retraining pipeline.
+    """
+    Hàm main để chạy retraining pipeline.
+    
+    Quy trình:
+    1. Kiểm tra điều kiện retrain (trừ khi force=True)
+    2. Backup checkpoint cũ
+    3. Train model mới
+    4. So sánh metrics với model cũ
+    5. Lưu model mới và cập nhật history
+    6. Clear cache để load model mới
     
     Args:
         force: Nếu True, bỏ qua điều kiện kiểm tra và chạy retraining ngay
@@ -233,13 +309,13 @@ def main(force: bool = False):
     print(f"[INFO] Bắt đầu retraining: {reason}")
     print()
     
-    # Load history
+    # Load history để lưu thông tin retrain
     history = load_retrain_history()
     
-    # Lấy metrics từ model cũ (nếu có)
+    # Lấy metrics từ model cũ (nếu có) để so sánh
     old_metrics = get_latest_checkpoint_metrics()
     
-    # Lấy checkpoint cũ
+    # Lấy checkpoint cũ để backup
     old_checkpoint = _get_latest_checkpoint(SAVED_DIR) if _get_latest_checkpoint else None
     
     if old_checkpoint:
@@ -248,9 +324,11 @@ def main(force: bool = False):
             print(f"[INFO] Metrics model cũ (từ history): RMSE={old_metrics.get('RMSE', 'N/A'):.4f}, MAE={old_metrics.get('MAE', 'N/A'):.4f}")
         else:
             print("[WARNING] Không có metrics trong history, sẽ so sánh với model mới sau khi train")
-        # Backup checkpoint cũ
+        
+        # Backup checkpoint cũ trước khi retrain
         backup_path = backup_checkpoint(old_checkpoint)
         if backup_path:
+            # Lưu thông tin backup vào history
             history.setdefault('backups', []).append({
                 'checkpoint': old_checkpoint,
                 'backup_path': backup_path,
@@ -276,7 +354,7 @@ def main(force: bool = False):
         
         # Lấy metrics từ kết quả training
         new_metrics = result.get('best_valid_result', {})
-        # Convert keys to uppercase để so sánh
+        # Convert keys to uppercase để so sánh (RecBole có thể trả về lowercase)
         new_metrics = {k.upper(): v for k, v in new_metrics.items()}
         new_rmse = new_metrics.get('RMSE', float('inf'))
         new_mae = new_metrics.get('MAE', float('inf'))
@@ -288,7 +366,7 @@ def main(force: bool = False):
         # So sánh với model cũ (nếu có)
         is_better = True  # Mặc định là True nếu không có model cũ
         if old_metrics:
-            # Convert keys to uppercase
+            # Convert keys to uppercase để so sánh
             old_metrics_upper = {k.upper(): v for k, v in old_metrics.items()}
             is_better = compare_models(old_metrics_upper, new_metrics)
             if not is_better:
@@ -297,12 +375,12 @@ def main(force: bool = False):
         else:
             print("[INFO] Không có model cũ để so sánh, chấp nhận model mới")
         
-        # Clear cache để load model mới
+        # Clear cache để load model mới (quan trọng!)
         if clear_cache:
             clear_cache()
             print("[INFO] Đã clear model cache")
         
-        # Cập nhật history
+        # Cập nhật history với thông tin retrain mới
         history['last_retrain_time'] = datetime.now().isoformat()
         history['last_dataset_size'] = get_dataset_size()
         history['last_retrain_metrics'] = new_metrics
@@ -334,4 +412,3 @@ if __name__ == "__main__":
     parser.add_argument("--force", action="store_true", help="Bỏ qua điều kiện kiểm tra và chạy retraining ngay")
     args = parser.parse_args()
     main(force=args.force)
-

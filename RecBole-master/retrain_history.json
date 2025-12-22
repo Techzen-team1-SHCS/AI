@@ -113,18 +113,54 @@
         "RMSE": 0.1896,
         "MAE": 0.1551
       }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Dec-04-2025_06-56-18.pth",
+      "backup_path": "saved\\backups\\DeepFM-Dec-04-2025_06-56-18.pth.backup_20251204_153649",
+      "backup_time": "2025-12-04T15:36:49.103321",
+      "metrics": {
+        "RMSE": 0.1896,
+        "MAE": 0.1551
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Dec-04-2025_15-36-51.pth",
+      "backup_path": "saved\\backups\\DeepFM-Dec-04-2025_15-36-51.pth.backup_20251204_160357",
+      "backup_time": "2025-12-04T16:03:57.857903",
+      "metrics": {
+        "RMSE": 0.1911,
+        "MAE": 0.1566
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Dec-04-2025_16-03-58.pth",
+      "backup_path": "saved\\backups\\DeepFM-Dec-04-2025_16-03-58.pth.backup_20251210_174659",
+      "backup_time": "2025-12-10T17:46:59.290982",
+      "metrics": {
+        "RMSE": 0.1905,
+        "MAE": 0.156
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Dec-10-2025_17-47-00.pth",
+      "backup_path": "saved\\backups\\DeepFM-Dec-10-2025_17-47-00.pth.backup_20251216_195700",
+      "backup_time": "2025-12-16T19:57:00.327301",
+      "metrics": {
+        "RMSE": 0.1907,
+        "MAE": 0.1564
+      }
     }
   ],
-  "last_retrain_time": "2025-11-28T14:34:54.065628",
-  "last_dataset_size": 100022,
+  "last_retrain_time": "2025-12-16T19:57:29.028753",
+  "last_dataset_size": 100122,
   "last_retrain_metrics": {
-    "RMSE": 0.1896,
-    "MAE": 0.1551
+    "RMSE": 0.1924,
+    "MAE": 0.1582
   },
-  "retrain_count": 15,
+  "retrain_count": 19,
   "last_retrain_result": {
-    "rmse": 0.1896,
-    "mae": 0.1551,
+    "rmse": 0.1924,
+    "mae": 0.1582,
     "is_better_than_old": false
   }
 }

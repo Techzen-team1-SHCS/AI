@@ -38,51 +38,62 @@ Sau đó nhập lại lệnh .\recbole-env\Scripts\Activate.ps1
 
 Sau khi kích hoạt, bạn sẽ thấy (recbole-env) tiền tố trên prompt.
 
-3) Cập nhật pip và cài PyTorch (quan trọng)
+3) Cập nhật pip và cài PyTorch (quan trọng - BẮT BUỘC)
 
-Lý do: requirements.txt có thể tham chiếu torch; tốt nhất cài PyTorch trước tùy môi trường GPU/CPU.
+Lý do: requirements.txt KHÔNG có torch (để tránh tải CUDA packages nặng). Phải cài PyTorch TRƯỚC.
 
-Nếu máy không có NVIDIA GPU (CPU-only):
+Bước 1: Cài pip vào virtual environment (nếu chưa có):
+python -m ensurepip --upgrade
+
+Bước 2: Cài PyTorch CPU-only (khuyến nghị cho Windows, không cần GPU):
 
 python -m pip install --upgrade pip
 pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
+Lưu ý: Lệnh trên sẽ cài PyTorch phiên bản mới nhất tương thích với Python của bạn (ví dụ: PyTorch 2.8.0+cpu cho Python 3.12).
 
-Nếu có GPU và bạn muốn dùng CUDA, vào https://pytorch.org
- chọn phiên bản CUDA tương thích rồi copy lệnh pip install ... --index-url ... tương ứng.
+Nếu có GPU NVIDIA và muốn dùng CUDA:
+Vào https://pytorch.org, chọn phiên bản CUDA tương thích rồi copy lệnh pip install tương ứng.
+Ví dụ cho CUDA 11.8:
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
-Lưu ý: nếu trong requirements.txt có một dòng torch==... mà không tương thích (ví dụ yêu cầu CUDA), tốt nhất xóa dòng torch trong file hoặc cài torch theo cách bên trên trước rồi pip install -r requirements.txt (không cài torch hai lần).
-
-4) Cài các thư viện từ requirements.txt — Tại sao: đây là tất cả phụ thuộc dự án
+4) Cài các thư viện từ requirements.txt
 
 Trong venv đã activate:
 
 pip install -r requirements.txt
 
+Lưu ý về Ray:
+- requirements.txt yêu cầu ray<=2.6.3 nhưng version này không còn sẵn có.
+- Nếu gặp lỗi "No matching distribution found for ray<=2.6.3", cài ray version mới hơn:
+pip install "ray[tune]>=2.31.0" pyarrow>=10.0.0
 
-Nếu lệnh báo lỗi hoặc dừng ở phần torch/cuda thì:
+Sau đó tiếp tục cài các dependencies còn lại:
+pip install fastapi==0.115.6 "uvicorn[standard]>=0.34.0,<0.39.0" "numpy>=1.24.0,<2.0.0" scipy>=1.10.0 pandas>=2.0.0 scikit-learn>=1.3.0 PyYAML>=6.0 tqdm>=4.65.0 colorlog==4.7.2 colorama==0.4.4 tensorboard>=2.13.0 thop>=0.1.1 tabulate>=0.9.0 plotly>=5.14.0 texttable>=1.6.0 psutil>=5.9.0 recbole==1.2.0
 
-Xem lại file requirements.txt, nếu có torch dòng, xóa dòng đó và cài torch riêng như bước 3 rồi chạy lại pip install -r requirements.txt.
+Hoặc cài từng package một nếu gặp lỗi conflict.
 
-5) Cài thêm (nếu cần) — những library RecBole hay dùng
+5) Kiểm tra cài đặt
 
-Bạn đã gặp các lỗi trước (thiếu ray, pyarrow) — để chắc chắn, cài:
+Trong môi trường đang active, kiểm tra từng bước:
 
-pip install "ray[tune]" pyarrow
+Kiểm tra PyTorch:
+python -c "import torch; print('PyTorch version:', torch.__version__)"
+python -c "import torch.distributed; print('torch.distributed OK')"
 
+Kiểm tra RecBole:
+python -c "from recbole.quick_start import run; print('RecBole OK')"
 
-ray[tune] cho hyperparameter tuning; pyarrow thường là dependency của Ray.
-
-6) Kiểm tra cài đặt RecBole & PyTorch
-
-Trong môi trường đang active:
-
+Kiểm tra đầy đủ:
 python -c "import recbole, torch; print('recbole', recbole.__version__); print('torch', torch.__version__, 'cuda_available=', torch.cuda.is_available())"
 
-
-Nếu lỗi ModuleNotFoundError: recbole thì pip install recbole (thường không cần nếu bạn đã cài theo requirements). Nếu lỗi numpy như np.float_ removed, cài lại numpy tương thích:
-
+Nếu lỗi ModuleNotFoundError: recbole thì pip install recbole==1.2.0
+Nếu lỗi numpy như np.float_ removed, cài lại numpy tương thích:
 pip install numpy==1.26.4
+
+Kiểm tra retrain_model.py có chạy được không:
+python retrain_model.py --help
+Nếu hiển thị help message, môi trường đã sẵn sàng!
 
 =============================================================================
 Chạy dự án:PowerShell

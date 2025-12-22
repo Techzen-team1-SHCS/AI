@@ -1,601 +1,601 @@
 user_id:token	age:float	gender:token	region:token
-1	25.0	F	Hanoi
-2	32.0	M	Hanoi
-3	28.0	F	Hoan Kiem
-4	35.0	M	Hanoi
-5	22.0	F	Cau Giay
-6	41.0	M	Hanoi
-7	29.0	F	Ba Dinh
-8	26.0	M	Hanoi
-9	33.0	F	Hoan Kiem
-10	38.0	M	Hanoi
-11	24.0	F	Hai Ba Trung
+1	32.0	M	Hanoi
+2	35.0	M	Hanoi
+3	26.0	M	Hanoi
+4	33.0	F	Hanoi
+5	36.0	M	Hanoi
+6	23.0	F	Hanoi
+7	25.0	M	Hanoi
+8	26.0	F	Hanoi
+9	32.0	M	Hanoi
+10	37.0	M	Hanoi
+11	23.0	F	Hanoi
 12	31.0	M	Hanoi
-13	27.0	F	Hanoi
-14	36.0	M	Hoan Kiem
-15	23.0	F	Cau Giay
-16	40.0	M	Hanoi
-17	30.0	F	Ba Dinh
-18	25.0	M	Hanoi
-19	34.0	F	Hoan Kiem
-20	39.0	M	Hanoi
-21	26.0	F	Hai Ba Trung
-22	32.0	M	Hanoi
-23	28.0	F	Hanoi
-24	37.0	M	Hoan Kiem
-25	24.0	F	Cau Giay
-26	31.0	M	Hanoi
-27	29.0	F	Ba Dinh
-28	35.0	M	Hanoi
-29	22.0	F	Hoan Kiem
-30	38.0	M	Hanoi
-31	27.0	F	Hai Ba Trung
-32	33.0	M	Hanoi
-33	25.0	F	Hanoi
-34	36.0	M	Hoan Kiem
-35	23.0	F	Cau Giay
-36	30.0	M	Hanoi
-37	28.0	F	Ba Dinh
-38	34.0	M	Hanoi
-39	26.0	F	Hoan Kiem
-40	31.0	M	Hanoi
-41	29.0	F	Hai Ba Trung
+13	29.0	F	Hanoi
+14	32.0	M	Hanoi
+15	27.0	F	Hanoi
+16	30.0	M	Hanoi
+17	28.0	F	Hanoi
+18	33.0	M	Hanoi
+19	26.0	F	Hanoi
+20	29.0	F	Hanoi
+21	36.0	M	Hanoi
+22	23.0	F	Hanoi
+23	25.0	F	Hanoi
+24	38.0	M	Hanoi
+25	30.0	M	Hanoi
+26	26.0	F	Hanoi
+27	27.0	F	Hanoi
+28	34.0	M	Hanoi
+29	28.0	F	Hanoi
+30	31.0	M	DaNang
+31	26.0	F	DaNang
+32	36.0	M	DaNang
+33	27.0	F	DaNang
+34	22.0	F	Hanoi
+35	29.0	M	Hanoi
+36	34.0	M	Hanoi
+37	36.0	M	Hanoi
+38	25.0	F	Hanoi
+39	32.0	M	Hanoi
+40	30.0	M	Hanoi
+41	26.0	F	Hanoi
 42	37.0	M	Hanoi
-43	24.0	F	Hanoi
-44	32.0	M	Hoan Kiem
-45	27.0	F	Cau Giay
-46	35.0	M	Hanoi
-47	25.0	F	Ba Dinh
-48	30.0	M	Hanoi
-49	28.0	F	Hoan Kiem
-50	33.0	M	Hanoi
-51	26.0	F	Hai Ba Trung
-52	31.0	M	Hanoi
-53	29.0	F	Hanoi
-54	36.0	M	Hoan Kiem
-55	23.0	F	Cau Giay
-56	34.0	M	Hanoi
-57	27.0	F	Ba Dinh
-58	32.0	M	Hanoi
-59	25.0	F	Hoan Kiem
-60	38.0	M	Hanoi
-61	28.0	F	Hai Ba Trung
-62	35.0	M	Hanoi
-63	24.0	F	Hanoi
-64	30.0	M	Hoan Kiem
-65	26.0	F	Cau Giay
-66	33.0	M	Hanoi
-67	29.0	F	Ba Dinh
-68	37.0	M	Hanoi
-69	25.0	F	Hoan Kiem
-70	31.0	M	Hanoi
-71	27.0	F	Hai Ba Trung
-72	34.0	M	Hanoi
-73	28.0	F	Hanoi
-74	32.0	M	Hoan Kiem
-75	23.0	F	Cau Giay
-76	36.0	M	Hanoi
-77	26.0	F	Ba Dinh
-78	30.0	M	Hanoi
-79	29.0	F	Hoan Kiem
-80	35.0	M	Hanoi
-81	24.0	F	Da Nang
-82	31.0	M	Da Nang
-83	27.0	F	Da Nang
-84	33.0	M	Da Nang
-85	25.0	F	Son Tra
-86	38.0	M	Da Nang
-87	28.0	F	Hai Chau
-88	32.0	M	Da Nang
-89	26.0	F	Ngu Hanh Son
-90	34.0	M	Da Nang
-91	29.0	F	Da Nang
-92	31.0	M	Son Tra
-93	24.0	F	Da Nang
-94	36.0	M	Hai Chau
-95	27.0	F	Da Nang
-96	30.0	M	Ngu Hanh Son
-97	25.0	F	Da Nang
-98	33.0	M	Da Nang
-99	28.0	F	Son Tra
-100	35.0	M	Da Nang
-101	22.0	F	Hanoi
-102	29.0	M	Hanoi
-103	26.0	F	Hoan Kiem
-104	34.0	M	Hanoi
-105	23.0	F	Cau Giay
-106	31.0	M	Hanoi
-107	28.0	F	Ba Dinh
-108	36.0	M	Hanoi
-109	25.0	F	Hoan Kiem
-110	32.0	M	Hanoi
-111	27.0	F	Hai Ba Trung
-112	30.0	M	Hanoi
-113	24.0	F	Hanoi
-114	33.0	M	Hoan Kiem
-115	26.0	F	Cau Giay
-116	35.0	M	Hanoi
-117	29.0	F	Ba Dinh
-118	31.0	M	Hanoi
-119	25.0	F	Hoan Kiem
-120	37.0	M	Hanoi
-121	28.0	F	Hai Ba Trung
-122	32.0	M	Hanoi
-123	23.0	F	Hanoi
-124	34.0	M	Hoan Kiem
-125	27.0	F	Cau Giay
-126	30.0	M	Hanoi
-127	26.0	F	Ba Dinh
-128	33.0	M	Hanoi
-129	24.0	F	Hoan Kiem
-130	35.0	M	Hanoi
-131	29.0	F	Hai Ba Trung
-132	31.0	M	Hanoi
-133	25.0	F	Hanoi
-134	36.0	M	Hoan Kiem
-135	28.0	F	Cau Giay
-136	32.0	M	Hanoi
-137	26.0	F	Ba Dinh
-138	34.0	M	Hanoi
-139	23.0	F	Hoan Kiem
-140	30.0	M	Hanoi
-141	27.0	F	Hai Ba Trung
-142	33.0	M	Hanoi
-143	24.0	F	Hanoi
-144	35.0	M	Hoan Kiem
-145	26.0	F	Cau Giay
-146	31.0	M	Hanoi
-147	29.0	F	Ba Dinh
-148	32.0	M	Hanoi
-149	25.0	F	Hoan Kiem
-150	37.0	M	Hanoi
-151	28.0	F	Hai Ba Trung
-152	30.0	M	Hanoi
-153	23.0	F	Hanoi
-154	34.0	M	Hoan Kiem
-155	27.0	F	Cau Giay
-156	33.0	M	Hanoi
-157	26.0	F	Ba Dinh
-158	35.0	M	Hanoi
-159	24.0	F	Hoan Kiem
-160	31.0	M	Hanoi
-161	29.0	F	Hai Ba Trung
-162	32.0	M	Hanoi
-163	25.0	F	Hanoi
-164	36.0	M	Hoan Kiem
-165	28.0	F	Cau Giay
-166	30.0	M	Hanoi
-167	26.0	F	Ba Dinh
-168	34.0	M	Hanoi
-169	23.0	F	Hoan Kiem
-170	33.0	M	Hanoi
-171	27.0	F	Hai Ba Trung
-172	31.0	M	Hanoi
-173	24.0	F	Hanoi
-174	35.0	M	Hoan Kiem
-175	26.0	F	Cau Giay
-176	32.0	M	Hanoi
-177	29.0	F	Ba Dinh
-178	30.0	M	Hanoi
-179	25.0	F	Hoan Kiem
-180	37.0	M	Hanoi
-181	28.0	F	Hai Ba Trung
-182	33.0	M	Hanoi
-183	23.0	F	Hanoi
-184	34.0	M	Hoan Kiem
-185	27.0	F	Cau Giay
-186	31.0	M	Hanoi
-187	26.0	F	Ba Dinh
-188	35.0	M	Hanoi
-189	24.0	F	Hoan Kiem
-190	32.0	M	Hanoi
-191	29.0	F	Hai Ba Trung
-192	30.0	M	Hanoi
-193	25.0	F	Hanoi
-194	36.0	M	Hoan Kiem
-195	28.0	F	Cau Giay
-196	33.0	M	Hanoi
-197	26.0	F	Ba Dinh
-198	34.0	M	Hanoi
-199	23.0	F	Hoan Kiem
-200	31.0	M	Hanoi
-201	27.0	F	Hai Ba Trung
-202	35.0	M	Hanoi
-203	24.0	F	Hanoi
-204	32.0	M	Hoan Kiem
-205	26.0	F	Cau Giay
-206	30.0	M	Hanoi
-207	29.0	F	Ba Dinh
-208	33.0	M	Hanoi
-209	25.0	F	Hoan Kiem
-210	37.0	M	Hanoi
-211	28.0	F	Hai Ba Trung
-212	31.0	M	Hanoi
-213	23.0	F	Hanoi
-214	34.0	M	Hoan Kiem
-215	27.0	F	Cau Giay
-216	32.0	M	Hanoi
-217	26.0	F	Ba Dinh
-218	35.0	M	Hanoi
-219	24.0	F	Hoan Kiem
-220	30.0	M	Hanoi
-221	29.0	F	Hai Ba Trung
-222	33.0	M	Hanoi
-223	25.0	F	Hanoi
-224	36.0	M	Hoan Kiem
-225	28.0	F	Cau Giay
-226	31.0	M	Hanoi
-227	26.0	F	Ba Dinh
-228	34.0	M	Hanoi
-229	23.0	F	Hoan Kiem
-230	32.0	M	Hanoi
-231	27.0	F	Hai Ba Trung
-232	35.0	M	Hanoi
-233	24.0	F	Hanoi
-234	30.0	M	Hoan Kiem
-235	26.0	F	Cau Giay
-236	33.0	M	Hanoi
-237	29.0	F	Ba Dinh
-238	31.0	M	Hanoi
-239	25.0	F	Hoan Kiem
-240	37.0	M	Hanoi
-241	28.0	F	Hai Ba Trung
-242	32.0	M	Hanoi
-243	23.0	F	Hanoi
-244	34.0	M	Hoan Kiem
-245	27.0	F	Cau Giay
-246	30.0	M	Hanoi
-247	26.0	F	Ba Dinh
-248	35.0	M	Hanoi
-249	24.0	F	Hoan Kiem
-250	33.0	M	Hanoi
-251	29.0	F	Hai Ba Trung
-252	31.0	M	Hanoi
-253	25.0	F	Hanoi
-254	36.0	M	Hoan Kiem
-255	28.0	F	Cau Giay
-256	32.0	M	Hanoi
-257	26.0	F	Ba Dinh
-258	34.0	M	Hanoi
-259	23.0	F	Hoan Kiem
-260	30.0	M	Hanoi
-261	27.0	F	Hai Ba Trung
-262	35.0	M	Hanoi
-263	24.0	F	Hanoi
-264	33.0	M	Hoan Kiem
-265	26.0	F	Cau Giay
-266	31.0	M	Hanoi
-267	29.0	F	Ba Dinh
-268	32.0	M	Hanoi
-269	25.0	F	Hoan Kiem
-270	37.0	M	Hanoi
-271	28.0	F	Hai Ba Trung
-272	30.0	M	Hanoi
-273	23.0	F	Hanoi
-274	34.0	M	Hoan Kiem
-275	27.0	F	Cau Giay
-276	33.0	M	Hanoi
-277	26.0	F	Ba Dinh
-278	35.0	M	Hanoi
-279	24.0	F	Hoan Kiem
-280	31.0	M	Hanoi
-281	29.0	F	Hai Ba Trung
-282	32.0	M	Hanoi
-283	25.0	F	Hanoi
-284	36.0	M	Hoan Kiem
-285	28.0	F	Cau Giay
-286	30.0	M	Hanoi
-287	26.0	F	Ba Dinh
-288	34.0	M	Hanoi
-289	23.0	F	Hoan Kiem
-290	33.0	M	Hanoi
-291	27.0	F	Hai Ba Trung
-292	35.0	M	Hanoi
-293	24.0	F	Hanoi
-294	31.0	M	Hoan Kiem
-295	26.0	F	Cau Giay
-296	32.0	M	Hanoi
-297	29.0	F	Ba Dinh
-298	30.0	M	Hanoi
-299	25.0	F	Hoan Kiem
-300	37.0	M	Hanoi
-301	28.0	F	Da Nang
-302	31.0	M	Da Nang
-303	24.0	F	Da Nang
-304	33.0	M	Da Nang
-305	26.0	F	Son Tra
-306	35.0	M	Da Nang
-307	29.0	F	Hai Chau
-308	32.0	M	Da Nang
-309	25.0	F	Ngu Hanh Son
-310	34.0	M	Da Nang
-311	27.0	F	Da Nang
-312	30.0	M	Son Tra
-313	23.0	F	Da Nang
-314	36.0	M	Hai Chau
-315	28.0	F	Da Nang
-316	31.0	M	Ngu Hanh Son
-317	24.0	F	Da Nang
-318	33.0	M	Da Nang
-319	26.0	F	Son Tra
-320	35.0	M	Da Nang
-321	29.0	F	Hai Chau
-322	32.0	M	Da Nang
-323	25.0	F	Da Nang
-324	34.0	M	Son Tra
-325	27.0	F	Da Nang
-326	30.0	M	Hai Chau
-327	23.0	F	Da Nang
-328	36.0	M	Ngu Hanh Son
-329	28.0	F	Da Nang
-330	31.0	M	Da Nang
-331	24.0	F	Son Tra
-332	33.0	M	Da Nang
-333	26.0	F	Hai Chau
-334	35.0	M	Da Nang
-335	29.0	F	Ngu Hanh Son
-336	32.0	M	Da Nang
-337	25.0	F	Da Nang
-338	34.0	M	Son Tra
-339	27.0	F	Da Nang
-340	30.0	M	Hai Chau
-341	23.0	F	Da Nang
-342	36.0	M	Ngu Hanh Son
-343	28.0	F	Da Nang
-344	31.0	M	Da Nang
-345	24.0	F	Son Tra
-346	33.0	M	Da Nang
-347	26.0	F	Hai Chau
-348	35.0	M	Da Nang
-349	29.0	F	Ngu Hanh Son
-350	32.0	M	Da Nang
-351	25.0	F	Da Nang
-352	34.0	M	Son Tra
-353	27.0	F	Da Nang
-354	30.0	M	Hai Chau
-355	23.0	F	Da Nang
-356	36.0	M	Ngu Hanh Son
-357	28.0	F	Da Nang
-358	31.0	M	Da Nang
-359	24.0	F	Son Tra
-360	33.0	M	Da Nang
-361	26.0	F	Hai Chau
-362	35.0	M	Da Nang
-363	29.0	F	Ngu Hanh Son
-364	32.0	M	Da Nang
-365	25.0	F	Da Nang
-366	34.0	M	Son Tra
-367	27.0	F	Da Nang
-368	30.0	M	Hai Chau
-369	23.0	F	Da Nang
-370	36.0	M	Ngu Hanh Son
-371	28.0	F	Da Nang
-372	31.0	M	Da Nang
-373	24.0	F	Son Tra
-374	33.0	M	Da Nang
-375	26.0	F	Hai Chau
-376	35.0	M	Da Nang
-377	29.0	F	Ngu Hanh Son
-378	32.0	M	Da Nang
-379	25.0	F	Da Nang
-380	34.0	M	Son Tra
-381	27.0	F	Da Nang
-382	30.0	M	Hai Chau
-383	23.0	F	Da Nang
-384	36.0	M	Ngu Hanh Son
-385	28.0	F	Da Nang
-386	31.0	M	Da Nang
-387	24.0	F	Son Tra
-388	33.0	M	Da Nang
-389	26.0	F	Hai Chau
-390	35.0	M	Da Nang
-391	29.0	F	Ngu Hanh Son
-392	32.0	M	Da Nang
-393	25.0	F	Da Nang
-394	34.0	M	Son Tra
-395	27.0	F	Da Nang
-396	30.0	M	Hai Chau
-397	23.0	F	Da Nang
-398	36.0	M	Ngu Hanh Son
-399	28.0	F	Da Nang
-400	31.0	M	Da Nang
-401	24.0	F	Son Tra
-402	33.0	M	Da Nang
-403	26.0	F	Hai Chau
-404	35.0	M	Da Nang
-405	29.0	F	Ngu Hanh Son
-406	32.0	M	Da Nang
-407	25.0	F	Da Nang
-408	34.0	M	Son Tra
-409	27.0	F	Da Nang
-410	30.0	M	Hai Chau
-411	23.0	F	Da Nang
-412	36.0	M	Ngu Hanh Son
-413	28.0	F	Da Nang
-414	31.0	M	Da Nang
-415	24.0	F	Son Tra
-416	33.0	M	Da Nang
-417	26.0	F	Hai Chau
-418	35.0	M	Da Nang
-419	29.0	F	Ngu Hanh Son
-420	32.0	M	Da Nang
-421	25.0	F	Da Nang
-422	34.0	M	Son Tra
-423	27.0	F	Da Nang
-424	30.0	M	Hai Chau
-425	23.0	F	Da Nang
-426	36.0	M	Ngu Hanh Son
-427	28.0	F	Da Nang
-428	31.0	M	Da Nang
-429	24.0	F	Son Tra
-430	33.0	M	Da Nang
-431	26.0	F	Hai Chau
-432	35.0	M	Da Nang
-433	29.0	F	Ngu Hanh Son
-434	32.0	M	Da Nang
-435	25.0	F	Da Nang
-436	34.0	M	Son Tra
-437	27.0	F	Da Nang
-438	30.0	M	Hai Chau
-439	23.0	F	Da Nang
-440	36.0	M	Ngu Hanh Son
-441	28.0	F	Da Nang
-442	31.0	M	Da Nang
-443	24.0	F	Son Tra
-444	33.0	M	Da Nang
-445	26.0	F	Hai Chau
-446	35.0	M	Da Nang
-447	29.0	F	Ngu Hanh Son
-448	32.0	M	Da Nang
-449	25.0	F	Da Nang
-450	34.0	M	Son Tra
-451	27.0	F	Da Nang
-452	30.0	M	Hai Chau
-453	23.0	F	Da Nang
-454	36.0	M	Ngu Hanh Son
-455	28.0	F	Da Nang
-456	31.0	M	Da Nang
-457	24.0	F	Son Tra
-458	33.0	M	Da Nang
-459	26.0	F	Hai Chau
-460	35.0	M	Da Nang
-461	29.0	F	Ngu Hanh Son
-462	32.0	M	Da Nang
-463	25.0	F	Da Nang
-464	34.0	M	Son Tra
-465	27.0	F	Da Nang
-466	30.0	M	Hai Chau
-467	23.0	F	Da Nang
-468	36.0	M	Ngu Hanh Son
-469	28.0	F	Da Nang
-470	31.0	M	Da Nang
-471	24.0	F	Son Tra
-472	33.0	M	Da Nang
-473	26.0	F	Hai Chau
-474	35.0	M	Da Nang
-475	29.0	F	Ngu Hanh Son
-476	32.0	M	Da Nang
-477	25.0	F	Da Nang
-478	34.0	M	Son Tra
-479	27.0	F	Da Nang
-480	30.0	M	Hai Chau
-481	23.0	F	Da Nang
-482	36.0	M	Ngu Hanh Son
-483	28.0	F	Da Nang
-484	31.0	M	Da Nang
-485	24.0	F	Son Tra
-486	33.0	M	Da Nang
-487	26.0	F	Hai Chau
-488	35.0	M	Da Nang
-489	29.0	F	Ngu Hanh Son
-490	32.0	M	Da Nang
-491	25.0	F	Da Nang
-492	34.0	M	Son Tra
-493	27.0	F	Da Nang
-494	30.0	M	Hai Chau
-495	23.0	F	Da Nang
-496	36.0	M	Ngu Hanh Son
-497	28.0	F	Da Nang
-498	31.0	M	Da Nang
-499	24.0	F	Son Tra
-500	33.0	M	Da Nang
-501	26.0	F	Hai Chau
-502	35.0	M	Da Nang
-503	29.0	F	Ngu Hanh Son
-504	32.0	M	Da Nang
-505	25.0	F	Da Nang
-506	34.0	M	Son Tra
-507	27.0	F	Da Nang
-508	30.0	M	Hai Chau
-509	23.0	F	Da Nang
-510	36.0	M	Ngu Hanh Son
-511	28.0	F	Da Nang
-512	31.0	M	Da Nang
-513	24.0	F	Son Tra
-514	33.0	M	Da Nang
-515	26.0	F	Hai Chau
-516	35.0	M	Da Nang
-517	29.0	F	Ngu Hanh Son
-518	32.0	M	Da Nang
-519	25.0	F	Da Nang
-520	34.0	M	Son Tra
-521	27.0	F	Da Nang
-522	30.0	M	Hai Chau
-523	23.0	F	Da Nang
-524	36.0	M	Ngu Hanh Son
-525	28.0	F	Da Nang
-526	31.0	M	Da Nang
-527	24.0	F	Son Tra
-528	33.0	M	Da Nang
-529	26.0	F	Hai Chau
-530	35.0	M	Da Nang
-531	29.0	F	Ngu Hanh Son
-532	32.0	M	Da Nang
-533	25.0	F	Da Nang
-534	34.0	M	Son Tra
-535	27.0	F	Da Nang
-536	30.0	M	Hai Chau
-537	23.0	F	Da Nang
-538	36.0	M	Ngu Hanh Son
-539	28.0	F	Da Nang
-540	31.0	M	Da Nang
-541	24.0	F	Son Tra
-542	33.0	M	Da Nang
-543	26.0	F	Hai Chau
-544	35.0	M	Da Nang
-545	29.0	F	Ngu Hanh Son
-546	32.0	M	Da Nang
-547	25.0	F	Da Nang
-548	34.0	M	Son Tra
-549	27.0	F	Da Nang
-550	30.0	M	Hai Chau
-551	23.0	F	Da Nang
-552	36.0	M	Ngu Hanh Son
-553	28.0	F	Da Nang
-554	31.0	M	Da Nang
-555	24.0	F	Son Tra
-556	33.0	M	Da Nang
-557	26.0	F	Hai Chau
-558	35.0	M	Da Nang
-559	29.0	F	Ngu Hanh Son
-560	32.0	M	Da Nang
-561	25.0	F	Da Nang
-562	34.0	M	Son Tra
-563	27.0	F	Da Nang
-564	30.0	M	Hai Chau
-565	23.0	F	Da Nang
-566	36.0	M	Ngu Hanh Son
-567	28.0	F	Da Nang
-568	31.0	M	Da Nang
-569	24.0	F	Son Tra
-570	33.0	M	Da Nang
-571	26.0	F	Hai Chau
-572	35.0	M	Da Nang
-573	29.0	F	Ngu Hanh Son
-574	32.0	M	Da Nang
-575	25.0	F	Da Nang
-576	34.0	M	Son Tra
-577	27.0	F	Da Nang
-578	30.0	M	Hai Chau
-579	23.0	F	Da Nang
-580	36.0	M	Ngu Hanh Son
-581	28.0	F	Da Nang
-582	31.0	M	Da Nang
-583	24.0	F	Son Tra
-584	33.0	M	Da Nang
-585	26.0	F	Hai Chau
-586	35.0	M	Da Nang
-587	29.0	F	Ngu Hanh Son
-588	32.0	M	Da Nang
-589	25.0	F	Da Nang
-590	34.0	M	Son Tra
-591	27.0	F	Da Nang
-592	30.0	M	Hai Chau
-593	23.0	F	Da Nang
-594	36.0	M	Ngu Hanh Son
-595	28.0	F	Da Nang
-596	31.0	M	Da Nang
-597	24.0	F	Son Tra
-598	33.0	M	Da Nang
-599	26.0	F	Hai Chau
-600	35.0	M	Da Nang
+43	23.0	F	Hanoi
+44	34.0	M	Hanoi
+45	30.0	M	Hanoi
+46	26.0	F	Hanoi
+47	33.0	M	Hanoi
+48	29.0	F	Hanoi
+49	33.0	M	Hanoi
+50	35.0	M	Hanoi
+51	37.0	M	Hanoi
+52	28.0	F	Hanoi
+53	30.0	M	Hanoi
+54	34.0	M	Hanoi
+55	27.0	F	Hanoi
+56	30.0	M	Hanoi
+57	33.0	M	Hanoi
+58	31.0	M	Hanoi
+59	35.0	M	Hanoi
+60	29.0	F	Hanoi
+61	28.0	F	Hanoi
+62	33.0	M	Hanoi
+63	34.0	M	Hanoi
+64	26.0	F	Hanoi
+65	32.0	M	Hanoi
+66	30.0	M	Hanoi
+67	28.0	F	Hanoi
+68	33.0	M	Hanoi
+69	25.0	F	Hanoi
+70	37.0	M	Hanoi
+71	28.0	F	Hanoi
+72	31.0	M	Hanoi
+73	24.0	F	Hanoi
+74	33.0	M	Hanoi
+75	25.0	F	Hanoi
+76	31.0	M	Hanoi
+77	34.0	M	Hanoi
+78	35.0	M	Hanoi
+79	26.0	F	Hanoi
+80	27.0	F	Hanoi
+81	30.0	M	Hanoi
+82	26.0	F	Hanoi
+83	24.0	F	Hanoi
+84	29.0	F	Hanoi
+85	25.0	F	Hanoi
+86	36.0	M	Hanoi
+87	32.0	M	Hanoi
+88	26.0	F	Hanoi
+89	33.0	M	Hanoi
+90	37.0	M	Hanoi
+91	28.0	F	Hanoi
+92	30.0	M	Hanoi
+93	23.0	F	Hanoi
+94	34.0	M	Hanoi
+95	27.0	F	Hanoi
+96	26.0	F	Hanoi
+97	35.0	M	Hanoi
+98	29.0	F	Hanoi
+99	32.0	M	Hanoi
+100	34.0	M	Hanoi
+101	27.0	F	Hanoi
+102	26.0	F	Hanoi
+103	25.0	F	Hanoi
+104	37.0	M	Hanoi
+105	28.0	F	DaNang
+106	31.0	M	DaNang
+107	33.0	M	DaNang
+108	28.0	F	DaNang
+109	29.0	F	DaNang
+110	34.0	M	DaNang
+111	27.0	F	DaNang
+112	28.0	F	DaNang
+113	31.0	M	DaNang
+114	24.0	F	DaNang
+115	26.0	F	DaNang
+116	35.0	M	DaNang
+117	29.0	F	DaNang
+118	27.0	F	DaNang
+119	28.0	F	DaNang
+120	24.0	F	DaNang
+121	25.0	F	DaNang
+122	34.0	M	DaNang
+123	26.0	F	DaNang
+124	30.0	M	DaNang
+125	23.0	F	DaNang
+126	31.0	M	DaNang
+127	34.0	M	DaNang
+128	23.0	F	DaNang
+129	31.0	M	DaNang
+130	24.0	F	DaNang
+131	33.0	M	DaNang
+132	35.0	M	DaNang
+133	27.0	F	DaNang
+134	23.0	F	DaNang
+135	24.0	F	DaNang
+136	33.0	M	DaNang
+137	29.0	F	DaNang
+138	33.0	M	DaNang
+139	35.0	M	DaNang
+140	32.0	M	DaNang
+141	27.0	F	DaNang
+142	28.0	F	DaNang
+143	31.0	M	DaNang
+144	24.0	F	DaNang
+145	29.0	F	DaNang
+146	34.0	M	DaNang
+147	28.0	F	DaNang
+148	36.0	M	DaNang
+149	28.0	F	DaNang
+150	31.0	M	DaNang
+151	24.0	F	DaNang
+152	33.0	M	DaNang
+153	36.0	M	DaNang
+154	33.0	M	DaNang
+155	35.0	M	DaNang
+156	27.0	F	DaNang
+157	23.0	F	DaNang
+158	36.0	M	DaNang
+159	28.0	F	DaNang
+160	31.0	M	DaNang
+161	31.0	M	DaNang
+162	35.0	M	DaNang
+163	29.0	F	DaNang
+164	32.0	M	DaNang
+165	30.0	M	DaNang
+166	36.0	M	DaNang
+167	32.0	M	DaNang
+168	25.0	F	DaNang
+169	36.0	M	DaNang
+170	31.0	M	DaNang
+171	33.0	M	DaNang
+172	35.0	M	DaNang
+173	29.0	F	DaNang
+174	23.0	F	DaNang
+175	31.0	M	DaNang
+176	26.0	F	DaNang
+177	29.0	F	DaNang
+178	27.0	F	DaNang
+179	30.0	M	DaNang
+180	29.0	F	DaNang
+181	32.0	M	DaNang
+182	25.0	F	DaNang
+183	23.0	F	DaNang
+184	35.0	M	DaNang
+185	32.0	M	DaNang
+186	27.0	F	DaNang
+187	30.0	M	DaNang
+188	28.0	F	DaNang
+189	26.0	F	DaNang
+190	35.0	M	DaNang
+191	41.0	M	HoChiMinh
+192	33.0	F	HoChiMinh
+193	32.0	M	HoChiMinh
+194	33.0	F	HoChiMinh
+195	25.0	M	HoChiMinh
+196	35.0	M	HoChiMinh
+197	31.0	F	HoChiMinh
+198	39.0	M	HoChiMinh
+199	35.0	F	HoChiMinh
+200	41.0	F	HoChiMinh
+201	30.0	F	HoChiMinh
+202	34.0	F	HoChiMinh
+203	41.0	M	HoChiMinh
+204	41.0	F	HoChiMinh
+205	32.0	M	HoChiMinh
+206	28.0	M	HoChiMinh
+207	31.0	M	HoChiMinh
+208	25.0	F	HoChiMinh
+209	37.0	F	HoChiMinh
+210	35.0	M	HoChiMinh
+211	25.0	F	HoChiMinh
+212	29.0	F	HoChiMinh
+213	41.0	F	HoChiMinh
+214	32.0	F	HoChiMinh
+215	22.0	F	HoChiMinh
+216	26.0	M	HoChiMinh
+217	33.0	M	HoChiMinh
+218	24.0	F	HoChiMinh
+219	29.0	M	HoChiMinh
+220	31.0	F	HoChiMinh
+221	33.0	M	HoChiMinh
+222	41.0	F	HoChiMinh
+223	28.0	M	HoChiMinh
+224	39.0	F	HoChiMinh
+225	35.0	M	HoChiMinh
+226	40.0	M	HoChiMinh
+227	33.0	F	HoChiMinh
+228	31.0	F	HoChiMinh
+229	38.0	M	HoChiMinh
+230	31.0	F	HoChiMinh
+231	33.0	M	HoChiMinh
+232	30.0	F	HoChiMinh
+233	29.0	M	HoChiMinh
+234	24.0	F	HoChiMinh
+235	23.0	M	HoChiMinh
+236	32.0	M	HoChiMinh
+237	26.0	F	HoChiMinh
+238	24.0	F	HoChiMinh
+239	41.0	F	HoChiMinh
+240	33.0	F	HoChiMinh
+241	35.0	F	HoChiMinh
+242	34.0	F	HoChiMinh
+243	39.0	M	HoChiMinh
+244	39.0	F	HoChiMinh
+245	41.0	F	HoChiMinh
+246	37.0	M	HoChiMinh
+247	26.0	M	HoChiMinh
+248	33.0	F	HoChiMinh
+249	23.0	M	HoChiMinh
+250	38.0	F	HoChiMinh
+251	34.0	M	HoChiMinh
+252	25.0	M	HoChiMinh
+253	40.0	M	HoChiMinh
+254	25.0	F	HoChiMinh
+255	24.0	M	HoChiMinh
+256	24.0	M	HoChiMinh
+257	40.0	M	HoChiMinh
+258	22.0	F	HoChiMinh
+259	30.0	F	HoChiMinh
+260	32.0	F	HoChiMinh
+261	41.0	M	HoChiMinh
+262	35.0	F	HoChiMinh
+263	34.0	M	HoChiMinh
+264	22.0	M	HoChiMinh
+265	39.0	F	HoChiMinh
+266	28.0	M	HoChiMinh
+267	26.0	M	HoChiMinh
+268	30.0	F	HoChiMinh
+269	32.0	F	HoChiMinh
+270	37.0	F	HoChiMinh
+271	28.0	F	HoChiMinh
+272	39.0	M	HoChiMinh
+273	34.0	M	HoChiMinh
+274	25.0	F	HoChiMinh
+275	26.0	F	HoChiMinh
+276	31.0	M	HoChiMinh
+277	22.0	M	HoChiMinh
+278	34.0	F	HoChiMinh
+279	30.0	M	HoChiMinh
+280	27.0	M	HoChiMinh
+281	33.0	M	HoChiMinh
+282	33.0	F	HoChiMinh
+283	38.0	M	HoChiMinh
+284	25.0	F	HoChiMinh
+285	40.0	M	HoChiMinh
+286	34.0	F	HoChiMinh
+287	38.0	F	HoChiMinh
+288	34.0	F	HoChiMinh
+289	25.0	F	HoChiMinh
+290	26.0	M	HoChiMinh
+291	26.0	F	NhaTrang
+292	23.0	F	NhaTrang
+293	36.0	F	NhaTrang
+294	33.0	F	NhaTrang
+295	41.0	F	NhaTrang
+296	35.0	M	NhaTrang
+297	23.0	M	NhaTrang
+298	35.0	M	NhaTrang
+299	32.0	M	NhaTrang
+300	22.0	M	NhaTrang
+301	26.0	F	NhaTrang
+302	34.0	M	NhaTrang
+303	23.0	M	NhaTrang
+304	41.0	M	NhaTrang
+305	30.0	M	NhaTrang
+306	31.0	M	NhaTrang
+307	37.0	F	NhaTrang
+308	38.0	M	NhaTrang
+309	33.0	M	NhaTrang
+310	38.0	F	NhaTrang
+311	41.0	M	NhaTrang
+312	22.0	M	NhaTrang
+313	39.0	F	NhaTrang
+314	41.0	M	NhaTrang
+315	31.0	F	NhaTrang
+316	30.0	F	NhaTrang
+317	24.0	M	NhaTrang
+318	32.0	M	NhaTrang
+319	27.0	M	NhaTrang
+320	25.0	M	NhaTrang
+321	33.0	M	NhaTrang
+322	22.0	M	NhaTrang
+323	31.0	F	NhaTrang
+324	34.0	M	NhaTrang
+325	40.0	M	NhaTrang
+326	22.0	M	NhaTrang
+327	29.0	M	NhaTrang
+328	30.0	F	NhaTrang
+329	37.0	F	NhaTrang
+330	30.0	F	NhaTrang
+331	30.0	M	NhaTrang
+332	23.0	M	NhaTrang
+333	24.0	M	NhaTrang
+334	34.0	F	NhaTrang
+335	34.0	F	NhaTrang
+336	33.0	F	NhaTrang
+337	34.0	F	NhaTrang
+338	38.0	F	NhaTrang
+339	38.0	M	NhaTrang
+340	36.0	F	NhaTrang
+341	39.0	M	NhaTrang
+342	36.0	M	NhaTrang
+343	28.0	F	NhaTrang
+344	26.0	F	NhaTrang
+345	33.0	M	NhaTrang
+346	26.0	F	NhaTrang
+347	23.0	F	NhaTrang
+348	41.0	M	NhaTrang
+349	40.0	M	NhaTrang
+350	27.0	F	NhaTrang
+351	38.0	M	NhaTrang
+352	39.0	F	NhaTrang
+353	26.0	M	NhaTrang
+354	33.0	F	NhaTrang
+355	32.0	F	NhaTrang
+356	26.0	M	NhaTrang
+357	40.0	M	NhaTrang
+358	24.0	F	NhaTrang
+359	34.0	F	NhaTrang
+360	41.0	M	NhaTrang
+361	24.0	M	NhaTrang
+362	29.0	M	NhaTrang
+363	29.0	M	NhaTrang
+364	41.0	M	NhaTrang
+365	31.0	F	NhaTrang
+366	38.0	M	NhaTrang
+367	39.0	M	NhaTrang
+368	32.0	F	NhaTrang
+369	36.0	M	NhaTrang
+370	36.0	M	NhaTrang
+371	29.0	M	PhuQuoc
+372	34.0	F	PhuQuoc
+373	38.0	F	PhuQuoc
+374	38.0	M	PhuQuoc
+375	30.0	F	PhuQuoc
+376	36.0	M	PhuQuoc
+377	30.0	F	PhuQuoc
+378	40.0	F	PhuQuoc
+379	41.0	M	PhuQuoc
+380	29.0	F	PhuQuoc
+381	27.0	M	PhuQuoc
+382	31.0	M	PhuQuoc
+383	33.0	M	PhuQuoc
+384	41.0	F	PhuQuoc
+385	23.0	M	PhuQuoc
+386	34.0	F	PhuQuoc
+387	29.0	F	PhuQuoc
+388	41.0	M	PhuQuoc
+389	31.0	M	PhuQuoc
+390	25.0	M	PhuQuoc
+391	32.0	F	PhuQuoc
+392	26.0	M	PhuQuoc
+393	24.0	M	PhuQuoc
+394	31.0	F	PhuQuoc
+395	28.0	M	PhuQuoc
+396	25.0	F	PhuQuoc
+397	24.0	F	PhuQuoc
+398	36.0	F	PhuQuoc
+399	26.0	F	PhuQuoc
+400	41.0	M	PhuQuoc
+401	24.0	M	PhuQuoc
+402	27.0	F	PhuQuoc
+403	38.0	M	PhuQuoc
+404	35.0	M	PhuQuoc
+405	41.0	M	PhuQuoc
+406	25.0	F	PhuQuoc
+407	39.0	M	PhuQuoc
+408	39.0	M	PhuQuoc
+409	31.0	M	PhuQuoc
+410	26.0	M	PhuQuoc
+411	37.0	F	PhuQuoc
+412	31.0	F	PhuQuoc
+413	36.0	M	PhuQuoc
+414	31.0	F	PhuQuoc
+415	22.0	M	PhuQuoc
+416	26.0	M	PhuQuoc
+417	27.0	F	PhuQuoc
+418	41.0	M	PhuQuoc
+419	28.0	M	PhuQuoc
+420	28.0	M	PhuQuoc
+421	38.0	M	PhuQuoc
+422	27.0	F	PhuQuoc
+423	28.0	F	PhuQuoc
+424	31.0	M	PhuQuoc
+425	22.0	M	PhuQuoc
+426	25.0	M	PhuQuoc
+427	32.0	M	PhuQuoc
+428	32.0	M	PhuQuoc
+429	22.0	F	PhuQuoc
+430	34.0	M	PhuQuoc
+431	26.0	F	PhuQuoc
+432	33.0	M	PhuQuoc
+433	36.0	M	PhuQuoc
+434	31.0	F	PhuQuoc
+435	39.0	M	PhuQuoc
+436	27.0	F	PhuQuoc
+437	40.0	M	PhuQuoc
+438	22.0	F	PhuQuoc
+439	27.0	M	PhuQuoc
+440	28.0	M	PhuQuoc
+441	37.0	F	DaLat
+442	30.0	F	DaLat
+443	24.0	M	DaLat
+444	36.0	M	DaLat
+445	25.0	F	DaLat
+446	23.0	M	DaLat
+447	36.0	M	DaLat
+448	26.0	M	DaLat
+449	35.0	M	DaLat
+450	39.0	F	DaLat
+451	39.0	F	DaLat
+452	36.0	F	DaLat
+453	39.0	F	DaLat
+454	37.0	F	DaLat
+455	32.0	F	DaLat
+456	36.0	M	DaLat
+457	25.0	M	DaLat
+458	27.0	M	DaLat
+459	40.0	F	DaLat
+460	26.0	M	DaLat
+461	22.0	M	DaLat
+462	31.0	F	DaLat
+463	32.0	F	DaLat
+464	25.0	M	DaLat
+465	27.0	F	DaLat
+466	28.0	M	DaLat
+467	32.0	F	DaLat
+468	30.0	F	DaLat
+469	41.0	F	DaLat
+470	38.0	M	DaLat
+471	39.0	M	DaLat
+472	23.0	F	DaLat
+473	25.0	F	DaLat
+474	24.0	F	DaLat
+475	36.0	F	DaLat
+476	28.0	M	DaLat
+477	27.0	F	DaLat
+478	34.0	M	DaLat
+479	25.0	F	DaLat
+480	29.0	F	DaLat
+481	34.0	F	DaLat
+482	29.0	F	DaLat
+483	30.0	M	DaLat
+484	37.0	F	DaLat
+485	30.0	M	DaLat
+486	30.0	F	DaLat
+487	33.0	F	DaLat
+488	27.0	F	DaLat
+489	37.0	F	DaLat
+490	40.0	M	DaLat
+491	39.0	F	DaLat
+492	34.0	M	DaLat
+493	38.0	M	DaLat
+494	23.0	F	DaLat
+495	35.0	F	DaLat
+496	25.0	F	DaLat
+497	25.0	M	DaLat
+498	28.0	M	DaLat
+499	23.0	M	DaLat
+500	35.0	F	DaLat
+501	39.0	F	Hue
+502	26.0	M	Hue
+503	22.0	F	Hue
+504	33.0	M	Hue
+505	37.0	M	Hue
+506	30.0	F	Hue
+507	26.0	F	Hue
+508	31.0	F	Hue
+509	34.0	M	Hue
+510	36.0	F	Hue
+511	34.0	F	Hue
+512	28.0	F	Hue
+513	39.0	M	Hue
+514	33.0	F	Hue
+515	36.0	F	Hue
+516	40.0	M	Hue
+517	26.0	M	Hue
+518	23.0	M	Hue
+519	35.0	F	Hue
+520	38.0	F	Hue
+521	36.0	M	Hue
+522	34.0	F	Hue
+523	28.0	F	Hue
+524	39.0	F	Hue
+525	30.0	M	Hue
+526	26.0	F	Hue
+527	37.0	M	Hue
+528	22.0	M	Hue
+529	31.0	F	Hue
+530	30.0	M	Hue
+531	27.0	M	Hue
+532	40.0	M	Hue
+533	29.0	M	Hue
+534	38.0	F	Hue
+535	31.0	M	Hue
+536	33.0	F	Hue
+537	24.0	M	Hue
+538	34.0	F	Hue
+539	27.0	F	Hue
+540	24.0	M	Hue
+541	24.0	M	Hue
+542	22.0	M	Hue
+543	38.0	M	Hue
+544	37.0	M	Hue
+545	32.0	M	Hue
+546	37.0	M	Hue
+547	23.0	M	Hue
+548	32.0	M	Hue
+549	29.0	M	Hue
+550	23.0	M	Hue
+551	40.0	F	HaiPhong
+552	25.0	F	HaiPhong
+553	29.0	F	HaiPhong
+554	40.0	F	HaiPhong
+555	36.0	F	HaiPhong
+556	37.0	M	HaiPhong
+557	28.0	F	HaiPhong
+558	29.0	M	HaiPhong
+559	41.0	F	HaiPhong
+560	25.0	M	HaiPhong
+561	34.0	F	HaiPhong
+562	23.0	F	HaiPhong
+563	31.0	F	HaiPhong
+564	36.0	M	HaiPhong
+565	26.0	M	HaiPhong
+566	31.0	M	HaiPhong
+567	29.0	M	HaiPhong
+568	34.0	F	HaiPhong
+569	22.0	M	HaiPhong
+570	32.0	M	HaiPhong
+571	23.0	M	HaiPhong
+572	33.0	M	HaiPhong
+573	26.0	M	HaiPhong
+574	24.0	M	HaiPhong
+575	23.0	F	HaiPhong
+576	23.0	M	HaiPhong
+577	39.0	F	HaiPhong
+578	37.0	M	HaiPhong
+579	28.0	F	HaiPhong
+580	26.0	F	HaiPhong
+581	37.0	F	HaiPhong
+582	22.0	F	HaiPhong
+583	31.0	F	HaiPhong
+584	29.0	F	HaiPhong
+585	25.0	M	HaiPhong
+586	40.0	F	HaiPhong
+587	25.0	F	HaiPhong
+588	25.0	M	HaiPhong
+589	37.0	F	HaiPhong
+590	32.0	M	HaiPhong
+591	30.0	M	HaiPhong
+592	37.0	F	HaiPhong
+593	25.0	F	HaiPhong
+594	38.0	F	HaiPhong
+595	33.0	F	HaiPhong
+596	25.0	M	HaiPhong
+597	36.0	F	HaiPhong
+598	24.0	F	HaiPhong
+599	28.0	M	HaiPhong
+600	31.0	M	HaiPhong
