@@ -1,0 +1,166 @@
+{
+  "backups": [
+    {
+      "checkpoint": "saved\\DeepFM-Nov-10-2025_15-00-24.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-10-2025_15-00-24.pth.backup_20251110_150132",
+      "backup_time": "2025-11-10T15:01:32.817260",
+      "metrics": null
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-10-2025_15-01-33.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-10-2025_15-01-33.pth.backup_20251110_151136",
+      "backup_time": "2025-11-10T15:11:36.790729",
+      "metrics": {
+        "RMSE": 0.1791,
+        "MAE": 0.116
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-10-2025_15-11-37.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-10-2025_15-11-37.pth.backup_20251111_160131",
+      "backup_time": "2025-11-11T16:01:31.195492",
+      "metrics": {
+        "RMSE": 0.1791,
+        "MAE": 0.116
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-11-2025_16-01-32.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-11-2025_16-01-32.pth.backup_20251111_161540",
+      "backup_time": "2025-11-11T16:15:40.668391",
+      "metrics": {
+        "RMSE": 0.1842,
+        "MAE": 0.1151
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-11-2025_16-15-41.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-11-2025_16-15-41.pth.backup_20251114_144211",
+      "backup_time": "2025-11-14T14:42:11.564785",
+      "metrics": {
+        "RMSE": 0.1842,
+        "MAE": 0.1151
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-14-2025_08-21-05.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-14-2025_08-21-05.pth.backup_20251114_170835",
+      "backup_time": "2025-11-14T17:08:35.295674",
+      "metrics": {
+        "RMSE": 0.1905,
+        "MAE": 0.1563
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-14-2025_17-08-35.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-14-2025_17-08-35.pth.backup_20251121_144309",
+      "backup_time": "2025-11-21T14:43:09.339848",
+      "metrics": {
+        "RMSE": 0.1912,
+        "MAE": 0.1563
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-21-2025_14-46-13.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-21-2025_14-46-13.pth.backup_20251121_144725",
+      "backup_time": "2025-11-21T14:47:25.753423",
+      "metrics": {
+        "RMSE": 0.1909,
+        "MAE": 0.1564
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-24-2025_08-39-20.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-24-2025_08-39-20.pth.backup_20251124_091138",
+      "backup_time": "2025-11-24T09:11:38.577946",
+      "metrics": {
+        "RMSE": 0.1913,
+        "MAE": 0.1567
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-24-2025_09-11-39.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-24-2025_09-11-39.pth.backup_20251125_160405",
+      "backup_time": "2025-11-25T16:04:05.271366",
+      "metrics": {
+        "RMSE": 0.1909,
+        "MAE": 0.1564
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-25-2025_16-04-06.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-25-2025_16-04-06.pth.backup_20251128_143048",
+      "backup_time": "2025-11-28T14:30:48.917330",
+      "metrics": {
+        "RMSE": 0.1895,
+        "MAE": 0.1551
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-28-2025_14-30-49.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-28-2025_14-30-49.pth.backup_20251128_143316",
+      "backup_time": "2025-11-28T14:33:16.124564",
+      "metrics": {
+        "RMSE": 0.1896,
+        "MAE": 0.1551
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Nov-28-2025_14-33-16.pth",
+      "backup_path": "saved\\backups\\DeepFM-Nov-28-2025_14-33-16.pth.backup_20251128_143434",
+      "backup_time": "2025-11-28T14:34:34.166765",
+      "metrics": {
+        "RMSE": 0.1896,
+        "MAE": 0.1551
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Dec-04-2025_06-56-18.pth",
+      "backup_path": "saved\\backups\\DeepFM-Dec-04-2025_06-56-18.pth.backup_20251204_153649",
+      "backup_time": "2025-12-04T15:36:49.103321",
+      "metrics": {
+        "RMSE": 0.1896,
+        "MAE": 0.1551
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Dec-04-2025_15-36-51.pth",
+      "backup_path": "saved\\backups\\DeepFM-Dec-04-2025_15-36-51.pth.backup_20251204_160357",
+      "backup_time": "2025-12-04T16:03:57.857903",
+      "metrics": {
+        "RMSE": 0.1911,
+        "MAE": 0.1566
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Dec-04-2025_16-03-58.pth",
+      "backup_path": "saved\\backups\\DeepFM-Dec-04-2025_16-03-58.pth.backup_20251210_174659",
+      "backup_time": "2025-12-10T17:46:59.290982",
+      "metrics": {
+        "RMSE": 0.1905,
+        "MAE": 0.156
+      }
+    },
+    {
+      "checkpoint": "saved\\DeepFM-Dec-10-2025_17-47-00.pth",
+      "backup_path": "saved\\backups\\DeepFM-Dec-10-2025_17-47-00.pth.backup_20251216_195700",
+      "backup_time": "2025-12-16T19:57:00.327301",
+      "metrics": {
+        "RMSE": 0.1907,
+        "MAE": 0.1564
+      }
+    }
+  ],
+  "last_retrain_time": "2025-12-16T19:57:29.028753",
+  "last_dataset_size": 100122,
+  "last_retrain_metrics": {
+    "RMSE": 0.1924,
+    "MAE": 0.1582
+  },
+  "retrain_count": 19,
+  "last_retrain_result": {
+    "rmse": 0.1924,
+    "mae": 0.1582,
+    "is_better_than_old": false
+  }
+}

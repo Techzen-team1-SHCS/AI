@@ -1,0 +1,95 @@
+services:
+  # API Server + ETL Scheduler
+  recbole-api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: recbole-api
+    ports:
+      - "5000:5000"
+    environment:
+      - USER_ACTION_LOG_FILE=/app/data/user_actions.log
+      - USER_ACTION_ARCHIVE_FILE=/app/data/user_actions.archive.log
+      - HOTEL_INTER_FILE=/app/dataset/hotel/hotel.inter
+      - ETL_INTERVAL_SECONDS=180
+      - API_KEY=${API_KEY:-}  # Set via .env file
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-*}
+    volumes:
+      # Persistent data storage
+      - ./dataset:/app/dataset
+      - ./data:/app/data
+      - ./log:/app/log
+      - ./log_tensorboard:/app/log_tensorboard
+      - ./saved:/app/saved
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health').read()"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s  # Tăng thời gian để model load (model load mất ~2-3 giây, nhưng để an toàn)
+
+  # ETL Scheduler (runs ETL script every 3 minutes)
+  recbole-etl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: recbole-etl
+    command: >
+      sh -c "
+        while true; do
+          python etl_web_to_hotel_inter.py
+          sleep 180
+        done
+      "
+    environment:
+      - USER_ACTION_LOG_FILE=/app/data/user_actions.log
+      - USER_ACTION_ARCHIVE_FILE=/app/data/user_actions.archive.log
+      - HOTEL_INTER_FILE=/app/dataset/hotel/hotel.inter
+    volumes:
+      - ./dataset:/app/dataset
+      - ./data:/app/data
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    depends_on:
+      - recbole-api
+
+  # Retraining Scheduler (runs retraining once per day at 2 AM)
+  recbole-retrain:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: recbole-retrain
+    command: python retrain_scheduler.py
+    environment:
+      - RETRAIN_HOUR=${RETRAIN_HOUR:-2}  # Default: 2 AM
+      - RETRAIN_MINUTE=${RETRAIN_MINUTE:-0}  # Default: 0 minutes
+      - RETRAIN_CHECK_INTERVAL=${RETRAIN_CHECK_INTERVAL:-3600}  # Check every hour
+    volumes:
+      - ./dataset:/app/dataset
+      - ./data:/app/data
+      - ./log:/app/log
+      - ./log_tensorboard:/app/log_tensorboard
+      - ./saved:/app/saved
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    depends_on:
+      - recbole-api
+
+volumes:
+  dataset:
+  data:
+

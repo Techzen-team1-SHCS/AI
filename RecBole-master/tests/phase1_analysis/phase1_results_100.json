@@ -1,0 +1,6449 @@
+{
+  "test_info": {
+    "model_path": "saved\\DeepFM-Dec-16-2025_19-57-01.pth",
+    "model_mtime": 1765889842.1290758,
+    "num_users_tested": 100,
+    "num_valid_results": 100,
+    "num_errors": 0,
+    "top_k": 10,
+    "test_date": "2025-12-18T20:27:26.629420"
+  },
+  "overall_stats": {
+    "total_users": 100,
+    "passed": 81,
+    "failed": 19,
+    "pass_rate": 0.81,
+    "avg_accuracy": 0.8325,
+    "avg_score": 2.92,
+    "avg_mandatory_passed": 1.93
+  },
+  "pattern_stats": {
+    "gender_style": {
+      "passed": 100,
+      "total": 100,
+      "pass_rate": 1.0
+    },
+    "age_price": {
+      "passed": 79,
+      "total": 100,
+      "pass_rate": 0.79
+    },
+    "region_city": {
+      "passed": 14,
+      "total": 100,
+      "pass_rate": 0.14
+    },
+    "age_star": {
+      "passed": 54,
+      "total": 54,
+      "pass_rate": 1.0
+    },
+    "age_score": {
+      "passed": 45,
+      "total": 46,
+      "pass_rate": 0.9782608695652174
+    }
+  },
+  "results": [
+    {
+      "user_id": "1",
+      "gender": "M",
+      "age": 32.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        753,
+        707,
+        712,
+        670,
+        766,
+        686,
+        740,
+        772
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "2",
+      "gender": "M",
+      "age": 35.0,
+      "region": "Hanoi",
+      "recommendations": [
+        712,
+        707,
+        690,
+        693,
+        555,
+        727,
+        670,
+        719,
+        704,
+        736
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "3",
+      "gender": "M",
+      "age": 26.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        707,
+        712,
+        686,
+        736,
+        690,
+        35,
+        753,
+        667
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 1,
+        "age_star": 0,
+        "age_score": 7
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "4",
+      "gender": "F",
+      "age": 33.0,
+      "region": "Hanoi",
+      "recommendations": [
+        712,
+        719,
+        8,
+        555,
+        694,
+        707,
+        691,
+        670,
+        727,
+        690
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 1,
+        "age_star": 9,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "5",
+      "gender": "M",
+      "age": 36.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        712,
+        686,
+        664,
+        690,
+        667,
+        719,
+        773,
+        693
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 9,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "6",
+      "gender": "F",
+      "age": 23.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        736,
+        712,
+        707,
+        690,
+        719,
+        773,
+        693,
+        668,
+        670
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "7",
+      "gender": "M",
+      "age": 25.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        712,
+        707,
+        690,
+        686,
+        704,
+        727,
+        668,
+        674
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "8",
+      "gender": "F",
+      "age": 26.0,
+      "region": "Hanoi",
+      "recommendations": [
+        771,
+        555,
+        773,
+        707,
+        712,
+        690,
+        757,
+        693,
+        736,
+        391
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 4
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "9",
+      "gender": "M",
+      "age": 32.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        773,
+        670,
+        674,
+        8,
+        712,
+        690,
+        691,
+        746
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 1,
+        "age_star": 9,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "10",
+      "gender": "M",
+      "age": 37.0,
+      "region": "Hanoi",
+      "recommendations": [
+        736,
+        746,
+        751,
+        536,
+        753,
+        525,
+        740,
+        485,
+        547,
+        250
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 9,
+        "age_price": 7,
+        "region_city": 0,
+        "age_star": 4,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "11",
+      "gender": "F",
+      "age": 23.0,
+      "region": "Hanoi",
+      "recommendations": [
+        35,
+        502,
+        531,
+        28,
+        194,
+        22,
+        151,
+        670,
+        157,
+        225
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 7,
+        "region_city": 5,
+        "age_star": 0,
+        "age_score": 2
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 5,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": false,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "12",
+      "gender": "M",
+      "age": 31.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        83,
+        8,
+        707,
+        750,
+        712,
+        693,
+        670,
+        746
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 2,
+        "age_star": 9,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 2,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 4,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "13",
+      "gender": "F",
+      "age": 29.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        741,
+        750,
+        83,
+        746,
+        773,
+        749,
+        502,
+        740,
+        436
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 4,
+        "region_city": 1,
+        "age_star": 0,
+        "age_score": 9
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "14",
+      "gender": "M",
+      "age": 32.0,
+      "region": "Hanoi",
+      "recommendations": [
+        83,
+        753,
+        555,
+        120,
+        766,
+        192,
+        688,
+        187,
+        772,
+        674
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 8,
+        "region_city": 2,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 2,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 4,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "15",
+      "gender": "F",
+      "age": 27.0,
+      "region": "Hanoi",
+      "recommendations": [
+        753,
+        35,
+        772,
+        391,
+        740,
+        555,
+        335,
+        766,
+        688,
+        670
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 0,
+        "region_city": 1,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 0,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "16",
+      "gender": "M",
+      "age": 30.0,
+      "region": "Hanoi",
+      "recommendations": [
+        707,
+        614,
+        736,
+        664,
+        686,
+        516,
+        667,
+        719,
+        536,
+        712
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 9,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "17",
+      "gender": "F",
+      "age": 28.0,
+      "region": "Hanoi",
+      "recommendations": [
+        8,
+        712,
+        555,
+        746,
+        690,
+        707,
+        773,
+        693,
+        736,
+        670
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 1,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "18",
+      "gender": "M",
+      "age": 33.0,
+      "region": "Hanoi",
+      "recommendations": [
+        712,
+        707,
+        693,
+        690,
+        555,
+        736,
+        670,
+        691,
+        727,
+        773
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "19",
+      "gender": "F",
+      "age": 26.0,
+      "region": "Hanoi",
+      "recommendations": [
+        773,
+        753,
+        736,
+        772,
+        712,
+        690,
+        766,
+        746,
+        764,
+        743
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "20",
+      "gender": "F",
+      "age": 29.0,
+      "region": "Hanoi",
+      "recommendations": [
+        531,
+        391,
+        651,
+        688,
+        753,
+        354,
+        502,
+        687,
+        194,
+        772
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 4
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "21",
+      "gender": "M",
+      "age": 36.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        664,
+        773,
+        736,
+        693,
+        753,
+        740,
+        712,
+        746,
+        751
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 7,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "22",
+      "gender": "F",
+      "age": 23.0,
+      "region": "Hanoi",
+      "recommendations": [
+        693,
+        555,
+        707,
+        736,
+        664,
+        712,
+        120,
+        662,
+        659,
+        686
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 1,
+        "region_city": 1,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 1,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "23",
+      "gender": "F",
+      "age": 25.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        712,
+        686,
+        668,
+        614,
+        690,
+        667,
+        727,
+        704
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "24",
+      "gender": "M",
+      "age": 38.0,
+      "region": "Hanoi",
+      "recommendations": [
+        736,
+        746,
+        707,
+        719,
+        712,
+        693,
+        691,
+        670,
+        727,
+        668
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 8,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "25",
+      "gender": "M",
+      "age": 30.0,
+      "region": "Hanoi",
+      "recommendations": [
+        707,
+        719,
+        712,
+        736,
+        668,
+        667,
+        693,
+        690,
+        727,
+        659
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "26",
+      "gender": "F",
+      "age": 26.0,
+      "region": "Hanoi",
+      "recommendations": [
+        712,
+        736,
+        707,
+        690,
+        727,
+        719,
+        555,
+        686,
+        743,
+        753
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "27",
+      "gender": "F",
+      "age": 27.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        8,
+        736,
+        753,
+        712,
+        693,
+        670,
+        690,
+        707
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 1,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "28",
+      "gender": "M",
+      "age": 34.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        5,
+        750,
+        35,
+        707,
+        670,
+        10,
+        753,
+        712
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 3,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 3,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 4,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "29",
+      "gender": "F",
+      "age": 28.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        35,
+        746,
+        113,
+        712,
+        391,
+        740,
+        773,
+        693
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 2,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 2,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "30",
+      "gender": "M",
+      "age": 31.0,
+      "region": "DaNang",
+      "recommendations": [
+        659,
+        707,
+        693,
+        746,
+        614,
+        720,
+        536,
+        285,
+        528,
+        740
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 8,
+        "age_price": 9,
+        "region_city": 1,
+        "age_star": 5,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "31",
+      "gender": "F",
+      "age": 26.0,
+      "region": "DaNang",
+      "recommendations": [
+        555,
+        766,
+        741,
+        757,
+        17,
+        27,
+        749,
+        787,
+        491,
+        75
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 9,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 8
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "32",
+      "gender": "M",
+      "age": 36.0,
+      "region": "DaNang",
+      "recommendations": [
+        555,
+        773,
+        664,
+        83,
+        693,
+        771,
+        688,
+        687,
+        391,
+        750
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "33",
+      "gender": "F",
+      "age": 27.0,
+      "region": "DaNang",
+      "recommendations": [
+        555,
+        773,
+        746,
+        686,
+        712,
+        614,
+        736,
+        651,
+        690,
+        473
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 9,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 8
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "34",
+      "gender": "F",
+      "age": 22.0,
+      "region": "Hanoi",
+      "recommendations": [
+        693,
+        555,
+        712,
+        707,
+        719,
+        736,
+        614,
+        662,
+        664,
+        690
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "35",
+      "gender": "M",
+      "age": 29.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        473,
+        707,
+        746,
+        740,
+        750,
+        362,
+        712,
+        693
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 9,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 7
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "36",
+      "gender": "M",
+      "age": 34.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        664,
+        667,
+        707,
+        690,
+        686,
+        798,
+        668,
+        771
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "37",
+      "gender": "M",
+      "age": 36.0,
+      "region": "Hanoi",
+      "recommendations": [
+        614,
+        707,
+        555,
+        740,
+        664,
+        712,
+        686,
+        736,
+        690,
+        753
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 6,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "38",
+      "gender": "F",
+      "age": 25.0,
+      "region": "Hanoi",
+      "recommendations": [
+        83,
+        76,
+        753,
+        772,
+        740,
+        18,
+        555,
+        766,
+        192,
+        27
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 4,
+        "region_city": 4,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 4,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 4,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "39",
+      "gender": "M",
+      "age": 32.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        686,
+        614,
+        651,
+        667,
+        690,
+        668,
+        727,
+        693
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 7,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "40",
+      "gender": "M",
+      "age": 30.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        83,
+        707,
+        746,
+        664,
+        686,
+        712,
+        614,
+        690
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 1,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "41",
+      "gender": "F",
+      "age": 26.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        120,
+        773,
+        753,
+        736,
+        764,
+        707,
+        740,
+        772,
+        766
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 1,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "42",
+      "gender": "M",
+      "age": 37.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        707,
+        712,
+        753,
+        686,
+        670,
+        690,
+        120,
+        766
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 1,
+        "age_star": 9,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "43",
+      "gender": "F",
+      "age": 23.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        746,
+        693,
+        773,
+        750,
+        740,
+        736,
+        664,
+        712,
+        767
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 8
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "44",
+      "gender": "M",
+      "age": 34.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        670,
+        712,
+        690,
+        753,
+        8,
+        35,
+        727,
+        664
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 2,
+        "age_star": 9,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 2,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 4,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "45",
+      "gender": "M",
+      "age": 30.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        712,
+        707,
+        664,
+        690,
+        693,
+        719,
+        686,
+        736
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "46",
+      "gender": "F",
+      "age": 26.0,
+      "region": "Hanoi",
+      "recommendations": [
+        712,
+        727,
+        719,
+        690,
+        670,
+        707,
+        691,
+        693,
+        705,
+        704
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 4
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "47",
+      "gender": "M",
+      "age": 33.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        473,
+        740,
+        746,
+        35,
+        528,
+        445,
+        536,
+        250,
+        197
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 7,
+        "age_price": 6,
+        "region_city": 1,
+        "age_star": 5,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "48",
+      "gender": "F",
+      "age": 29.0,
+      "region": "Hanoi",
+      "recommendations": [
+        531,
+        502,
+        651,
+        194,
+        181,
+        254,
+        753,
+        482,
+        746,
+        555
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 9,
+        "age_price": 6,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 3
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "49",
+      "gender": "M",
+      "age": 33.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        712,
+        773,
+        686,
+        690,
+        693,
+        664,
+        727,
+        614
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "50",
+      "gender": "M",
+      "age": 35.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        712,
+        354,
+        668,
+        773,
+        391,
+        690,
+        686,
+        667
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 7,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "51",
+      "gender": "M",
+      "age": 37.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        712,
+        707,
+        664,
+        690,
+        719,
+        727,
+        686,
+        736,
+        693
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "52",
+      "gender": "F",
+      "age": 28.0,
+      "region": "Hanoi",
+      "recommendations": [
+        83,
+        746,
+        753,
+        740,
+        10,
+        555,
+        766,
+        113,
+        764,
+        707
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 4,
+        "region_city": 3,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 3,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 4,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "53",
+      "gender": "M",
+      "age": 30.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        712,
+        614,
+        686,
+        773,
+        736,
+        690,
+        664,
+        719,
+        727
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 7,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "54",
+      "gender": "M",
+      "age": 34.0,
+      "region": "Hanoi",
+      "recommendations": [
+        740,
+        707,
+        614,
+        555,
+        445,
+        746,
+        693,
+        83,
+        473,
+        686
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 9,
+        "age_price": 8,
+        "region_city": 1,
+        "age_star": 7,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "55",
+      "gender": "F",
+      "age": 27.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        773,
+        712,
+        690,
+        750,
+        746,
+        693,
+        664,
+        614
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "56",
+      "gender": "M",
+      "age": 30.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        746,
+        773,
+        707,
+        690,
+        693,
+        736,
+        740,
+        727,
+        704
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 7,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "57",
+      "gender": "M",
+      "age": 33.0,
+      "region": "Hanoi",
+      "recommendations": [
+        8,
+        746,
+        670,
+        736,
+        35,
+        753,
+        743,
+        691,
+        707,
+        772
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 2,
+        "age_star": 9,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 2,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 4,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "58",
+      "gender": "M",
+      "age": 31.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        686,
+        614,
+        667,
+        719,
+        690,
+        664,
+        668,
+        727
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 7,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "59",
+      "gender": "M",
+      "age": 35.0,
+      "region": "Hanoi",
+      "recommendations": [
+        531,
+        651,
+        502,
+        482,
+        516,
+        232,
+        740,
+        391,
+        753,
+        181
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 9,
+        "age_price": 7,
+        "region_city": 0,
+        "age_star": 6,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "60",
+      "gender": "F",
+      "age": 29.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        746,
+        736,
+        614,
+        712,
+        693,
+        690,
+        740,
+        664
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 7
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "61",
+      "gender": "F",
+      "age": 28.0,
+      "region": "Hanoi",
+      "recommendations": [
+        736,
+        693,
+        555,
+        751,
+        712,
+        767,
+        774,
+        765,
+        690,
+        773
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "62",
+      "gender": "M",
+      "age": 33.0,
+      "region": "Hanoi",
+      "recommendations": [
+        707,
+        555,
+        614,
+        693,
+        686,
+        659,
+        712,
+        664,
+        736,
+        662
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 6,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "63",
+      "gender": "M",
+      "age": 34.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        712,
+        707,
+        686,
+        753,
+        690,
+        772,
+        670,
+        736
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "64",
+      "gender": "F",
+      "age": 26.0,
+      "region": "Hanoi",
+      "recommendations": [
+        502,
+        35,
+        531,
+        31,
+        22,
+        194,
+        746,
+        120,
+        740,
+        93
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 5,
+        "region_city": 5,
+        "age_star": 0,
+        "age_score": 4
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 5,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 4,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "65",
+      "gender": "M",
+      "age": 32.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        746,
+        740,
+        362,
+        445,
+        707,
+        736,
+        391,
+        358
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 8,
+        "region_city": 0,
+        "age_star": 7,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "66",
+      "gender": "M",
+      "age": 30.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        693,
+        736,
+        712,
+        746,
+        707,
+        670,
+        719,
+        664,
+        691
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 8,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "67",
+      "gender": "F",
+      "age": 28.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        753,
+        712,
+        690,
+        766,
+        772,
+        670,
+        757,
+        707,
+        773
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "68",
+      "gender": "M",
+      "age": 33.0,
+      "region": "Hanoi",
+      "recommendations": [
+        614,
+        707,
+        651,
+        555,
+        693,
+        621,
+        659,
+        712,
+        626,
+        593
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 8,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 6,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "69",
+      "gender": "F",
+      "age": 25.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        712,
+        707,
+        690,
+        727,
+        686,
+        773,
+        736,
+        704,
+        705
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "70",
+      "gender": "M",
+      "age": 37.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        670,
+        707,
+        753,
+        712,
+        691,
+        668,
+        690,
+        674
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "71",
+      "gender": "F",
+      "age": 28.0,
+      "region": "Hanoi",
+      "recommendations": [
+        753,
+        35,
+        772,
+        120,
+        766,
+        688,
+        767,
+        757,
+        555,
+        687
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 1,
+        "region_city": 2,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 1,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 2,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "72",
+      "gender": "M",
+      "age": 31.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        707,
+        712,
+        391,
+        362,
+        664,
+        771,
+        690,
+        686
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 9,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "73",
+      "gender": "F",
+      "age": 24.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        736,
+        712,
+        707,
+        773,
+        690,
+        693,
+        719,
+        35,
+        670
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 1,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "74",
+      "gender": "M",
+      "age": 33.0,
+      "region": "Hanoi",
+      "recommendations": [
+        707,
+        719,
+        746,
+        250,
+        8,
+        197,
+        287,
+        693,
+        614,
+        736
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 6,
+        "region_city": 1,
+        "age_star": 6,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "75",
+      "gender": "F",
+      "age": 25.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        773,
+        736,
+        712,
+        690,
+        686,
+        8,
+        674,
+        727
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 1,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "76",
+      "gender": "M",
+      "age": 31.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        712,
+        707,
+        719,
+        668,
+        693,
+        773,
+        664,
+        690,
+        746
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 8,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "77",
+      "gender": "M",
+      "age": 34.0,
+      "region": "Hanoi",
+      "recommendations": [
+        120,
+        555,
+        145,
+        766,
+        31,
+        192,
+        757,
+        225,
+        187,
+        674
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 6,
+        "region_city": 3,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 3,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 4,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "78",
+      "gender": "M",
+      "age": 35.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        740,
+        746,
+        707,
+        473,
+        614,
+        693,
+        712,
+        531,
+        528
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 8,
+        "age_price": 8,
+        "region_city": 0,
+        "age_star": 5,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "79",
+      "gender": "F",
+      "age": 26.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        736,
+        707,
+        120,
+        664,
+        693,
+        712,
+        614,
+        740
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 1,
+        "region_city": 1,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 1,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "80",
+      "gender": "F",
+      "age": 27.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        746,
+        773,
+        750,
+        473,
+        691,
+        670,
+        740,
+        712,
+        707
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 9,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 7
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "81",
+      "gender": "M",
+      "age": 30.0,
+      "region": "Hanoi",
+      "recommendations": [
+        707,
+        719,
+        736,
+        712,
+        693,
+        746,
+        690,
+        727,
+        668,
+        667
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 8,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "82",
+      "gender": "F",
+      "age": 26.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        736,
+        746,
+        707,
+        614,
+        751,
+        712,
+        120,
+        693,
+        740
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 1,
+        "age_star": 0,
+        "age_score": 4
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "83",
+      "gender": "F",
+      "age": 24.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        746,
+        712,
+        736,
+        773,
+        693,
+        690,
+        664,
+        771
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 4,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "84",
+      "gender": "F",
+      "age": 29.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        667,
+        773,
+        712,
+        771,
+        664,
+        668,
+        686,
+        614
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "85",
+      "gender": "F",
+      "age": 25.0,
+      "region": "Hanoi",
+      "recommendations": [
+        707,
+        712,
+        555,
+        719,
+        690,
+        727,
+        736,
+        667,
+        668,
+        693
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "86",
+      "gender": "M",
+      "age": 36.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        614,
+        651,
+        686,
+        667,
+        773,
+        668,
+        719,
+        727
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 7,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "87",
+      "gender": "M",
+      "age": 32.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        712,
+        707,
+        664,
+        668,
+        686,
+        704,
+        727,
+        750,
+        746
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "88",
+      "gender": "F",
+      "age": 26.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        614,
+        686,
+        712,
+        773,
+        736,
+        664,
+        693,
+        727
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 1,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 5
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 1,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "89",
+      "gender": "M",
+      "age": 33.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        120,
+        753,
+        771,
+        765,
+        736,
+        362,
+        766,
+        774
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 1,
+        "age_star": 7,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 1,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "90",
+      "gender": "M",
+      "age": 37.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        746,
+        773,
+        8,
+        736,
+        753,
+        740,
+        35,
+        751,
+        766
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 2,
+        "age_star": 7,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 2,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 7,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 4,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "91",
+      "gender": "F",
+      "age": 28.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        746,
+        753,
+        772,
+        614,
+        712,
+        690,
+        766,
+        707,
+        686
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "92",
+      "gender": "M",
+      "age": 30.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        773,
+        750,
+        362,
+        740,
+        337,
+        707,
+        771,
+        664,
+        753
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 9,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "93",
+      "gender": "F",
+      "age": 23.0,
+      "region": "Hanoi",
+      "recommendations": [
+        736,
+        614,
+        719,
+        712,
+        659,
+        662,
+        693,
+        668,
+        667,
+        746
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "94",
+      "gender": "M",
+      "age": 34.0,
+      "region": "Hanoi",
+      "recommendations": [
+        707,
+        693,
+        686,
+        712,
+        445,
+        690,
+        614,
+        674,
+        740,
+        753
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "95",
+      "gender": "F",
+      "age": 27.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        741,
+        750,
+        773,
+        757,
+        436,
+        444,
+        746,
+        740,
+        749
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 3,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 9
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 3,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 9,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "96",
+      "gender": "F",
+      "age": 26.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        746,
+        686,
+        712,
+        690,
+        727,
+        719,
+        773,
+        693
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 4,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 6
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "97",
+      "gender": "M",
+      "age": 35.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        736,
+        664,
+        751,
+        693,
+        773,
+        767,
+        740,
+        753,
+        762
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 5,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 5,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "98",
+      "gender": "F",
+      "age": 29.0,
+      "region": "Hanoi",
+      "recommendations": [
+        712,
+        555,
+        690,
+        707,
+        693,
+        773,
+        727,
+        704,
+        670,
+        674
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 2,
+        "region_city": 0,
+        "age_star": 0,
+        "age_score": 4
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 2,
+            "threshold": 3,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_score": {
+            "count": 4,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 1,
+        "mandatory_passed": false,
+        "optional_passed": true,
+        "total_score": 2,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": false,
+        "passed": false,
+        "accuracy": 0.75
+      },
+      "error": null
+    },
+    {
+      "user_id": "99",
+      "gender": "M",
+      "age": 32.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        24,
+        192,
+        766,
+        757,
+        436,
+        10,
+        771,
+        332,
+        716
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 6,
+        "region_city": 2,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 6,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 2,
+            "threshold": 2,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 3,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 4,
+        "max_score": 4,
+        "passed_strict": true,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 1.0
+      },
+      "error": null
+    },
+    {
+      "user_id": "100",
+      "gender": "M",
+      "age": 34.0,
+      "region": "Hanoi",
+      "recommendations": [
+        555,
+        707,
+        773,
+        686,
+        712,
+        614,
+        690,
+        693,
+        674,
+        704
+      ],
+      "num_recommendations": 10,
+      "pattern_counts": {
+        "gender_style": 10,
+        "age_price": 10,
+        "region_city": 0,
+        "age_star": 8,
+        "age_score": 0
+      },
+      "evaluation": {
+        "pattern_scores": {
+          "gender_style": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "age_price": {
+            "count": 10,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": true
+          },
+          "region_city": {
+            "count": 0,
+            "threshold": 2,
+            "passed": false,
+            "is_mandatory": true
+          },
+          "age_star": {
+            "count": 8,
+            "threshold": 3,
+            "passed": true,
+            "is_mandatory": false
+          }
+        },
+        "mandatory_passed_count": 2,
+        "mandatory_passed": true,
+        "optional_passed": true,
+        "total_score": 3,
+        "max_score": 4,
+        "passed_strict": false,
+        "passed_flexible": true,
+        "passed": true,
+        "accuracy": 0.75
+      },
+      "error": null
+    }
+  ]
+}

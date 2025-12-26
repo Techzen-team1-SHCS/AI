@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+recbole-env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Git
+.git/
+.gitignore
+
+# Logs and temp
+*.log
+*.tmp
+log/
+log_tensorboard/
+user_actions.log
+user_actions.archive.log
+
+# Docker
+# Note: Dockerfile and docker-compose.yml are needed for build, so don't ignore them
+.dockerignore
+
+# Tests
+tests/
+test_*.py
+
+# Documentation
+docs/
+*.md
+README*.md
+HUONG_DAN*.md
+
+# Large files
+# Note: Model files (*.pth) are excluded to keep image size small
+# Models will be loaded from host via volume mount (./saved:/app/saved)
+*.pth
+*.pt
+saved/backups/
+
+# OS
+.DS_Store
+Thumbs.db
+
