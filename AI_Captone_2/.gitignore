@@ -1,0 +1,26 @@
+## Ignore assistant-only documentation and raw datasets
+Document_code/
+
+## Python artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+ENV/
+env/
+
+## Jupyter
+.ipynb_checkpoints/
+
+## OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+## Logs / outputs
+*.log
+outputs/
+artifacts/
