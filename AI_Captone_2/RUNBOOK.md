@@ -42,3 +42,4 @@ Chương trình in ra 1 JSON object duy nhất gồm:
 
 ### 7) Nhật ký file chức năng đã tạo (kèm giải thích ngắn)
 - `ai_service/evaluation/comparison.py`: so sánh forecast vs actual theo từng `ds` và (tuỳ chọn) lưu bảng sai lệch để phục vụ drift detection.
+
