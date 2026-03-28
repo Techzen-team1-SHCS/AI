@@ -39,7 +39,3 @@ Chương trình in ra 1 JSON object duy nhất gồm:
 
 ### 6) Lưu ý thường gặp
 - Nếu terminal không in được tiếng Việt: dùng Windows Terminal hoặc đảm bảo output UTF-8 (code đã cấu hình sẵn).
-
-### 7) Nhật ký file chức năng đã tạo (kèm giải thích ngắn)
-- `ai_service/evaluation/comparison.py`: so sánh forecast vs actual theo từng `ds` và (tuỳ chọn) lưu bảng sai lệch để phục vụ drift detection.
-
