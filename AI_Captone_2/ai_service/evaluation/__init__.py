@@ -20,4 +20,11 @@ from ai_service.evaluation.rolling_window import (
     add_rolling_mean_error,
     mark_persistent_large_deviation,
 )
+from ai_service.evaluation.error_history_store import (
+    ErrorHistoryStoreConfig,
+    append_forecast_error_history,
+    compute_run_operational_status,
+    enrich_deviation_dataframe_for_history,
+    save_deviation_history_run,
+)
 
