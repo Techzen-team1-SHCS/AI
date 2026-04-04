@@ -21,6 +21,7 @@ from ai_service.evaluation.threshold_policy import ThreeBandThresholds, infer_th
 from ai_service.evaluation.rolling_window import PersistentDeviationConfig
 from ai_service.evaluation.comparison import ComparisonConfig, compare_forecast_with_actual_over_time
 from ai_service.evaluation.error_history_store import ErrorHistoryStoreConfig, save_deviation_history_run
+from ai_service.decision.decision_table import DecisionTable, ConfidenceLevel
 
 
 @dataclass(frozen=True)
@@ -43,6 +44,7 @@ class ForecastingService:
         adapter: Optional[BookingLikeAdapter] = None,
         preprocessor: Optional[ContinuousDailySeriesPreprocessor] = None,
         explainer: Optional[SimpleExplainer] = None,
+        decision: Optional[DecisionTable] = None,
     ) -> None:
         self._settings = settings
         self._schema = schema
@@ -51,6 +53,7 @@ class ForecastingService:
         self._adapter = adapter or BookingLikeAdapter()
         self._preprocessor = preprocessor or ContinuousDailySeriesPreprocessor()
         self._explainer = explainer or SimpleExplainer()
+        self._decision = decision or DecisionTable()
 
     def run_phase1(
         self,
@@ -171,12 +174,16 @@ class ForecastingService:
             penalty_map = {"high": "medium", "medium": "low", "low": "low"}
             confidence = penalty_map.get(raw_confidence, "low")
 
-        # Phase 1: decision is placeholder (phase 2+)
+        # Phase 2: Decision (Map Trend + Confidence)
+        typed_conf: ConfidenceLevel = confidence if confidence in ["high", "medium", "low"] else "medium" # type: ignore
+        trend = self._decision.evaluate_trend(forecast_df)
+        action = self._decision.get_suggested_action(trend=trend, confidence=typed_conf)
+
         return Phase1Result(
             forecast=forecast_payload,
             confidence=confidence,
             deviation=deviation_flag,
-            suggested_action="monitor",
+            suggested_action=action,
             explanation=explanation,
         )
 
