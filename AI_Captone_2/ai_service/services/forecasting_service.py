@@ -76,6 +76,13 @@ class ForecastingService:
         # Adapt raw → standardized ds,y
         daily = self._adapter.to_daily_series(raw_df, AdaptConfig(schema=self._schema, hotel=hotel))
 
+        # Fallback Strategy: If hotel data is insufficient, use Global data
+        fallback_used = False
+        if hotel and len(daily) < self._settings.data.min_training_days:
+            daily = self._adapter.to_daily_series(raw_df, AdaptConfig(schema=self._schema, hotel=None))
+            fallback_used = True
+
+
         # Preprocess: continuous daily series
         series = self._preprocessor.make_continuous(
             daily,
@@ -145,14 +152,29 @@ class ForecastingService:
             )
             op_status = DeviationLevel(eval_result["operational_status"])
             deviation_flag = (op_status in [DeviationLevel.WARNING, DeviationLevel.DRIFT])
+            
+            # Map operational status to Confidence string
+            conf_map = {
+                DeviationLevel.NORMAL: "high",
+                DeviationLevel.WARNING: "medium",
+                DeviationLevel.DRIFT: "low",
+            }
+            raw_confidence = conf_map.get(op_status, "medium")
         except Exception as e:
             # Safe fallback if evaluation fails
             deviation_flag = False
+            raw_confidence = "medium"
 
-        # Phase 1: confidence/decision are placeholders (phase 2+)
+        # Apply Fallback Penalty: Downgrade confidence if global fallback was used
+        confidence = raw_confidence
+        if fallback_used:
+            penalty_map = {"high": "medium", "medium": "low", "low": "low"}
+            confidence = penalty_map.get(raw_confidence, "low")
+
+        # Phase 1: decision is placeholder (phase 2+)
         return Phase1Result(
             forecast=forecast_payload,
-            confidence="medium",
+            confidence=confidence,
             deviation=deviation_flag,
             suggested_action="monitor",
             explanation=explanation,
