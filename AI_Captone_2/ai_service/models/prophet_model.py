@@ -55,3 +55,11 @@ class ProphetModel:
         fcst = self._model.predict(future_df)
         return fcst[["ds", "yhat", "yhat_lower", "yhat_upper"]].copy()
 
+    def predict_in_sample(self, df_ds: pd.DataFrame) -> pd.DataFrame:
+        if self._model is None:
+            raise RuntimeError("Model is not fitted yet")
+        if "ds" not in df_ds.columns:
+            raise ValueError("Input DataFrame must have 'ds' column")
+        fcst = self._model.predict(df_ds[["ds"]])
+        return fcst[["ds", "yhat", "yhat_lower", "yhat_upper"]].copy()
+
