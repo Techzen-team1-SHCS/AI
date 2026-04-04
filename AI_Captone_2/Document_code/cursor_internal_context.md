@@ -51,7 +51,11 @@ Cac file thay doi
 - `ai_service/tools/task_380_demo.py`: lenh demo minh chung task #380.
 - `ai_service/evaluation/error_history_store.py`: luu lich su sai lech theo thoi gian (append CSV) + trang thai hoat dong theo run.
 - `ai_service/tools/task_381_demo.py`: lenh demo minh chung task #381 (CSV + operational_status).
+- `ai_service/decision/__init__.py`: package marker cho bộ phận hỗ trợ ra quyết định.
+- `ai_service/decision/decision_table.py`: bảng quyết định Rule-based phân luồng Trend và Confidence thành văn bản.
+- `ai_service/tools/task_395_demo.py`: script tĩnh demo thử nghiệm cho module Decision Table.
 - `Document_code/task_demo_commands.md`: lenh demo theo task (chup man hinh).
+
 
 ### 3) Nguyen tac cap nhat
 - Khi tao file chuc nang moi, them 1 dong mo ta ngan vao file nay.
