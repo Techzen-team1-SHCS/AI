@@ -16,6 +16,11 @@ from ai_service.data.preprocessors.continuous_daily_series import (
 )
 from ai_service.insights.explainer import ExplainConfig, SimpleExplainer
 from ai_service.models.base import ForecastModel
+from ai_service.evaluation.errors import ErrorConfig, ErrorType
+from ai_service.evaluation.threshold_policy import ThreeBandThresholds, infer_three_band_thresholds_from_errors, DeviationLevel
+from ai_service.evaluation.rolling_window import PersistentDeviationConfig
+from ai_service.evaluation.comparison import ComparisonConfig, compare_forecast_with_actual_over_time
+from ai_service.evaluation.error_history_store import ErrorHistoryStoreConfig, save_deviation_history_run
 
 
 @dataclass(frozen=True)
@@ -103,11 +108,52 @@ class ForecastingService:
                 item["yhat_upper"] = float(row["yhat_upper"])
             forecast_payload.append(item)
 
-        # Phase 1: confidence/deviation/decision are placeholders (phase 2+)
+        # Phase 2: Evaluation (In-sample error tracking)
+        try:
+            in_sample_forecast = self._model.predict_in_sample(series)
+            compared_df = compare_forecast_with_actual_over_time(
+                forecast_df=in_sample_forecast,
+                actual_df=series,
+                error_config=ErrorConfig(error_type=ErrorType.ABSOLUTE),
+                config=ComparisonConfig()
+            )
+            
+            try:
+                thresholds = infer_three_band_thresholds_from_errors(
+                    compared_df["error"], 
+                    normal_quantile=0.75, 
+                    warning_quantile=0.95
+                )
+            except Exception:
+                thresholds = ThreeBandThresholds(max_error_normal=10.0, max_error_warning=25.0)
+
+            persistent_config = PersistentDeviationConfig(
+                window_days=3,
+                threshold=thresholds.max_error_warning,
+                min_exceed_days=2,
+                error_col="error",
+            )
+
+            hotel_slug = hotel.replace(' ', '_').lower() if hotel else "global"
+            out_path = Path("outputs") / f"evaluation_history_{hotel_slug}.csv"
+            
+            eval_result = save_deviation_history_run(
+                compared_df,
+                store=ErrorHistoryStoreConfig(csv_path=out_path),
+                thresholds=thresholds,
+                persistent=persistent_config,
+            )
+            op_status = DeviationLevel(eval_result["operational_status"])
+            deviation_flag = (op_status in [DeviationLevel.WARNING, DeviationLevel.DRIFT])
+        except Exception as e:
+            # Safe fallback if evaluation fails
+            deviation_flag = False
+
+        # Phase 1: confidence/decision are placeholders (phase 2+)
         return Phase1Result(
             forecast=forecast_payload,
             confidence="medium",
-            deviation=False,
+            deviation=deviation_flag,
             suggested_action="monitor",
             explanation=explanation,
         )
