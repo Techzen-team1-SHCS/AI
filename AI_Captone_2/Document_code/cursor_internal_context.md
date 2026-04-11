@@ -56,8 +56,11 @@ Cac file thay doi
 - `ai_service/tools/task_395_demo.py`: script tĩnh demo thử nghiệm cho module Decision Table.
 - `ai_service/advanced/__init__.py`: marker package hệ thống Khuyến nghị nâng cao.
 - `ai_service/advanced/dynamic_pricing.py`: lập trình engine Đề xuất Giá động.
+- `ai_service/advanced/staffing_optimizer.py`: bộ tính toán Lượng số phòng quy đổi ra khối lượng nhân sự theo ca làm việc.
 - `ai_service/tools/task_418_demo.py`: kịch bản phân nhánh demo toán học của Module Giá động.
+- `ai_service/tools/task_419_demo.py`: mô phỏng logic quy đổi Ca nhân sự.
 - `Document_code/task_demo_commands.md`: lenh demo theo task (chup man hinh).
+
 
 
 
