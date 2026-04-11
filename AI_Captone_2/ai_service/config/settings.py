@@ -5,7 +5,7 @@ from dataclasses import dataclass
 
 @dataclass(frozen=True)
 class ForecastSettings:
-    horizon_days: int = 14  # Mặc định dự báo 14 ngày, không cho phép Web thay đổi qua API
+    horizon_days: int = 30  # Mặc định dự báo 30 ngày; FastAPI cho phép PHP gửi override (optional)
 
 
 @dataclass(frozen=True)
