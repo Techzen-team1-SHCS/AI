@@ -57,9 +57,12 @@ Cac file thay doi
 - `ai_service/advanced/__init__.py`: marker package hệ thống Khuyến nghị nâng cao.
 - `ai_service/advanced/dynamic_pricing.py`: lập trình engine Đề xuất Giá động.
 - `ai_service/advanced/staffing_optimizer.py`: bộ tính toán Lượng số phòng quy đổi ra khối lượng nhân sự theo ca làm việc.
+- `ai_service/advanced/holiday_detector.py`: bộ lọc phát hiện đụng độ Lễ Tết để chống nhiễu / cảnh báo nhân sự.
 - `ai_service/tools/task_418_demo.py`: kịch bản phân nhánh demo toán học của Module Giá động.
 - `ai_service/tools/task_419_demo.py`: mô phỏng logic quy đổi Ca nhân sự.
+- `ai_service/tools/task_420_demo.py`: in mảng nội dung cảnh báo dữ liệu trùng Lễ.
 - `Document_code/task_demo_commands.md`: lenh demo theo task (chup man hinh).
+
 
 
 
