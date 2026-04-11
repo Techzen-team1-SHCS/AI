@@ -21,8 +21,14 @@ class ExplainSettings:
 
 
 @dataclass(frozen=True)
+class AdvancedSettings:
+    hotel_capacity: int = 150  # Default number of rooms
+
+
+@dataclass(frozen=True)
 class AppSettings:
     forecast: ForecastSettings = ForecastSettings()
     data: DataSettings = DataSettings()
     explain: ExplainSettings = ExplainSettings()
+    advanced: AdvancedSettings = AdvancedSettings()
 

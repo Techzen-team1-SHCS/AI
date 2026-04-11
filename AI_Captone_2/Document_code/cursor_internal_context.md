@@ -54,7 +54,11 @@ Cac file thay doi
 - `ai_service/decision/__init__.py`: package marker cho bộ phận hỗ trợ ra quyết định.
 - `ai_service/decision/decision_table.py`: bảng quyết định Rule-based phân luồng Trend và Confidence thành văn bản.
 - `ai_service/tools/task_395_demo.py`: script tĩnh demo thử nghiệm cho module Decision Table.
+- `ai_service/advanced/__init__.py`: marker package hệ thống Khuyến nghị nâng cao.
+- `ai_service/advanced/dynamic_pricing.py`: lập trình engine Đề xuất Giá động.
+- `ai_service/tools/task_418_demo.py`: kịch bản phân nhánh demo toán học của Module Giá động.
 - `Document_code/task_demo_commands.md`: lenh demo theo task (chup man hinh).
+
 
 
 ### 3) Nguyen tac cap nhat
