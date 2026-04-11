@@ -22,6 +22,9 @@ from ai_service.evaluation.rolling_window import PersistentDeviationConfig
 from ai_service.evaluation.comparison import ComparisonConfig, compare_forecast_with_actual_over_time
 from ai_service.evaluation.error_history_store import ErrorHistoryStoreConfig, save_deviation_history_run
 from ai_service.decision.decision_table import DecisionTable, ConfidenceLevel
+from ai_service.advanced.dynamic_pricing import DynamicPricingEngine
+from ai_service.advanced.staffing_optimizer import StaffingOptimizer
+from ai_service.advanced.holiday_detector import HolidayDetector
 
 
 @dataclass(frozen=True)
@@ -31,6 +34,7 @@ class Phase1Result:
     deviation: bool
     suggested_action: str
     explanation: str
+    advanced_insights: dict[str, Any]
 
 
 class ForecastingService:
@@ -54,6 +58,11 @@ class ForecastingService:
         self._preprocessor = preprocessor or ContinuousDailySeriesPreprocessor()
         self._explainer = explainer or SimpleExplainer()
         self._decision = decision or DecisionTable()
+        
+        # Instantiate Advanced Engines
+        self._pricing_engine = DynamicPricingEngine(max_capacity=self._settings.advanced.hotel_capacity)
+        self._staffing_optimizer = StaffingOptimizer()
+        self._holiday_detector = HolidayDetector()
 
     def run_phase1(
         self,
@@ -179,11 +188,23 @@ class ForecastingService:
         trend = self._decision.evaluate_trend(forecast_df)
         action = self._decision.get_suggested_action(trend=trend, confidence=typed_conf)
 
+        # Phase 4: Advanced Computations
+        pricing_text = self._pricing_engine.get_pricing_recommendation(forecast_df, trend)
+        staffing_text = self._staffing_optimizer.get_staffing_recommendation(forecast_df)
+        holiday_warnings = self._holiday_detector.detect_holidays(forecast_df)
+
+        advanced_payload = {
+            "dynamic_pricing": pricing_text,
+            "staffing": staffing_text,
+            "holiday_warnings": holiday_warnings,
+        }
+
         return Phase1Result(
             forecast=forecast_payload,
             confidence=confidence,
             deviation=deviation_flag,
             suggested_action=action,
             explanation=explanation,
+            advanced_insights=advanced_payload,
         )
 
