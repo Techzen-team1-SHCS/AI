@@ -50,3 +50,38 @@ cd d:\GitHub\AI\AI_Captone_2
 python -m ai_service.tools.task_381_demo
 ```
 
+### Task #395 — Decision Table (Ma trận Quyết định Trend × Confidence)
+```powershell
+cd d:\GitHub\AI\AI_Captone_2
+python -m ai_service.tools.task_395_demo
+```
+
+### Task #397 — Insight Explainer (Sinh chữ phân tích cuối tuần vs giữa tuần)
+```powershell
+cd d:\GitHub\AI\AI_Captone_2
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8 ; python -m ai_service.main --csv Document_code/hotel_booking.csv --horizon 14 --scope per_hotel --hotel "City Hotel" | Select-String "explanation"
+```
+
+### Task #418 — Dynamic Pricing (Khuyến nghị Giá phòng động)
+```powershell
+cd d:\GitHub\AI\AI_Captone_2
+python -m ai_service.tools.task_418_demo
+```
+
+### Task #419 — Staffing Optimizer (Tối ưu Nhân sự)
+```powershell
+cd d:\GitHub\AI\AI_Captone_2
+python -m ai_service.tools.task_419_demo
+```
+
+### Task #420 — Holiday Regressor (Phát hiện Lễ Tết)
+```powershell
+cd d:\GitHub\AI\AI_Captone_2
+python -m ai_service.tools.task_420_demo
+```
+
+### Task #421 — Full Pipeline (Toàn bộ advanced_insights trong JSON cuối)
+```powershell
+cd d:\GitHub\AI\AI_Captone_2
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8 ; python -m ai_service.main --csv Document_code/hotel_booking.csv --horizon 14 --scope per_hotel --hotel "City Hotel" | Select-String "advanced_insights" -Context 0,7
+```

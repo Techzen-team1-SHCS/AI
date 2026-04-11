@@ -63,6 +63,7 @@ def main() -> int:
                 "deviation": result.deviation,
                 "suggested_action": result.suggested_action,
                 "explanation": result.explanation,
+                "advanced_insights": result.advanced_insights,
             },
             ensure_ascii=False,
             indent=2,
