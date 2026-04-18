@@ -61,6 +61,7 @@ Cac file thay doi
 - `ai_service/tools/task_418_demo.py`: kịch bản phân nhánh demo toán học của Module Giá động.
 - `ai_service/tools/task_419_demo.py`: mô phỏng logic quy đổi Ca nhân sự.
 - `ai_service/tools/task_420_demo.py`: in mảng nội dung cảnh báo dữ liệu trùng Lễ.
+- `ai_service/tools/test_api_e2e.py`: kịch bản kiểm thử API tự động với urllib (`POST /forecast`) giả lập Docker container call. (Task #437)
 - `Document_code/task_demo_commands.md`: lenh demo theo task (chup man hinh).
 - `ai_service/api.py`: FastAPI server — endpoint POST /forecast nhan JSON tu PHP, wire vao ForecastingService.run_from_web_payload(). Swagger UI tai /docs. (Task #432)
 - `ai_service/data/adapters/web_payload_adapter.py`: Adapter ép kiểu mảng JSON payload từ Web thành DataFrame chuẩn (ds, y). (Task #433)
