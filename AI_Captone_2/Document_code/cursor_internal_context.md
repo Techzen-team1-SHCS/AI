@@ -63,7 +63,8 @@ Cac file thay doi
 - `ai_service/tools/task_420_demo.py`: in mảng nội dung cảnh báo dữ liệu trùng Lễ.
 - `Document_code/task_demo_commands.md`: lenh demo theo task (chup man hinh).
 - `ai_service/api.py`: FastAPI server — endpoint POST /forecast nhan JSON tu PHP, wire vao ForecastingService.run_from_web_payload(). Swagger UI tai /docs. (Task #432)
-- `ai_service/services/forecasting_service.py`: bo sung run_from_web_payload() (web path) va _run_core_pipeline() (private shared logic). run_phase1() CLI giu nguyen. (Task #432)
+- `ai_service/data/adapters/web_payload_adapter.py`: Adapter ép kiểu mảng JSON payload từ Web thành DataFrame chuẩn (ds, y). (Task #433)
+- `ai_service/services/forecasting_service.py`: bo sung run_from_web_payload() (web path) va _run_core_pipeline() (private shared logic). run_phase1() CLI giu nguyen. Đã inject `WebPayloadAdapter`. (Task #432, #433)
 
 
 

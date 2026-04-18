@@ -9,6 +9,7 @@ import pandas as pd
 from ai_service.config.dataset_schema import BookingLikeSchema
 from ai_service.config.settings import AppSettings
 from ai_service.data.adapters.booking_like_adapter import AdaptConfig, BookingLikeAdapter
+from ai_service.data.adapters.web_payload_adapter import WebPayloadAdapter
 from ai_service.data.loaders.csv_loader import CsvLoadConfig, CsvLoader
 from ai_service.data.preprocessors.continuous_daily_series import (
     ContinuousDailySeriesPreprocessor,
@@ -46,6 +47,7 @@ class ForecastingService:
         model: ForecastModel,
         loader: Optional[CsvLoader] = None,
         adapter: Optional[BookingLikeAdapter] = None,
+        web_adapter: Optional[WebPayloadAdapter] = None,
         preprocessor: Optional[ContinuousDailySeriesPreprocessor] = None,
         explainer: Optional[SimpleExplainer] = None,
         decision: Optional[DecisionTable] = None,
@@ -55,6 +57,7 @@ class ForecastingService:
         self._model = model
         self._loader = loader or CsvLoader()
         self._adapter = adapter or BookingLikeAdapter()
+        self._web_adapter = web_adapter or WebPayloadAdapter()
         self._preprocessor = preprocessor or ContinuousDailySeriesPreprocessor()
         self._explainer = explainer or SimpleExplainer()
         self._decision = decision or DecisionTable()
@@ -128,16 +131,8 @@ class ForecastingService:
         Returns:
             Phase1Result — cùng cấu trúc với run_phase1.
         """
-        if not payload:
-            raise ValueError("payload không được rỗng.")
-
-        # Chuyển list[dict] → DataFrame chuẩn (ds, y)
-        daily = pd.DataFrame(payload)
-        if "ds" not in daily.columns or "y" not in daily.columns:
-            raise ValueError("Mỗi phần tử payload phải có trường 'ds' và 'y'.")
-
-        daily["ds"] = pd.to_datetime(daily["ds"])
-        daily["y"] = daily["y"].astype("float64")
+        # Chuyển list[dict] → DataFrame chuẩn (ds, y) thông qua WebPayloadAdapter
+        daily = self._web_adapter.to_daily_series(payload)
 
         # Web payload: PHP đã lọc đúng khách sạn → không cần Fallback Global
         fallback_used = False

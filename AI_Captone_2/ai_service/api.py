@@ -164,11 +164,8 @@ def forecast(request: ForecastRequest) -> ForecastResponse:
     try:
         service = _build_service(hotel_capacity=request.hotel_capacity)
 
-        # Chuyển HistoricalDataPoint → dict chuẩn {ds, y} cho ForecastingService
-        payload_dicts = [
-            {"ds": point.ds, "y": point.rooms_booked}
-            for point in request.historical_data
-        ]
+        # Chuyển object Pydantic thành dict format cho WebPayloadAdapter
+        payload_dicts = [point.model_dump() for point in request.historical_data]
 
         result = service.run_from_web_payload(
             payload=payload_dicts,
