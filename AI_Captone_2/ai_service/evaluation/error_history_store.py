@@ -10,6 +10,9 @@ import pandas as pd
 
 from ai_service.evaluation.threshold_policy import DeviationLevel, ThreeBandThresholds, add_deviation_level_column
 from ai_service.evaluation.rolling_window import PersistentDeviationConfig, mark_persistent_large_deviation
+import threading
+
+_write_lock = threading.Lock()
 
 
 @dataclass(frozen=True)
@@ -91,14 +94,15 @@ def append_forecast_error_history(
     out["operational_status"] = operational_status.value
 
     store.csv_path.parent.mkdir(parents=True, exist_ok=True)
-    file_exists = store.csv_path.exists() and store.csv_path.stat().st_size > 0
-    out.to_csv(
-        store.csv_path,
-        mode="a",
-        header=not file_exists,
-        index=False,
-        encoding=store.encoding,
-    )
+    with _write_lock:
+        file_exists = store.csv_path.exists() and store.csv_path.stat().st_size > 0
+        out.to_csv(
+            store.csv_path,
+            mode="a",
+            header=not file_exists,
+            index=False,
+            encoding=store.encoding,
+        )
     return store.csv_path, rid, run_at, len(out)
 
 

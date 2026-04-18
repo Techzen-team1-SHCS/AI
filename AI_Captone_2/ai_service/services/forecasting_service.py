@@ -4,6 +4,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Optional
 
+import logging
 import pandas as pd
 
 from ai_service.config.dataset_schema import BookingLikeSchema
@@ -237,8 +238,9 @@ class ForecastingService:
                 DeviationLevel.DRIFT: "low",
             }
             raw_confidence = conf_map.get(op_status, "medium")
-        except Exception:
-            # Safe fallback nếu evaluation gặp lỗi
+        except Exception as e:
+            # Safe fallback nếu evaluation gặp lỗi nhưng log lỗi đầy đủ
+            logging.error(f"Lỗi tính toán Evaluation (API vẫn trả về JSON fallback): {e}", exc_info=True)
             deviation_flag = False
             raw_confidence = "medium"
 
