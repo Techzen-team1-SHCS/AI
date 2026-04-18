@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  ai_service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hotel_forecasting_ai
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./outputs:/app/outputs
+    environment:
+      - TZ=Asia/Ho_Chi_Minh
+    # Kết nối mạng LAN Docker nội bộ với Backend Web
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+    driver: bridge
