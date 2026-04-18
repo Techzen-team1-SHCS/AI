@@ -64,6 +64,10 @@ class ForecastingService:
         self._staffing_optimizer = StaffingOptimizer()
         self._holiday_detector = HolidayDetector()
 
+    # ------------------------------------------------------------------
+    # Public: CLI path — đọc từ file CSV (không thay đổi)
+    # ------------------------------------------------------------------
+
     def run_phase1(
         self,
         *,
@@ -94,7 +98,73 @@ class ForecastingService:
             daily = self._adapter.to_daily_series(raw_df, AdaptConfig(schema=self._schema, hotel=None))
             fallback_used = True
 
+        return self._run_core_pipeline(
+            daily=daily,
+            horizon_days=horizon_days,
+            hotel_id=hotel or "global",
+            fallback_used=fallback_used,
+        )
 
+    # ------------------------------------------------------------------
+    # Public: Web/API path — nhận payload JSON từ PHP (Task #432)
+    # PHP đã tự group-by date, AI chỉ nhận mảng {ds, y} sạch
+    # ------------------------------------------------------------------
+
+    def run_from_web_payload(
+        self,
+        *,
+        payload: list[dict[str, Any]],
+        horizon_days: int,
+        hotel_id: str,
+    ) -> Phase1Result:
+        """
+        Chạy pipeline từ JSON payload của Web (PHP).
+
+        Args:
+            payload: Mảng dict [{ds: 'YYYY-MM-DD', y: <int>}] đã group-by ngày.
+            horizon_days: Số ngày dự báo.
+            hotel_id: Tên/ID khách sạn (dùng để slug hoá file evaluation history).
+
+        Returns:
+            Phase1Result — cùng cấu trúc với run_phase1.
+        """
+        if not payload:
+            raise ValueError("payload không được rỗng.")
+
+        # Chuyển list[dict] → DataFrame chuẩn (ds, y)
+        daily = pd.DataFrame(payload)
+        if "ds" not in daily.columns or "y" not in daily.columns:
+            raise ValueError("Mỗi phần tử payload phải có trường 'ds' và 'y'.")
+
+        daily["ds"] = pd.to_datetime(daily["ds"])
+        daily["y"] = daily["y"].astype("float64")
+
+        # Web payload: PHP đã lọc đúng khách sạn → không cần Fallback Global
+        fallback_used = False
+
+        return self._run_core_pipeline(
+            daily=daily,
+            horizon_days=horizon_days,
+            hotel_id=hotel_id,
+            fallback_used=fallback_used,
+        )
+
+    # ------------------------------------------------------------------
+    # Private: Pipeline lõi dùng chung cho cả CLI và Web
+    # ------------------------------------------------------------------
+
+    def _run_core_pipeline(
+        self,
+        *,
+        daily: pd.DataFrame,
+        horizon_days: int,
+        hotel_id: str,
+        fallback_used: bool,
+    ) -> Phase1Result:
+        """
+        Toàn bộ logic pipeline từ Preprocess đến Output.
+        Được gọi bởi run_phase1 (CLI) và run_from_web_payload (API).
+        """
         # Preprocess: continuous daily series
         series = self._preprocessor.make_continuous(
             daily,
@@ -127,7 +197,7 @@ class ForecastingService:
                 item["yhat_upper"] = float(row["yhat_upper"])
             forecast_payload.append(item)
 
-        # Phase 2: Evaluation (In-sample error tracking)
+        # Evaluation (In-sample error tracking)
         try:
             in_sample_forecast = self._model.predict_in_sample(series)
             compared_df = compare_forecast_with_actual_over_time(
@@ -153,7 +223,7 @@ class ForecastingService:
                 error_col="error",
             )
 
-            hotel_slug = hotel.replace(' ', '_').lower() if hotel else "global"
+            hotel_slug = hotel_id.replace(' ', '_').lower()
             out_path = Path("outputs") / f"evaluation_history_{hotel_slug}.csv"
             
             eval_result = save_deviation_history_run(
@@ -165,30 +235,30 @@ class ForecastingService:
             op_status = DeviationLevel(eval_result["operational_status"])
             deviation_flag = (op_status in [DeviationLevel.WARNING, DeviationLevel.DRIFT])
             
-            # Map operational status to Confidence string
+            # Map operational status → Confidence string
             conf_map = {
                 DeviationLevel.NORMAL: "high",
                 DeviationLevel.WARNING: "medium",
                 DeviationLevel.DRIFT: "low",
             }
             raw_confidence = conf_map.get(op_status, "medium")
-        except Exception as e:
-            # Safe fallback if evaluation fails
+        except Exception:
+            # Safe fallback nếu evaluation gặp lỗi
             deviation_flag = False
             raw_confidence = "medium"
 
-        # Apply Fallback Penalty: Downgrade confidence if global fallback was used
+        # Apply Fallback Penalty: hạ bậc confidence nếu dùng global fallback
         confidence = raw_confidence
         if fallback_used:
             penalty_map = {"high": "medium", "medium": "low", "low": "low"}
             confidence = penalty_map.get(raw_confidence, "low")
 
-        # Phase 2: Decision (Map Trend + Confidence)
-        typed_conf: ConfidenceLevel = confidence if confidence in ["high", "medium", "low"] else "medium" # type: ignore
+        # Decision (Map Trend + Confidence → suggested_action)
+        typed_conf: ConfidenceLevel = confidence if confidence in ["high", "medium", "low"] else "medium"  # type: ignore
         trend = self._decision.evaluate_trend(forecast_df)
         action = self._decision.get_suggested_action(trend=trend, confidence=typed_conf)
 
-        # Phase 4: Advanced Computations
+        # Advanced Computations
         pricing_text = self._pricing_engine.get_pricing_recommendation(forecast_df, trend)
         staffing_text = self._staffing_optimizer.get_staffing_recommendation(forecast_df)
         holiday_warnings = self._holiday_detector.detect_holidays(forecast_df)
@@ -207,4 +277,3 @@ class ForecastingService:
             explanation=explanation,
             advanced_insights=advanced_payload,
         )
-
