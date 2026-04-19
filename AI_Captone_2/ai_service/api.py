@@ -12,6 +12,8 @@ from typing import Any, Optional
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
+import pandas as pd
+from pathlib import Path
 
 from ai_service.config.settings import AppSettings, AdvancedSettings, DataSettings, ExplainSettings, ForecastSettings
 from ai_service.config.dataset_schema import HOTEL_BOOKING_CSV_SCHEMA
@@ -58,10 +60,10 @@ class ForecastRequest(BaseModel):
     )
     historical_data: list[HistoricalDataPoint] = Field(
         ...,
-        min_length=2,
+        min_length=1,
         description=(
             "Mảng lịch sử đặt phòng theo ngày. PHP tự query DB, group-by date "
-            "rồi gửi lên. AI không cần tự group."
+            "rồi gửi lên. Lần đầu gửi đủ 180 ngày. Các lần sau chỉ cần gửi 1 ngày mới, AI sẽ tự cộng dồn vào Database CSV riêng."
         ),
     )
     horizon_days: Optional[int] = Field(
@@ -132,6 +134,45 @@ def health_check() -> dict[str, str]:
     return {"status": "ok", "service": "AI Forecasting Service v1.0.0"}
 
 
+def _update_and_get_hotel_data(hotel_id: str, new_data: list[HistoricalDataPoint]) -> list[dict[str, Any]]:
+    """
+    Stateful Storage: Quản lý file CSV riêng cho từng khách sạn.
+    Lấy dữ liệu mới nối vào file cũ, điền 0 các ngày thiếu, và trả về toàn bộ chuỗi.
+    """
+    slug = hotel_id.replace(' ', '_').lower()
+    file_path = Path("outputs") / "data" / f"{slug}.csv"
+    file_path.parent.mkdir(parents=True, exist_ok=True)
+    
+    # 1. Định hình dữ liệu mới gửi lên
+    new_df = pd.DataFrame([point.model_dump() for point in new_data])
+    new_df['ds'] = pd.to_datetime(new_df['ds']).dt.date
+    
+    # 2. Đọc file cũ và nối (Update/Insert)
+    if file_path.exists():
+        old_df = pd.read_csv(file_path)
+        old_df['ds'] = pd.to_datetime(old_df['ds']).dt.date
+        # Kết hợp, giữ lại giá trị của new_df nếu trùng ngày (để hỗ trợ WEB sửa sai dữ liệu cũ)
+        combined = pd.concat([old_df, new_df]).drop_duplicates(subset=['ds'], keep='last')
+    else:
+        combined = new_df
+        
+    combined = combined.sort_values(by='ds')
+    
+    # 3. Fill những ngày thiếu bằng 0 để tránh đứt chuỗi
+    if not combined.empty:
+        continuous_idx = pd.date_range(start=combined['ds'].min(), end=combined['ds'].max())
+        combined = combined.set_index('ds').reindex(continuous_idx, fill_value=0).reset_index()
+        combined.rename(columns={'index': 'ds'}, inplace=True)
+        # Chuẩn hoá về string
+        combined['ds'] = combined['ds'].dt.strftime('%Y-%m-%d')
+        
+    # 4. Ghi đè file CSV lưu lại
+    combined.to_csv(file_path, index=False)
+    
+    # 5. Trả về format dict cho AI Pipeline
+    return combined.to_dict(orient='records')
+
+
 @app.post(
     "/forecast",
     response_model=ForecastResponse,
@@ -164,11 +205,22 @@ def forecast(request: ForecastRequest) -> ForecastResponse:
     try:
         service = _build_service(hotel_capacity=request.hotel_capacity)
 
-        # Chuyển object Pydantic thành dict format cho WebPayloadAdapter
-        payload_dicts = [point.model_dump() for point in request.historical_data]
+        # 1. Stateful Save & Merge: Nối data mới gửi vào CSV khách sạn, fill thiếu bằng 0
+        full_historical_payload = _update_and_get_hotel_data(
+            hotel_id=request.hotel_id, 
+            new_data=request.historical_data
+        )
 
+        # Chặn bắt buộc nếu dữ liệu tổng < 7 ngày
+        if len(full_historical_payload) < 7:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Chưa đủ dữ liệu. Khách sạn '{request.hotel_id}' hiện có {len(full_historical_payload)} ngày dữ liệu. AI cần tối thiểu 7 ngày để xuất báo cáo."
+            )
+
+        # 2. Chuyển toàn bộ dữ liệu (đã gộp) vào lõi Predict
         result = service.run_from_web_payload(
-            payload=payload_dicts,
+            payload=full_historical_payload,
             horizon_days=horizon,
             hotel_id=request.hotel_id,
         )
