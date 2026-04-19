@@ -185,12 +185,12 @@ class ForecastingService:
         for _, row in forecast_df.iterrows():
             item = {
                 "date": pd.to_datetime(row["ds"]).date().isoformat(),
-                "yhat": float(row["yhat"]),
+                "yhat": int(round(float(row["yhat"]))),
             }
             if "yhat_lower" in forecast_df.columns and not pd.isna(row.get("yhat_lower")):
-                item["yhat_lower"] = float(row["yhat_lower"])
+                item["yhat_lower"] = int(round(float(row["yhat_lower"])))
             if "yhat_upper" in forecast_df.columns and not pd.isna(row.get("yhat_upper")):
-                item["yhat_upper"] = float(row["yhat_upper"])
+                item["yhat_upper"] = int(round(float(row["yhat_upper"])))
             forecast_payload.append(item)
 
         # Evaluation (In-sample error tracking)

@@ -53,6 +53,10 @@ class ProphetModel:
         )
         future_df = pd.DataFrame({"ds": future})
         fcst = self._model.predict(future_df)
+        
+        # Làm tròn thành số nguyên, số phòng không lấy số âm
+        fcst[["yhat", "yhat_lower", "yhat_upper"]] = fcst[["yhat", "yhat_lower", "yhat_upper"]].round().clip(lower=0).astype(int)
+        
         return fcst[["ds", "yhat", "yhat_lower", "yhat_upper"]].copy()
 
     def predict_in_sample(self, df_ds: pd.DataFrame) -> pd.DataFrame:
@@ -61,5 +65,9 @@ class ProphetModel:
         if "ds" not in df_ds.columns:
             raise ValueError("Input DataFrame must have 'ds' column")
         fcst = self._model.predict(df_ds[["ds"]])
+        
+        # Làm tròn
+        fcst[["yhat", "yhat_lower", "yhat_upper"]] = fcst[["yhat", "yhat_lower", "yhat_upper"]].round().clip(lower=0).astype(int)
+        
         return fcst[["ds", "yhat", "yhat_lower", "yhat_upper"]].copy()
 
